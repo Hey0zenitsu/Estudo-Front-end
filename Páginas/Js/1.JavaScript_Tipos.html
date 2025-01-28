@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)file:///C:/Users/Bruno%20Lind%C3%A3o/Desktop/teste/createapage.html -->
+<html lang="pt-br">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card estilo VS Code</title>
+    <!-- Link para o Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: #f8f9fa;
+        }
+
+        .form-control {
+            background-color: #1f1f1f;
+            color: #f8f9fa;
+            /* Garante que o texto seja branco */
+            border: 1px solid #333333;
+        }
+
+        .form-control:focus {
+            background-color: #1f1f1f;
+            /* Mantém a consistência do fundo */
+            color: #f8f9fa;
+            border-color: #0d6efd;
+            /* Realça o foco no campo */
+            box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
+        }
+
+        .form-control:placeholder {
+            color: #888888;
+            /* Contraste adequado para o placeholder */
+        }
+
+        .btn-primary {
+            background-color: #0d6efd;
+            border: none;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            border: none;
+        }
+
+        .btn-warning {
+            background-color: #ffc107;
+            border: none;
+            color: #121212;
+        }
+
+        .btn-success {
+            background-color: #198754;
+            border: none;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #f8f9fa;
+        }
+
+        #final {
+            font-size: 55px;
+            margin-top: 150px;
+        }
+    </style>
+    <style type="text/css" id="operaUserStyle"></style>
+</head>
+
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand"
+                    href="file:///C:/Users/Bruno%20Lind%C3%A3o/Desktop/teste/createapage.html#">Minha Marca</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link"
+                                href="file:///C:/Users/Bruno%20Lind%C3%A3o/Desktop/teste/createapage.html#">Home</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="file:///C:/Users/Bruno%20Lind%C3%A3o/Desktop/teste/createapage.html#">Sobre</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"
+                                href="file:///C:/Users/Bruno%20Lind%C3%A3o/Desktop/teste/createapage.html#"
+                                id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Serviços
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                                <li><a class="dropdown-item"
+                                        href="file:///C:/Users/Bruno%20Lind%C3%A3o/Desktop/teste/createapage.html#">Serviço
+                                        1</a></li>
+                                <li><a class="dropdown-item"
+                                        href="file:///C:/Users/Bruno%20Lind%C3%A3o/Desktop/teste/createapage.html#">Serviço
+                                        2</a></li>
+                                <li><a class="dropdown-item"
+                                        href="file:///C:/Users/Bruno%20Lind%C3%A3o/Desktop/teste/createapage.html#">Serviço
+                                        3</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"
+                                href="file:///C:/Users/Bruno%20Lind%C3%A3o/Desktop/teste/createapage.html#"
+                                id="contactDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Contato
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="contactDropdown">
+                                <li><a class="dropdown-item"
+                                        href="file:///C:/Users/Bruno%20Lind%C3%A3o/Desktop/teste/createapage.html#">Email</a>
+                                </li>
+                                <li><a class="dropdown-item"
+                                        href="file:///C:/Users/Bruno%20Lind%C3%A3o/Desktop/teste/createapage.html#">Telefone</a>
+                                </li>
+                                <li><a class="dropdown-item"
+                                        href="file:///C:/Users/Bruno%20Lind%C3%A3o/Desktop/teste/createapage.html#">Suporte</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Container para os cards -->
+        <div class="row" id="cards-container">
+            <div class="col-md-12">
+                <div class="vscode-explanation">
+                    <h3>Tipos de Dados em JavaScript</h3>
+                    <p>No JavaScript, temos alguns tipos de dados fundamentais que são muito usados no dia a dia da
+                        programação:</p>
+                </div>
+            </div>
+            <div class="mb-2">
+                <h1>Strings (String)</h1>
+            </div>
+            <div class="col-md-12">
+                <div class="vscode-explanation">
+                    <h3></h3>
+                    <p>As strings são sequências de caracteres usadas para representar texto. Elas podem ser criadas com
+                        aspas simples ou duplas.</p>
+                </div>
+            </div>
+            <div class="col-md-12 mb-4">
+                <ul class="styled-list list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center"><span><strong>Exemplo
+                                de string com aspas duplas:</strong> "Olá Mundo!"</span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center"><span><strong>Exemplo
+                                de string com aspas simples:</strong> 'JavaScript'</span></li>
+                </ul>
+            </div>
+            <div class="col-md-12">
+                <div class="vscode-explanation">
+                    <h3></h3>
+                    <p>Você pode manipular strings com várias funções, como:</p>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="vscode-card">
+                    <div class="vscode-header">
+                        <div class="dots">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                        <span>Tipos de Dados</span>
+                    </div>
+                    <div class="vscode-content">
+                        <pre>let texto = "Olá, Mundo!";
+let tamanho = texto.length; // Retorna o tamanho da string
+let maiuscula = texto.toUpperCase(); // Converte para maiúsculas</pre>
+                    </div>
+                    <div class="vscode-terminal">Código executado com sucesso.</div>
+                    <div class="vscode-footer">
+                        <button onclick="executeCode(this)">Executar Código</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-2">
+                <h1>Números (Number)</h1>
+            </div>
+            <div class="col-md-12">
+                <div class="vscode-explanation">
+                    <h3></h3>
+                    <p>Os números em JavaScript podem ser inteiros (sem casas decimais) ou de ponto flutuante (com casas
+                        decimais).</p>
+                </div>
+            </div>
+            <div class="col-md-12 mb-4">
+                <ul class="styled-list list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center"><span><strong>Exemplos
+                                de números inteiros:</strong> 10 -5 100</span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center"><span><strong>Exemplos
+                                de números de ponto flutuante:</strong> 3.14 -0.5 2.5</span></li>
+                </ul>
+            </div>
+            <div class="col-md-12">
+                <div class="vscode-card">
+                    <div class="vscode-header">
+                        <div class="dots">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                        <span>Tipos de Dados</span>
+                    </div>
+                    <div class="vscode-content">
+                        <pre>let soma = 10 + 5; // 15
+let produto = 3 * 4; // 12
+let divisao = 10 / 2; // 5</pre>
+                    </div>
+                    <div class="vscode-terminal">
+                        <span>NaN</span>
+                    </div>
+                    <div class="vscode-footer">
+                        <button onclick="executeCode(this)">Executar Código</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-2">
+                <h1>Booleanos (Boolean)</h1>
+            </div>
+            <div class="col-md-12">
+                <div class="vscode-explanation">
+                    <h3></h3>
+                    <p>Os booleanos representam dois valores possíveis: true (verdadeiro) ou false (falso). Eles são
+                        usados para decisões lógicas e controles de fluxo (como em estruturas if).</p><button </div>
+                </div>
+                <div class="col-md-12 mb-4">
+                    <ul class="styled-list list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span><strong>Exemplo
+                                    de valor booleano verdadeiro:</strong> true</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span><strong>Exemplo
+                                    de valor booleano falso:</strong> false</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-12">
+                    <div class="vscode-card">
+                        <div class="vscode-header">
+                            <div class="dots">
+                                <div class="dot red"></div>
+                                <div class="dot yellow"></div>
+                                <div class="dot green"></div>
+                            </div>
+                            <span>Tipos de Dados</span>
+                        </div>
+                        <div class="vscode-content">
+                            <pre>let maiorQueCinco = 10 &gt; 5; // true
+let igual = 5 === 3; // false</pre>
+                        </div>
+                        <div class="vscode-terminal">
+                            <span>NaN</span>
+                        </div>
+                        <div class="vscode-footer">
+                            <button onclick="executeCode(this)">Executar Código</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="vscode-explanation">
+                        <h3></h3>
+                        <p>Esses são os três tipos primitivos que você vai utilizar com frequência na programação em
+                            JavaScript. Com as strings, números e booleanos, você já pode criar variáveis e fazer
+                            operações
+                            simples para construir seus programas.
+                            <br><br>
+                            Por enquanto, essa é a introdução a esses tipos. Na próxima aula, vamos aprofundar ainda
+                            mais em
+                            cada um deles e como usá-los de forma eficiente.
+                            <br><br>
+                            Até mais!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Formulário para criar novos cards -->
+
+            <!-- footer -->
+            <footer class="site-footer bg-dark text-light py-4">
+                <div class="container">
+                    <div class="row">
+                        <!-- Coluna para texto de copyright -->
+                        <div class="col-12 col-md-6 text-center text-md-left">
+                            <p class="footer-text mb-0">© 2025 - Todos os direitos reservados</p>
+                        </div>
+                        <!-- Coluna para links -->
+                        <div class="col-12 col-md-6 text-center text-md-right">
+                            <ul class="footer-links list-unstyled mb-0">
+                                <li class="d-inline-block mr-3">
+                                    <a href="file:///C:/Users/Bruno%20Lind%C3%A3o/Desktop/teste/createapage.html#"
+                                        class="footer-link text-light">Sobre</a>
+                                </li>
+                                <li class="d-inline-block mr-3">
+                                    <a href="file:///C:/Users/Bruno%20Lind%C3%A3o/Desktop/teste/createapage.html#"
+                                        class="footer-link text-light">Serviços</a>
+                                </li>
+                                <li class="d-inline-block">
+                                    <a href="file:///C:/Users/Bruno%20Lind%C3%A3o/Desktop/teste/createapage.html#"
+                                        class="footer-link text-light">Contato</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+</body>
+
+</html>

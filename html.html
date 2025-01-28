@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card estilo VS Code</title>
+    <!-- Link para o Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    </div>
+    <div class="container">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Minha Marca</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sobre</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Serviços
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                                <li><a class="dropdown-item" href="#">Serviço 1</a></li>
+                                <li><a class="dropdown-item" href="#">Serviço 2</a></li>
+                                <li><a class="dropdown-item" href="#">Serviço 3</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Contato
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="contactDropdown">
+                                <li><a class="dropdown-item" href="#">Email</a></li>
+                                <li><a class="dropdown-item" href="#">Telefone</a></li>
+                                <li><a class="dropdown-item" href="#">Suporte</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <nav class="custom-navbar">
+            <div class="custom-container">
+                <ul class="custom-navbar-nav">
+                    <li class="custom-nav-item">
+                        <a class="custom-nav-link" href="#">HTML</a>
+                    </li>
+                    <li class="custom-nav-item">
+                        <a class="custom-nav-link" href="#">CSS</a>
+                    </li>
+                    <li class="custom-nav-item">
+                        <a class="custom-nav-link" href="#">JavaScript</a>
+                    </li>
+                    <li class="custom-nav-item">
+                        <a class="custom-nav-link" href="#">Python</a>
+                    </li>
+                    <li class="custom-nav-item">
+                        <a class="custom-nav-link" href="#">Java</a>
+                    </li>
+                    <li class="custom-nav-item">
+                        <a class="custom-nav-link" href="#">PHP</a>
+                    </li>
+                    <li class="custom-nav-item">
+                        <a class="custom-nav-link" href="#">C#</a>
+                    </li>
+                    <li class="custom-nav-item">
+                        <a class="custom-nav-link" href="#">Ruby</a>
+                    </li>
+                    <li class="custom-nav-item">
+                        <a class="custom-nav-link" href="#">Swift</a>
+                    </li>
+                    <li class="custom-nav-item">
+                        <a class="custom-nav-link" href="#">Go</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="row">
+            <!-- Card de Código -->
+            <div class="col-md-12">
+                <div class="vscode-card">
+                    <div class="vscode-header">
+                        <div class="dots">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                        <span>main.py</span>
+                    </div>
+
+                    <div class="vscode-content">
+                        <pre>
+<span class="comment"># Este é um exemplo de código em Python</span>
+<span class="keyword">def</span> <span class="function">hello_world</span>() :
+    <span class="keyword">print</span>(<span class="string">"Hello, VS Code Style!"</span>)
+
+hello_world()
+                        </pre>
+                    </div>
+
+                    <div class="vscode-terminal" id="terminal">
+                        <span>C:\User\Project&gt;</span> <br>
+                    </div>
+
+                    <div class="vscode-footer">
+                        <button onclick="executeCode()">Executar Código</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card de Explicação -->
+            <div class="col-md-12">
+                <div class="vscode-explanation">
+                    <h3>Explicação do Código</h3>
+                    <p>Este código é uma simples função em Python chamada <strong>hello_world</strong>, que imprime a
+                        mensagem <strong>"Hello, VS Code Style!"</strong> no terminal. Ele demonstra a estrutura básica
+                        de um programa Python.</p>
+                    <p>O comando <strong>print()</strong> é utilizado para exibir informações na tela do terminal.</p>
+                </div>
+            </div>
+
+            <!-- lista -->
+            <div class="col-md-12">
+                <ul class="styled-list">
+                    <li><strong>Passo 1:</strong> Instalar o Python</li>
+                    <li><strong>Passo 2:</strong> Configurar o ambiente de desenvolvimento</li>
+                    <li><strong>Passo 3:</strong> Criar seu primeiro programa</li>
+                    <li><strong>Passo 4:</strong> Explorar conceitos avançados</li>
+                </ul>
+            </div>
+            <!-- Tabela -->
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-striped-columns styled-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Nome</th>
+                                <th>Descrição</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Python</td>
+                                <td>Uma linguagem de programação versátil</td>
+                                <td><span class="status active">Ativo</span></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>JavaScript</td>
+                                <td>Linguagem de programação para web</td>
+                                <td><span class="status inactive">Inativo</span></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Java</td>
+                                <td>Uma linguagem de programação orientada a objetos</td>
+                                <td><span class="status active">Ativo</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- formulario -->
+            <div class="col-md-12">
+                <div class="form-container">
+                    <form action="#" method="post">
+                        <h3>Formulário de Contato</h3>
+                        <div class="form-group">
+                            <label for="nome">Nome:</label>
+                            <input type="text" id="nome" name="nome" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="assunto">Assunto:</label>
+                            <input type="text" id="assunto" name="assunto" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem:</label>
+                            <textarea id="mensagem" name="mensagem" class="form-control" rows="4" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn-submit">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- Titulos -->
+            <h1>Titulos</h1>
+            <h2>Titulos</h2>
+            <h3>Titulos</h3>
+            <h4>Titulos</h4>
+            <h5>Titulos</h5>
+            <h6>Titulos</h6>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad sapiente recusandae cumque, eos quis amet
+                inventore, excepturi eveniet laborum dignissimos aspernatur deserunt distinctio sed officia optio, animi
+                dolores minus corrupti!</p>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="site-footer bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <!-- Coluna para texto de copyright -->
+                <div class="col-12 col-md-6 text-center text-md-left">
+                    <p class="footer-text mb-0">© 2025 - Todos os direitos reservados</p>
+                </div>
+                <!-- Coluna para links -->
+                <div class="col-12 col-md-6 text-center text-md-right">
+                    <ul class="footer-links list-unstyled mb-0">
+                        <li class="d-inline-block mr-3">
+                            <a href="#" class="footer-link text-light">Sobre</a>
+                        </li>
+                        <li class="d-inline-block mr-3">
+                            <a href="#" class="footer-link text-light">Serviços</a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a href="#" class="footer-link text-light">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Link para o Bootstrap 5 JS (com Popper incluído) -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function executeCode() {
+            const terminal = document.getElementById('terminal');
+            terminal.style.display = 'block'; // Mostra o terminal
+            terminal.innerHTML += '<br>Hello, VS Code Style!'; // Exibe o resultado
+        }
+
+    </script>
+</body>
+
+</html>

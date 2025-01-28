@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card estilo VS Code</title>
+    <!-- Link para o Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    body {
+        background-color: #121212;
+        color: #f8f9fa;
+    }
+
+    .form-control {
+        background-color: #1f1f1f;
+        color: #f8f9fa;
+        /* Garante que o texto seja branco */
+        border: 1px solid #333333;
+    }
+
+    .form-control:focus {
+        background-color: #1f1f1f;
+        /* Mantém a consistência do fundo */
+        color: #f8f9fa;
+        border-color: #0d6efd;
+        /* Realça o foco no campo */
+        box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
+    }
+
+    .form-control::placeholder {
+        color: #888888;
+        /* Contraste adequado para o placeholder */
+    }
+
+    .btn-primary {
+        background-color: #0d6efd;
+        border: none;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border: none;
+    }
+
+    .btn-warning {
+        background-color: #ffc107;
+        border: none;
+        color: #121212;
+    }
+
+    .btn-success {
+        background-color: #198754;
+        border: none;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #f8f9fa;
+    }
+
+    #final {
+        font-size: 55px;
+        margin-top: 150px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Minha Marca</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Sobre</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Serviços
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                                <li><a class="dropdown-item" href="#">Serviço 1</a></li>
+                                <li><a class="dropdown-item" href="#">Serviço 2</a></li>
+                                <li><a class="dropdown-item" href="#">Serviço 3</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Contato
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="contactDropdown">
+                                <li><a class="dropdown-item" href="#">Email</a></li>
+                                <li><a class="dropdown-item" href="#">Telefone</a></li>
+                                <li><a class="dropdown-item" href="#">Suporte</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Container para os cards -->
+        <div class="row" id="cards-container"></div>
+        <!-- Formulário para criar novos cards -->
+
+        <!-- footer -->
+        <footer class="site-footer bg-dark text-light py-4">
+            <div class="container">
+                <div class="row">
+                    <!-- Coluna para texto de copyright -->
+                    <div class="col-12 col-md-6 text-center text-md-left">
+                        <p class="footer-text mb-0">© 2025 - Todos os direitos reservados</p>
+                    </div>
+                    <!-- Coluna para links -->
+                    <div class="col-12 col-md-6 text-center text-md-right">
+                        <ul class="footer-links list-unstyled mb-0">
+                            <li class="d-inline-block mr-3">
+                                <a href="#" class="footer-link text-light">Sobre</a>
+                            </li>
+                            <li class="d-inline-block mr-3">
+                                <a href="#" class="footer-link text-light">Serviços</a>
+                            </li>
+                            <li class="d-inline-block">
+                                <a href="#" class="footer-link text-light">Contato</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="deletarCode">
+            <h1 id="final">DELETAR A PARTIR DAQUI</h1>
+
+            <div class="mb-5">
+                <h1>Adicionar Novo Card De Programação</h1>
+                <label for="file-name" class="form-label">Nome do Arquivo</label>
+                <input spellcheck="true" class="form-control mb-3" type="text" id="file-name"
+                    placeholder="Nome do Arquivo (ex: main.py)" required>
+                <label for="code-content" class="form-label">Conteúdo do Código</label>
+                <textarea spellcheck="true" class="form-control mb-3" id="code-content" placeholder="Conteúdo do Código"
+                    rows="5" required></textarea>
+                <label for="terminal-content" class="form-label">Texto do Terminal</label>
+                <textarea spellcheck="true" class="form-control mb-3" id="terminal-content"
+                    placeholder="Texto do Terminal" rows="2" required></textarea>
+                <button class="btn btn-primary" onclick="addNewCard()">Adicionar Card</button>
+            </div>
+
+            <!-- Adicionar Explicação -->
+            <div class="mb-5">
+                <h1>Adicionar Novo Card De Explicação</h1>
+                <form id="content-form" onsubmit="addContent(event)">
+                    <div class="mb-3">
+                        <label for="codeTitle" class="form-label">Título da Explicação</label>
+                        <input spellcheck="true" type="text" class="form-control" id="codeTitle"
+                            placeholder="Digite o título da explicação">
+                    </div>
+                    <div class="mb-3">
+                        <label for="codeExplanation" class="form-label">Explicação</label>
+                        <textarea class="form-control" id="codeExplanation" rows="3"
+                            placeholder="Digite a explicação do código"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Adicionar Conteúdo</button>
+                </form>
+            </div>
+
+            <!-- Adicionar Lista -->
+            <div class="mb-5">
+                <h1>Adicionar Lista</h1>
+                <form id="listForm" class="mb-4">
+                    <div class="mb-3">
+                        <label for="listPrefix" class="form-label">Prefixo para os passos:</label>
+                        <input spellcheck="true" type="text" id="listPrefix" class="form-control"
+                            placeholder="Ex: Etapa, Tarefa, Item">
+                    </div>
+                    <div class="mb-3">
+                        <label for="listItems" class="form-label">Insira os passos da lista (separados por
+                            vírgula):</label>
+                        <input spellcheck="true" type="text" id="listItems" class="form-control"
+                            placeholder="Ex: Instalar Python, Configurar ambiente, Criar programa">
+                    </div>
+                    <button type="submit" class="btn btn-primary" onclick="addDynamicList(event)">Adicionar
+                        Lista</button>
+                </form>
+                <div id="cards-container" class="row">
+                    <!-- Listas geradas dinamicamente -->
+                </div>
+            </div>
+
+            <!-- Adicionar Tabela -->
+            <div class="mb-5">
+                <h1>Adicionar Tabela</h1>
+                <div id="table-container" class="mb-4"></div>
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                    <button class="btn btn-primary" onclick="addDynamicTable()">Adicionar Tabela</button>
+                    <button class="btn btn-secondary" onclick="addRow()">Adicionar Linha</button>
+                    <button class="btn btn-secondary" onclick="addColumn()">Adicionar Coluna</button>
+                    <button class="btn btn-warning" onclick="deleteRow()">Excluir Linha</button>
+                    <button class="btn btn-warning" onclick="deleteColumn()">Excluir Coluna</button>
+                    <button class="btn btn-success" onclick="finalizeTable()">Concluir Tabela</button>
+                </div>
+                <div id="cards-container" class="row">
+                    <!-- Tabelas concluídas -->
+                </div>
+            </div>
+
+            <!-- Adicionar Títulos -->
+            <div class="mb-5">
+                <h1>Adicionar Títulos</h1>
+                <div class="mb-3">
+                    <label for="titleText" class="form-label">Texto do Título:</label>
+                    <input spellcheck="true" type="text" id="titleText" class="form-control"
+                        placeholder="Digite o texto do título">
+                </div>
+                <div class="mb-3">
+                    <label for="titleLevel" class="form-label">Nível do Título:</label>
+                    <select id="titleLevel" class="form-control">
+                        <option value="1">H1</option>
+                        <option value="2">H2</option>
+                        <option value="3">H3</option>
+                        <option value="4">H4</option>
+                        <option value="5">H5</option>
+                        <option value="6">H6</option>
+                    </select>
+                </div>
+                <button onclick="deletarElementos()" class="btn btn-primary">Finalizar</button>
+                <button class="btn btn-primary" onclick="addDynamicTitle()">Adicionar Título</button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+    </div>
+    <div class="deletarCode">
+        <script>
+            // Função para criar um card dinamicamente
+            function createCodeCard(fileName, codeContent, terminalContent) {
+                const container = document.getElementById("cards-container");
+
+                const card = document.createElement("div");
+                card.className = "col-md-12";
+
+                card.innerHTML = `
+                <div class="vscode-card">
+                    <div class="vscode-header">
+                        <div class="dots">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                        <span>${fileName}</span>
+                    </div>
+                    <div class="vscode-content">
+                        <pre>${codeContent}</pre>
+                    </div>
+                    <div class="vscode-terminal">
+                        <span>${terminalContent}</span>
+                    </div>
+                    <div class="vscode-footer">
+                        <button onclick="executeCode(this)">Executar Código</button>
+                        <button onclick="deleteCard(this)" id="btndel">Deletar Card</button>
+                    </div>
+                </div>
+            `;
+
+                container.appendChild(card);
+            }
+
+            // Função para executar o código de um card
+            function executeCode(button) {
+                const card = button.closest(".vscode-card");
+                const codeContent = card.querySelector(".vscode-content pre").textContent;
+                const terminal = card.querySelector(".vscode-terminal");
+
+                try {
+                    const result = eval(codeContent);
+                    terminal.textContent = result !== undefined ? result : "Código executado com sucesso.";
+                } catch (error) {
+                    terminal.textContent = `Erro: ${error.message}`;
+                }
+            }
+
+            // Função para deletar um card
+            function deleteCard(button) {
+                const card = button.closest(".col-md-12");
+                card.remove();
+            }
+
+            // Função para adicionar um novo card usando o formulário
+            function addNewCard() {
+                const fileName = document.getElementById("file-name").value.trim();
+                const codeContent = document.getElementById("code-content").value.trim();
+                const terminalContent = document.getElementById("terminal-content").value.trim();
+
+                if (!fileName || !codeContent || !terminalContent) {
+                    alert("Por favor, preencha todos os campos!");
+                    return;
+                }
+
+                createCodeCard(fileName, codeContent, terminalContent);
+
+
+            }
+
+            // Função para adicionar o conteúdo de explicação no card
+            function addContent(event) {
+                event.preventDefault(); // Evitar o envio do formulário
+
+                const title = document.getElementById("codeTitle").value.trim();
+                const explanation = document.getElementById("codeExplanation").value.trim();
+
+                const colDiv = document.createElement('div');
+                colDiv.classList.add('col-md-12');
+
+                const vscodeExplanationDiv = document.createElement('div');
+                vscodeExplanationDiv.classList.add('vscode-explanation');
+
+                const h3 = document.createElement('h3');
+                h3.textContent = title;
+
+                const p1 = document.createElement('p');
+                p1.innerHTML = explanation;
+
+                // Criar botão de deletar
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Deletar';
+                deleteButton.classList.add('btn', 'btn-danger', 'delete-button');
+                deleteButton.id = 'btndel';  // Corrigido aqui
+                deleteButton.style.marginTop = '10px';
+
+                // Adicionar funcionalidade ao botão de deletar
+                deleteButton.addEventListener('click', function () {
+                    colDiv.remove(); // Remove o card do DOM
+                });
+
+                // Adicionar elementos ao card
+                vscodeExplanationDiv.appendChild(h3);
+                vscodeExplanationDiv.appendChild(p1);
+                vscodeExplanationDiv.appendChild(deleteButton);
+                colDiv.appendChild(vscodeExplanationDiv);
+
+                // Adicionar o card ao container
+                document.getElementById('cards-container').appendChild(colDiv);
+            }
+            function addDynamicList(event) {
+                event.preventDefault(); // Evitar o envio do formulário
+
+                // Obter os valores dos inputs e transformá-los em arrays
+                const prefixes = document.getElementById("listPrefix").value.trim().split(',');
+                const listItems = document.getElementById("listItems").value.trim().split(',');
+
+                // Verificar se os arrays possuem o mesmo tamanho
+                if (prefixes.length !== listItems.length) {
+                    alert("O número de prefixos e itens deve ser igual!");
+                    return;
+                }
+
+                // Criar o container para a lista
+                const colDiv = document.createElement('div');
+                colDiv.classList.add('col-md-12', 'mb-4');
+
+                const ul = document.createElement('ul');
+                ul.classList.add('styled-list', 'list-group');
+
+                // Adicionar os itens da lista pareando os prefixos com os itens
+                prefixes.forEach((prefix, index) => {
+                    const li = document.createElement('li');
+                    li.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center'); // Estilo do Bootstrap
+
+                    // Preencher a `li` com o prefixo e o item correspondente
+                    li.innerHTML = `<span><strong>${prefix.trim()}:</strong> ${listItems[index].trim()}</span>`;
+
+                    // Botão para deletar o item individual
+                    const deleteLiButton = document.createElement('button');
+                    deleteLiButton.classList.add('btn', 'btn-danger', 'btn-sm');
+                    deleteLiButton.id = 'btndel';  // Corrigido aqui
+                    deleteLiButton.textContent = 'Deletar';
+                    deleteLiButton.onclick = () => li.remove();
+
+                    li.appendChild(deleteLiButton);
+                    ul.appendChild(li);
+                });
+
+                // Botão para deletar a lista inteira
+                const deleteUlButton = document.createElement('button');
+                deleteUlButton.classList.add('btn', 'btn-danger', 'mt-2');
+                deleteUlButton.id = 'btndel';  // Corrigido aqui
+                deleteUlButton.textContent = 'Deletar Lista';
+                deleteUlButton.onclick = () => colDiv.remove();
+
+                // Adicionar a lista e o botão ao container
+                colDiv.appendChild(ul);
+                colDiv.appendChild(deleteUlButton);
+                document.getElementById('cards-container').appendChild(colDiv);
+
+
+            }
+
+            let table; // Variável global para a tabela dinâmica
+
+            // Função para adicionar uma tabela dinâmica
+            function addDynamicTable() {
+                const container = document.getElementById("table-container");
+                container.innerHTML = ""; // Limpar o container para evitar múltiplas tabelas
+
+                // Criar a estrutura base da tabela
+                const colDiv = document.createElement("div");
+                colDiv.classList.add("col-md-12");
+
+                const tableResponsiveDiv = document.createElement("div");
+                tableResponsiveDiv.classList.add("table-responsive");
+
+                table = document.createElement("table");
+                table.classList.add("table", "table-striped-columns", "styled-table");
+
+                // Criar o cabeçalho da tabela
+                const thead = table.createTHead();
+                const headerRow = thead.insertRow();
+                const headers = ["#", "Nome", "Descrição", "Status"];
+                headers.forEach(headerText => {
+                    const th = document.createElement("th");
+                    th.textContent = headerText;
+                    th.contentEditable = "true"; // Torna o <th> editável
+                    headerRow.appendChild(th);
+                });
+
+                // Criar o corpo da tabela
+                const tbody = table.createTBody();
+
+                // Adicionar uma linha inicial ao corpo da tabela
+                const row = tbody.insertRow();
+                row.innerHTML = `
+        <td>1</td>
+        <td contenteditable="true">Exemplo</td>
+        <td contenteditable="true">Descrição inicial</td>
+        <td contenteditable="true"><span class="status active">Ativo</span></td>
+    `;
+
+                // Adicionar a tabela à estrutura
+                tableResponsiveDiv.appendChild(table);
+                colDiv.appendChild(tableResponsiveDiv);
+                container.appendChild(colDiv);
+            }
+
+            // Função para adicionar uma linha à tabela
+            function addRow() {
+                if (!table) {
+                    alert("Por favor, adicione uma tabela primeiro!");
+                    return;
+                }
+
+                const tbody = table.tBodies[0];
+                const rowCount = tbody.rows.length + 1;
+                const row = tbody.insertRow();
+
+                // Adicionar células editáveis à nova linha
+                row.innerHTML = `
+        <td>${rowCount}</td>
+        <td contenteditable="true">Novo Nome</td>
+        <td contenteditable="true">Nova Descrição</td>
+        <td contenteditable="true"><span class="status active">Ativo</span></td>
+    `;
+            }
+
+            // Função para adicionar uma coluna à tabela
+            function addColumn() {
+                if (!table) {
+                    alert("Por favor, adicione uma tabela primeiro!");
+                    return;
+                }
+
+                // Adicionar uma nova célula ao cabeçalho
+                const headerRow = table.tHead.rows[0];
+                const th = document.createElement("th");
+                th.textContent = `Nova Coluna`;
+                th.contentEditable = "true"; // Torna o novo <th> editável
+                headerRow.appendChild(th);
+
+                // Adicionar uma nova célula a cada linha do corpo
+                const tbody = table.tBodies[0];
+                for (const row of tbody.rows) {
+                    const cell = row.insertCell();
+                    cell.textContent = "Novo Valor";
+                    cell.contentEditable = "true";
+                }
+            }
+
+            // Função para deletar uma linha
+            function deleteRow() {
+                if (!table) {
+                    alert("Por favor, adicione uma tabela primeiro!");
+                    return;
+                }
+
+                const tbody = table.tBodies[0];
+                if (tbody.rows.length > 0) {
+                    tbody.deleteRow(tbody.rows.length - 1); // Deleta a última linha
+                } else {
+                    alert("Não há linhas para excluir!");
+                }
+            }
+
+            // Função para deletar uma coluna
+            function deleteColumn() {
+                if (!table) {
+                    alert("Por favor, adicione uma tabela primeiro!");
+                    return;
+                }
+
+                const headerRow = table.tHead.rows[0];
+                if (headerRow.cells.length > 0) {
+                    const columnIndex = headerRow.cells.length - 1; // Índice da última coluna
+                    headerRow.deleteCell(columnIndex);
+
+                    const tbody = table.tBodies[0];
+                    for (const row of tbody.rows) {
+                        row.deleteCell(columnIndex);
+                    }
+                } else {
+                    alert("Não há colunas para excluir!");
+                }
+            }
+
+            // Função para finalizar a tabela
+            function finalizeTable() {
+                if (!table) {
+                    alert("Por favor, adicione uma tabela primeiro!");
+                    return;
+                }
+
+                // Clonar a tabela e torná-la não modificável
+                const finalizedTable = table.cloneNode(true);
+                finalizedTable.classList.remove("table-striped-columns");
+                const cells = finalizedTable.querySelectorAll("[contenteditable]");
+                cells.forEach(cell => cell.removeAttribute("contenteditable"));
+
+                // Adicionar a tabela finalizada ao cards-container
+                const cardsContainer = document.getElementById("cards-container");
+                const cardDiv = document.createElement("div");
+                cardDiv.classList.add("col-md-12", "mb-4");
+
+                const tableResponsiveDiv = document.createElement("div");
+                tableResponsiveDiv.classList.add("table-responsive");
+                tableResponsiveDiv.appendChild(finalizedTable);
+
+                cardDiv.appendChild(tableResponsiveDiv);
+                cardsContainer.appendChild(cardDiv);
+
+                // Remover a tabela atual
+                const tableContainer = document.getElementById("table-container");
+                tableContainer.innerHTML = "";
+                table = null; // Limpa a referência da tabela atual
+            }
+
+            // Função para adicionar títulos dinâmicos
+            function addDynamicTitle() {
+                const titleText = document.getElementById("titleText").value.trim();
+                const titleLevel = document.getElementById("titleLevel").value;
+
+                if (!titleText) {
+                    alert("Por favor, insira o texto do título!");
+                    return;
+                }
+
+                // Criar o título com o nível selecionado
+                const titleElement = document.createElement(`h${titleLevel}`);
+                titleElement.textContent = titleText;
+
+                // Criar o botão para deletar o título
+                const deleteButton = document.createElement('button');
+                deleteButton.classList.add('btn', 'btn-danger', 'ml-3');
+                deleteButton.id = 'btndel';  // Corrigido aqui
+                deleteButton.textContent = 'Deletar';
+
+                // Adicionar evento de deletação
+                deleteButton.onclick = function () {
+                    titleElement.remove(); // Deleta o título
+                    deleteButton.remove(); // Deleta o botão
+                };
+
+                // Adicionar o título e o botão ao container
+                const titlesContainer = document.getElementById("cards-container");
+                const titleWrapper = document.createElement('div');
+                titleWrapper.classList.add('mb-2');
+                titleWrapper.appendChild(titleElement);
+                titleWrapper.appendChild(deleteButton);
+
+                titlesContainer.appendChild(titleWrapper);
+
+            }
+
+
+
+
+        </script>
+    </div>
+    <script>
+        function deletarElementos() {
+            // Deletar todos os elementos com id 'btndel'
+            const btnsDel = document.querySelectorAll('#btndel');
+            btnsDel.forEach(btn => btn.remove());
+
+            // Deletar o conteúdo da div com a classe 'deletarCode'
+            const divDeletar = document.querySelector('.deletarCode');
+            if (divDeletar) {
+                divDeletar.innerHTML = ''; // Limpar o conteúdo
+            }
+        }
+    </script>
+
+</body>
+
+</html>
