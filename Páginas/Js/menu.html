@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu de Atividades</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .curso {
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .atividades {
+            display: none;
+            margin-left: 20px;
+        }
+
+        .curso h3 {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .atividade {
+            background-color: #f4f4f4;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Menu de Atividades</h1>
+
+    <div class="curso" onclick="toggleAtividades('curso-js-basico')">
+        <h3>JavaScript Básico</h3>
+        <div id="curso-js-basico" class="atividades">
+            <div class="atividade">Introdução ao JavaScript</div>
+            <div class="atividade">Variáveis e Tipos de Dados</div>
+            <div class="atividade">Operadores e Expressões</div>
+        </div>
+    </div>
+
+    <div class="curso" onclick="toggleAtividades('curso-js-avancado')">
+        <h3>JavaScript Avançado</h3>
+        <div id="curso-js-avancado" class="atividades">
+            <div class="atividade">Promises e Async/Await</div>
+            <div class="atividade">Manipulação do DOM</div>
+            <div class="atividade">ES6 e Recursos Modernos</div>
+        </div>
+    </div>
+
+    <script>
+        function toggleAtividades(id) {
+            var atividades = document.getElementById(id);
+            atividades.style.display = atividades.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</body>
+</html>

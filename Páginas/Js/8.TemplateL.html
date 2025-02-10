@@ -176,29 +176,26 @@
 
         <!-- Container para os cards -->
         <div class="row" id="cards-container">
-            <div class="mb-2">
-                <h1>Funções em JavaScript</h1>
-            </div>
             <div class="col-md-12">
                 <div class="vscode-explanation">
-                    <h3>O que são funções?</h3>
-                    <p>Funções em JavaScript são blocos de código reutilizáveis que podem ser chamados para realizar uma
-                        tarefa específica. Elas ajudam a organizar e reduzir a repetição de código, tornando o programa
-                        mais eficiente e fácil de manter.</p>
+                    <h3>Template Literário com JavaScript</h3>
+                    <p>Templates literários são usados para criar estruturas HTML ou textos dinâmicos de forma prática,
+                        misturando texto e variáveis no mesmo bloco de código.</p>
                 </div>
             </div>
             <div class="mb-2"></div>
-            <div class="mb-2"></div>
             <div class="mb-2">
-                <h1>Como declarar uma função?</h1>
+                <h1>O que é um Template Literário?</h1>
             </div>
             <div class="col-md-12">
                 <div class="vscode-explanation">
-                    <h3>Sintaxe básica</h3>
-                    <p>A declaração de uma função pode ser feita utilizando a palavra-chave function, seguida pelo nome
-                        da função, parênteses (que podem conter parâmetros) e chaves para delimitar o bloco de código.
-                    </p>
+                    <h3></h3>
+                    <p>É uma maneira de combinar texto fixo e dados dinâmicos usando strings literais do JavaScript. Com
+                        isso, podemos gerar conteúdo personalizado facilmente.</p>
                 </div>
+            </div>
+            <div class="mb-2">
+                <h3>Exemplo Simples</h3>
             </div>
             <!-- Card de Código -->
             <div class="col-md-12">
@@ -209,62 +206,37 @@
                             <div class="dot yellow"></div>
                             <div class="dot green"></div>
                         </div>
-                        <span>Exemplo: Declaração de Função</span>
+                        <span>Exemplo: Template Literals</span>
                     </div>
                     <div class="vscode-content">
                         <pre>
-<span class="keyword">function</span> <span class="function">nomeDaFuncao</span>(<span class="parameter">param1, param2</span>) {
-    <span class="comment">// Código a ser executado</span>
-            }
-                        </pre>
-                    </div>
-                    <div class="vscode-terminal">
-                        <span>1</span>
-                    </div>
-                    <div class="vscode-footer">
-                        <button onclick="executeCode(this)">Executar Código</button>
-                    </div>
-                </div>
-            </div>
+<span class="keyword">const</span> <span class="variable">linguagem</span> = {
+  <span class="property">nome</span>: <span class="string">"JavaScript"</span>,
+  <span class="property">descricao</span>: <span class="string">"Uma linguagem de programação versátil usada tanto no front-end quanto no back-end."</span>,
+  <span class="property">popularidade</span>: <span class="string">"Muito Alta"</span>,
+};
 
-            <p>Este exemplo mostra a declaração básica de uma função em JavaScript. Ela pode receber parâmetros, como
-                `param1` e `param2`, e executar um bloco de código quando chamada.</p>
+<span class="keyword">const</span> <span class="variable">template</span> = <span class="string">`
+Linguagem: ${linguagem.nome}
+Descrição: ${linguagem.descricao}
+Popularidade: ${linguagem.popularidade}
+`</span>;
 
-            <div class="mb-2">
-                <h3>Exemplo:</h3>
-            </div>
-            <!-- Card de Código -->
-            <div class="col-md-12">
-                <div class="vscode-card">
-                    <div class="vscode-header">
-                        <div class="dots">
-                            <div class="dot red"></div>
-                            <div class="dot yellow"></div>
-                            <div class="dot green"></div>
-                        </div>
-                        <span>Exemplo: Função de Saudação</span>
+<span class="keyword">console</span>.<span class="function">log</span>(<span class="variable">template</span>);
+            </pre>
                     </div>
-                    <div class="vscode-content">
-                        <pre>
-<span class="keyword">function</span> <span class="function">saudacao</span>(<span class="parameter">nome</span>) {
-    <span class="keyword">console</span>.<span class="function">log</span>(<span class="string">"Olá, "</span> + <span class="variable">nome</span> + <span class="string">"!"</span>);
-            }
-<span class="function">saudacao</span>(<span class="string">"Bruno"</span>);
-                        </pre>
-                    </div>
-                    <div class="vscode-terminal" id='terminal1'>
+                    <div class="vscode-terminal" id="terminal1">
                         <span>1</span>
                     </div>
                     <div class="vscode-footer">
                         <script>
                             function card1() {
                                 let terminal = document.getElementById('terminal1')
-                                terminal.innerHTML = "C:User/Project><br><br> Olá,Bruno!"
-
-                                if (terminal.style.display === "flex") {
-                                    terminal.style.display = "none";
+                                terminal.innerHTML = "C:User/Project><br><br>Linguagem: JavaScript<br>  Descrição: Uma linguagem de programação versátil usada tanto no front-end quanto no back-end.<br>  Popularidade: Muito Alta"
+                                if (terminal.style.display === "none") {
+                                    terminal.style.display = "flex"
                                 } else {
-                                    terminal.style.display = "flex";
+                                    terminal.style.display = 'none'
                                 }
                             }
                         </script>
@@ -272,512 +244,34 @@
                     </div>
                 </div>
             </div>
+            <p>O código utiliza template literals para criar uma string que inclui variáveis e expressões de maneira
+                mais legível e fácil de entender. As variáveis são inseridas dentro da string com a sintaxe
+                `${variavel}`.</p>
 
-            <p>Este exemplo define uma função chamada `saudacao` que recebe um parâmetro `nome` e exibe uma mensagem de
-                saudação no console. Quando a função é chamada com o argumento "Bruno", ela imprime "Olá, Bruno!" no
-                terminal.</p>
-
+            <div class="mb-2"></div>
             <div class="mb-2">
-                <h1>Tipos de funções</h1>
+                <h3>Por que usar Templates Literários?</h3>
             </div>
-            <div class="col-md-12">
-                <div class="vscode-explanation">
-                    <h3>1. Funções Declaradas</h3>
-                    <p>São aquelas definidas usando a palavra-chave function e possuem um nome. Elas são elevadas
-                        (hoisting), ou seja, podem ser chamadas antes de serem declaradas.</p>
-                </div>
+            <div class="col-md-12 mb-4">
+                <ul class="styled-list list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center"><span><strong>Fácil de
+                                usar:</strong> Insere dados no texto sem precisar de concatenações complicadas.</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span><strong>Organizado:</strong> Mantém o código limpo e fácil de entender.</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span><strong>Flexível:</strong> Permite criar qualquer tipo de texto ou conteúdo baseado em
+                            dados.</span>
+                    </li>
+                </ul>
             </div>
-            <!-- Card de Código -->
-            <div class="col-md-12">
-                <div class="vscode-card">
-                    <div class="vscode-header">
-                        <div class="dots">
-                            <div class="dot red"></div>
-                            <div class="dot yellow"></div>
-                            <div class="dot green"></div>
-                        </div>
-                        <span>Exemplo: Função de Soma</span>
-                    </div>
-                    <div class="vscode-content">
-                        <pre>
-<span class="keyword">function</span> <span class="function">somar</span>(<span class="parameter">a, b</span>) {
-    <span class="keyword">return</span> <span class="variable">a</span> + <span class="variable">b</span>;
-            }
-<span class="keyword">console</span>.<span class="function">log</span>(<span class="function">somar</span>(<span class="number">2</span>, <span class="number">3</span>)); <span class="comment">// 5</span>
-                        </pre>
-                    </div>
-                    <div class="vscode-terminal" id="terminal2">
-                        <span>1</span>
-                    </div>
-                    <div class="vscode-footer">
-                        <script>
-                            function card2() {
-                                let terminal = document.getElementById('terminal2')
-                                terminal.innerHTML = "C:User/Project><br><br> 5"
-
-                                if (terminal.style.display === "flex") {
-                                    terminal.style.display = "none";
-                                } else {
-                                    terminal.style.display = "flex";
-                                }
-                            }
-                        </script>
-                        <button onclick="card2()">Executar Código</button>
-                    </div>
-                </div>
-            </div>
-
-            <p>Este exemplo define uma função chamada `somar`, que recebe dois parâmetros `a` e `b`, e retorna a soma
-                desses valores. Quando a função é chamada com os argumentos `2` e `3`, o resultado `5` é impresso no
-                console.</p>
-
-            <div class="col-md-12">
-                <div class="vscode-explanation">
-                    <h3>2. Funções Anônimas</h3>
-                    <p>São funções sem nome, geralmente atribuídas a uma variável.</p>
-                </div>
-            </div>
-            <!-- Card de Código -->
-            <div class="col-md-12">
-                <div class="vscode-card">
-                    <div class="vscode-header">
-                        <div class="dots">
-                            <div class="dot red"></div>
-                            <div class="dot yellow"></div>
-                            <div class="dot green"></div>
-                        </div>
-                        <span>Exemplo: Função de Multiplicação</span>
-                    </div>
-                    <div class="vscode-content">
-                        <pre>
-<span class="keyword">const</span> <span class="function">multiplicar</span> = <span class="keyword">function</span>(<span class="parameter">a, b</span>) {
-    <span class="keyword">return</span> <span class="variable">a</span> * <span class="variable">b</span>;
-            };
-<span class="keyword">console</span>.<span class="function">log</span>(<span class="function">multiplicar</span>(<span class="number">2</span>, <span class="number">3</span>)); <span class="comment">// 6</span>
-                        </pre>
-                    </div>
-                    <div class="vscode-terminal" id='terminal3'>
-                        <span>1</span>
-                    </div>
-                    <div class="vscode-footer">
-                        <script>
-                            function card3() {
-                                let terminal = document.getElementById('terminal3')
-                                terminal.innerHTML = "C:User/Project><br><br> 6"
-
-                                if (terminal.style.display === "flex") {
-                                    terminal.style.display = "none";
-                                } else {
-                                    terminal.style.display = "flex";
-                                }
-                            }
-                        </script>
-                        <button onclick="card3()">Executar Código</button>
-                    </div>
-                </div>
-            </div>
-
-            <p>Este exemplo mostra como declarar uma função anônima chamada `multiplicar`, que recebe dois parâmetros e
-                retorna o produto desses números. Quando a função é chamada com os argumentos `2` e `3`, o resultado `6`
-                é impresso no console.</p>
-
-            <div class="col-md-12">
-                <div class="vscode-explanation">
-                    <h3>3. Funções de Setas (Arrow Functions)</h3>
-                    <p>São uma forma mais concisa de escrever funções. Elas não possuem seu próprio this.</p>
-                </div>
-            </div>
-            <!-- Card de Código -->
-            <div class="col-md-12">
-                <div class="vscode-card">
-                    <div class="vscode-header">
-                        <div class="dots">
-                            <div class="dot red"></div>
-                            <div class="dot yellow"></div>
-                            <div class="dot green"></div>
-                        </div>
-                        <span>Exemplo: Função de Divisão</span>
-                    </div>
-                    <div class="vscode-content">
-                        <pre>
-<span class="keyword">const</span> <span class="function">dividir</span> = (<span class="parameter">a, b</span>) =&gt; <span class="variable">a</span> / <span class="variable">b</span>;
-<span class="keyword">console</span>.<span class="function">log</span>(<span class="function">dividir</span>(<span class="number">6</span>, <span class="number">3</span>)); <span class="comment">// 2</span>
-                        </pre>
-                    </div>
-                    <div class="vscode-terminal" id='terminal4'>
-                        <span>1</span>
-                    </div>
-                    <div class="vscode-footer">
-                        <script>
-                            function card4() {
-                                let terminal = document.getElementById('terminal4')
-                                terminal.innerHTML = "C:User/Project><br><br> 2"
-
-                                if (terminal.style.display === "flex") {
-                                    terminal.style.display = "none";
-                                } else {
-                                    terminal.style.display = "flex";
-                                }
-                            }
-                        </script>
-                        <button onclick="card4()">Executar Código</button>
-                    </div>
-                </div>
-            </div>
-
-            <p>Esse exemplo mostra como declarar uma função de divisão utilizando a sintaxe de arrow function. Quando a
-                função `dividir(6, 3)` é chamada, o resultado `2` é exibido no console.</p>
-
-            <div class="mb-2">
-                <h1>Parâmetros e Argumentos</h1>
-            </div>
-            <div class="mb-2">
-                <h1>Parâmetros</h1>
-            </div>
-            <div class="mb-2">
-                <h3>Os valores que uma função espera receber ao ser chamada. javascript Copiar Editar</h3>
-            </div>
-            <div class="col-md-12">
-                <div class="vscode-card">
-                    <div class="vscode-header">
-                        <div class="dots">
-                            <div class="dot red"></div>
-                            <div class="dot yellow"></div>
-                            <div class="dot green"></div>
-                        </div>
-                        <span>Exemplo: Função de Saudação</span>
-                    </div>
-                    <div class="vscode-content">
-                        <pre>
-<span class="keyword">function</span> <span class="function">cumprimentar</span>(<span class="parameter">nome</span>) {
-    <span class="function">console</span>.<span class="function">log</span>(<span class="string">"Olá, "</span> + <span class="parameter">nome</span> + <span class="string">"!"</span>);
-}
-<span class="function">cumprimentar</span>("Bruno")
-
-                        </pre>
-                    </div>
-                    <div class="vscode-terminal" id='terminal5'>
-                        <span>1</span>
-                    </div>
-                    <div class="vscode-footer">
-                        <script>
-                            function card5() {
-                                let terminal = document.getElementById('terminal5')
-                                terminal.innerHTML = "C:User/Project><br><br> Olá, Bruno!"
-
-                                if (terminal.style.display === "flex") {
-                                    terminal.style.display = "none";
-                                } else {
-                                    terminal.style.display = "flex";
-                                }
-                            }
-                        </script>
-                        <button onclick="card5()">Executar Código</button>
-                    </div>
-                </div>
-            </div>
-
-            <p>Esse código JavaScript define uma função chamada <code>cumprimentar()</code>, que recebe um nome e
-                imprime uma saudação personalizada no terminal. Ao chamar <code>cumprimentar("Bruno")</code>, a mensagem
-                <strong>"Olá, Bruno!"</strong> será exibida no terminal.
-            </p>
-            <div class="mb-2">
-                <h1>Argumentos</h1>
-            </div>
-            <div class="mb-2">
-                <h3>Os valores reais passados para os parâmetros quando a função é chamada. javascript Copiar Editar
-                </h3>
-            </div>
-            <div class="col-md-12">
-                <div class="vscode-card custom-vscode-card">
-                    <div class="vscode-header custom-vscode-header">
-                        <div class="dots">
-                            <div class="dot red"></div>
-                            <div class="dot yellow"></div>
-                            <div class="dot green"></div>
-                        </div>
-                        <span>Exemplo: Chamando a Função</span>
-                    </div>
-                    <div class="vscode-content custom-vscode-content">
-                        <pre><span class="function">cumprimentar</span>(<span class="string">"Bruno"</span>);  <span class="comment">// "Olá, Bruno!"</span></pre>
-                    </div>
-                    <div class="vscode-terminal custom-vscode-terminal" id='terminal6'>
-                        <span>1</span>
-                    </div>
-                    <div class="vscode-footer custom-vscode-footer">
-                        <script>
-                            function card6() {
-                                let terminal = document.getElementById('terminal6')
-                                terminal.innerHTML = "C:User/Project><br><br> Olá, Bruno!"
-
-                                if (terminal.style.display === "flex") {
-                                    terminal.style.display = "none";
-                                } else {
-                                    terminal.style.display = "flex";
-                                }
-                            }
-                        </script>
-                        <button onclick="card6()">Executar Código</button>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
-            <p>Esse exemplo demonstra como chamar uma função em JavaScript. Ao executar o código, o resultado será uma
-                saudação personalizada: "Olá, Bruno!"</p>
-
-
-
-
-
-            <div class="mb-2">
-                <h1>Parâmetros Padrão</h1>
-            </div>
-            <div class="mb-2">
-                <h3>Se nenhum valor for passado, os parâmetros podem assumir um valor padrão. javascript Copiar Editar
-                </h3>
-            </div>
-            <div class="col-md-12">
-                <div class="vscode-card">
-                    <div class="vscode-header">
-                        <div class="dots">
-                            <div class="dot red"></div>
-                            <div class="dot yellow"></div>
-                            <div class="dot green"></div>
-                        </div>
-                        <span>Exemplo: Função com Valor Padrão</span>
-                    </div>
-                    <div class="vscode-content">
-                        <pre><span class="keyword">function</span> <span class="function">saudacao</span>(<span class="parameter">nome</span> = <span class="string">"Visitante"</span>) {
-    <span class="keyword">console</span>.<span class="function">log</span>(<span class="string">"Bem-vindo, "</span> + <span class="parameter">nome</span> + <span class="string">"!"</span>);
-            }
-<span class="function">saudacao</span>(); <span class="comment">// "Bem-vindo, Visitante!"</span></pre>
-                    </div>
-                    <div class="vscode-terminal" id='terminal7'>
-                        <span>1</span>
-                    </div>
-                    <div class="vscode-footer">
-                        <script>
-                            function card7() {
-                                let terminal = document.getElementById('terminal7')
-                                terminal.innerHTML = "C:User/Project><br><br>Bem-vindo, Visitante!"
-
-                                if (terminal.style.display === "flex") {
-                                    terminal.style.display = "none";
-                                } else {
-                                    terminal.style.display = "flex";
-                                }
-                            }
-                        </script>
-                        <button onclick="card7()">Executar Código</button>
-                    </div>
-                </div>
-            </div>
-
-            <p>Este exemplo demonstra uma função com um valor padrão para o parâmetro `nome`. Quando não é passado um
-                argumento, a função utiliza o valor `"Visitante"`.</p>
-
-            <div class="mb-2">
-                <h1>Escopo</h1>
-            </div>
-            <div class="col-md-12">
-                <div class="vscode-explanation">
-                    <h3>Escopo Local</h3>
-                    <p>Uma variável declarada dentro de uma função só pode ser acessada dentro dela.</p>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="vscode-card">
-                    <div class="vscode-header">
-                        <div class="dots">
-                            <div class="dot red"></div>
-                            <div class="dot yellow"></div>
-                            <div class="dot green"></div>
-                        </div>
-                        <span>Exemplo: Escopo de Variáveis</span>
-                    </div>
-                    <div class="vscode-content">
-                        <pre><span class="keyword">function</span> <span class="function">exemplo</span>() {
-    <span class="keyword">let</span> <span class="variable">mensagem</span> = <span class="string">"Olá!"</span>;
-    <span class="keyword">console</span>.<span class="function">log</span>(<span class="variable">mensagem</span>); <span class="comment">// Funciona</span>
-            }
-<span class="keyword">console</span>.<span class="function">log</span>(<span class="variable">mensagem</span>); <span class="comment">// Erro</span></pre>
-                    </div>
-                    <div class="vscode-terminal" id='terminal8'>
-                        <span>1</span>
-                    </div>
-                    <div class="vscode-footer">
-                        <script>
-                            function card8() {
-                                let terminal = document.getElementById('terminal8')
-                                terminal.innerHTML = "C:User/Project><br><br>ReferenceError: mensagem is not defined"
-
-                                if (terminal.style.display === "flex") {
-                                    terminal.style.display = "none";
-                                } else {
-                                    terminal.style.display = "flex";
-                                }
-                            }
-                        </script>
-                        <button onclick="card8()">Executar Código</button>
-                    </div>
-                </div>
-            </div>
-
-            <p>Este exemplo mostra a diferença entre o escopo de uma variável dentro de uma função e fora dela. A
-                variável `mensagem` é definida dentro da função `exemplo`, então ela não é acessível fora dessa função,
-                resultando em erro.</p>
-
-            <div class="col-md-12">
-                <div class="vscode-explanation">
-                    <h3>Escopo Global</h3>
-                    <p>Variáveis declaradas fora de qualquer função podem ser acessadas em qualquer parte do código.</p>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="vscode-card">
-                    <div class="vscode-header">
-                        <div class="dots">
-                            <div class="dot red"></div>
-                            <div class="dot yellow"></div>
-                            <div class="dot green"></div>
-                        </div>
-                        <span>Exemplo: Variável Global</span>
-                    </div>
-                    <div class="vscode-content">
-                        <pre><span class="keyword">let</span> <span class="variable">mensagem</span> = <span class="string">"Global!"</span>;
-<span class="keyword">function</span> <span class="function">exemplo</span>() {
-    <span class="keyword">console</span>.<span class="function">log</span>(<span class="variable">mensagem</span>); <span class="comment">// "Global!"</span>
-            }
-<span class="function">exemplo</span>();</pre>
-                    </div>
-                    <div class="vscode-terminal" id='terminal9'>
-                        <span>1</span>
-                    </div>
-                    <div class="vscode-footer">
-                        <script>
-                            function card9() {
-                                let terminal = document.getElementById('terminal9')
-                                terminal.innerHTML = "C:User/Project><br><br>Global!"
-
-                                if (terminal.style.display === "flex") {
-                                    terminal.style.display = "none";
-                                } else {
-                                    terminal.style.display = "flex";
-                                }
-                            }
-                        </script>
-                        <button onclick="card9()">Executar Código</button>
-                    </div>
-                </div>
-            </div>
-
-            <p>Este exemplo mostra como uma variável global, como `mensagem`, pode ser acessada dentro de uma função.
-                Mesmo dentro de `exemplo`, a variável `mensagem` mantém seu valor e pode ser usada sem problemas.</p>
-
-            <div class="mb-2">
-                <h1>Funções como Valores</h1>
-            </div>
-            <div class="mb-2">
-                <h3>Em JavaScript, funções podem ser atribuídas a variáveis, armazenadas em arrays ou passadas como
-                    argumentos para outras funções.</h3>
-            </div>
-            <div class="col-md-12">
-                <div class="vscode-card">
-                    <div class="vscode-header">
-                        <div class="dots">
-                            <div class="dot red"></div>
-                            <div class="dot yellow"></div>
-                            <div class="dot green"></div>
-                        </div>
-                        <span>Exemplo</span>
-                    </div>
-                    <div class="vscode-content">
-                        <pre><span class="keyword">const</span> <span class="variable">dobro</span> = (<span class="parameter">x</span>) =&gt; <span class="variable">x</span> * <span class="number">2</span>;
-            
-<span class="keyword">function</span> <span class="function">aplicarFuncao</span>(<span class="parameter">numero</span>, <span class="parameter">funcao</span>) {
-    <span class="keyword">return</span> <span class="function">funcao</span>(<span class="variable">numero</span>);
-            }
-            
-<span class="keyword">console</span>.<span class="function">log</span>(<span class="function">aplicarFuncao</span>(<span class="number">5</span>, <span class="variable">dobro</span>)); <span class="comment">// 10</span></pre>
-                    </div>
-                    <div class="vscode-terminal" id='terminal10'>
-                        <span>1</span>
-                    </div>
-                    <div class="vscode-footer">
-                        <script>
-                            function card10() {
-                                let terminal = document.getElementById('terminal10')
-                                terminal.innerHTML = "C:User/Project><br><br>10"
-
-                                if (terminal.style.display === "flex") {
-                                    terminal.style.display = "none";
-                                } else {
-                                    terminal.style.display = "flex";
-                                }
-                            }
-                        </script>
-                        <button onclick="card10()">Executar Código</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mb-2">
-                <h1>Funções Aninhadas</h1>
-            </div>
-            <div class="mb-2">
-                <h3>Uma função pode estar contida dentro de outra função, permitindo a criação de escopos mais
-                    restritos.</h3>
-            </div>
-            <div class="col-md-12">
-                <div class="vscode-card">
-                    <div class="vscode-header">
-                        <div class="dots">
-                            <div class="dot red"></div>
-                            <div class="dot yellow"></div>
-                            <div class="dot green"></div>
-                        </div>
-                        <span>Exemplo</span>
-                    </div>
-                    <div class="vscode-content">
-                        <pre><span class="keyword">function</span> <span class="function">externa</span>() {
-    <span class="keyword">function</span> <span class="function">interna</span>() {
-        <span class="keyword">console</span>.<span class="function">log</span>("<span class="string">Sou uma função interna!</span>");
-                }
-    <span class="function">interna</span>();
-            }
-<span class="function">externa</span>(); <span class="comment">// "Sou uma função interna!"</span></pre>
-                    </div>
-                    <div class="vscode-terminal" id='terminal11'>
-                        <span>1</span>
-                    </div>
-                    <div class="vscode-footer">
-                        <script>
-                            function card11() {
-                                let terminal = document.getElementById('terminal11')
-                                terminal.innerHTML = "C:User/Project><br><br>Sou uma função interna!"
-
-                                if (terminal.style.display === "flex") {
-                                    terminal.style.display = "none";
-                                } else {
-                                    terminal.style.display = "flex";
-                                }
-                            }
-                        </script>
-                        <button onclick="card11()">Executar Código</button>
-                    </div>
-                </div>
-            </div>
-
             <div class="col-md-12">
                 <div class="vscode-explanation">
                     <h3>Conclusão</h3>
-                    <p>Funções são uma das ferramentas mais poderosas do JavaScript. Elas permitem modularizar o código,
-                        reduzir redundâncias e criar programas mais organizados e reutilizáveis. Pratique bastante para
-                        dominar os diferentes tipos e usos de funções!</p>
+                    <p>Templates literários são uma ferramenta simples e eficiente para gerar conteúdo dinâmico com
+                        JavaScript. Experimente integrá-los em seus projetos para economizar tempo e melhorar a
+                        organização do código!</p>
                 </div>
             </div>
         </div>
@@ -840,13 +334,13 @@
                             <div class="dot yellow"></div>
                             <div class="dot green"></div>
                         </div>
- <span>${fileName}</span>
+                        <span>${fileName}</span>
                     </div>
                     <div class="vscode-content">
                         <pre>${codeContent}</pre>
                     </div>
                     <div class="vscode-terminal">
- <span>${terminalContent}</span>
+                        <span>${terminalContent}</span>
                     </div>
                     <div class="vscode-footer">
                         <button onclick="executeCode(this)">Executar Código</button>

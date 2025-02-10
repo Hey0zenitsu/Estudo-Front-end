@@ -197,6 +197,18 @@ body {
     /* Transição suave ao passar o mouse */
 }
 
+.list-group-item {
+    position: relative;
+    z-index: 1;
+}
+
+.menu {
+    position: absolute;
+    /* Garante que o z-index funcione */
+    z-index: 1000;
+    /* Número alto para ficar sobre outros elementos */
+}
+
 /* Efeito ao clicar (active) */
 .styled-list li:active {
     background-color: #007acc;
@@ -458,4 +470,214 @@ p {
         display: inline-block;
         margin-bottom: 10px;
     }
+}
+
+.vscode-terminal {
+    flex-direction: column;
+}
+
+.vscode-terminal {
+    text-align: start;
+}
+
+.vscode-terminal span {
+    margin-right: 10px;
+}
+
+/* Menu fixo com animação suave */
+.menu {
+    position: fixed;
+    right: -250px;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #1f1f1f;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.3s ease-in-out;
+    padding-top: 60px;
+    overflow-x: hidden;
+    /* Adiciona a barra de rolagem */
+    scrollbar-width: thin;
+    /* Para navegadores que suportam */
+    scrollbar-color: #888 #1f1f1f;
+    /* Cor da barra e fundo */
+}
+
+/* Personalização da barra de rolagem para Webkit (Chrome, Edge, Safari) */
+.menu::-webkit-scrollbar {
+    width: 5px;
+}
+
+.menu::-webkit-scrollbar-track {
+    background: #1f1f1f;
+}
+
+.menu::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.menu::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Menu visível quando a classe 'show' é adicionada */
+.menu.show {
+    right: 0;
+}
+
+/* Animação suave para os itens da lista */
+.menu ul li {
+    padding: 10px;
+    border-bottom: 1px solid #333;
+    opacity: 0;
+    transform: translateY(-30px);
+    /* Vindo de cima */
+    list-style: none;
+}
+
+/* Animação de entrada dos itens (de cima para baixo) */
+.menu.show ul li {
+    opacity: 1;
+    transform: translateY(0);
+    animation: slideIn 0.3s ease forwards;
+}
+
+/* Adiciona delay progressivo para cada item */
+.menu.show ul li:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.menu.show ul li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.menu.show ul li:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.menu.show ul li:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.menu.show ul li:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+/* Animação para h1 e h3 */
+.menu h1 {
+    padding: 0px 15px 0px 5px;
+    opacity: 0;
+    transform: translateY(-50px);
+    /* Vindo de cima */
+    animation: slideInText 0.4s ease forwards;
+}
+
+.menu h3 {
+    padding: 0px 15px 0px 15px;
+    opacity: 0;
+    transform: translateY(-50px);
+    /* Vindo de cima */
+    animation: slideInText 0.1s ease forwards;
+}
+
+/* Definindo delay para animação de h1 e h3 */
+.menu h1 {
+    animation-delay: 0.1s;
+}
+
+.menu h3 {
+    animation-delay: 0.1s;
+}
+
+/* Estilo dos links no menu */
+.menu ul li a {
+    color: #f8f9fa;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 0;
+    /* Começa invisível */
+    transform: translateY(10px);
+    /* Efeito suave de entrada */
+    transition: all 0.3s ease-in-out;
+    animation: slideInLink 0.1s ease forwards;
+    /* Aplicando animação */
+}
+
+/* Delay para links individualmente */
+.menu.show ul li:nth-child(1) a {
+    animation-delay: 0.1s;
+}
+
+.menu.show ul li:nth-child(2) a {
+    animation-delay: 0.1s;
+}
+
+.menu.show ul li:nth-child(3) a {
+    animation-delay: 0.1s;
+}
+
+.menu.show ul li:nth-child(4) a {
+    animation-delay: 0.1s;
+}
+
+.menu.show ul li:nth-child(5) a {
+    animation-delay: 0.1s;
+}
+
+.menu ul li a:hover {
+    background-color: #0d6efd;
+    padding-left: 15px;
+    transform: scale(1.05);
+}
+
+/* 🔹 Animação de entrada dos itens (para o li) */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+        /* Vindo de cima */
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* 🔹 Animação de entrada para h1 e h3 (de cima para baixo) */
+@keyframes slideInText {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+        /* Vindo de cima */
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 🔹 Corrigindo animação de entrada para os links */
+@keyframes slideInLink {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+        /* Vindo de baixo */
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        /* Posição final */
+    }
+}
+
+ul,
+ol {
+    padding: 0px;
 }

@@ -87,7 +87,39 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5500/createapage.html#">Home</a>
+                        <li class="nav-item">
+                            <script>
+                                function aulas() {
+                                    let menu = document.getElementById('menu'); // Obtém o menu pelo ID
+                                    let items = menu.querySelectorAll("ul li"); // Pega todos os itens da lista
+                                    let h1 = menu.querySelector("h1"); // Pega o h1
+                                    let h3 = menu.querySelector("h3"); // Pega o h3
+
+                                    if (menu.classList.contains("show")) {
+                                        // Se o menu já está visível, apenas remove a classe para escondê-lo sem animação
+                                        menu.classList.remove("show");
+
+                                    } else {
+                                        // Se o menu está fechado, abre ele com animação normal
+                                        menu.classList.add("show");
+
+                                        // Aplica animação de entrada para h1 e h3
+                                        h1.style.animation = `slideInText 0.4s ease forwards`;
+                                        h1.style.animationDelay = "0.1s";  // h1 aparece antes
+
+                                        h3.style.animation = `slideInText 0.4s ease forwards`;
+                                        h3.style.animationDelay = "0.1s";  // h3 aparece logo depois
+
+                                        // Aplica animação de entrada para os itens da lista
+                                        items.forEach((item, index) => {
+                                            item.style.animation = `slideIn 0.3s ease forwards`;
+                                            item.style.animationDelay = `${0.1 * (index + 1) + 0.1}s`; // Adiciona delay progressivo e espera o h1 e h3 aparecerem
+                                        });
+                                    }
+                                }
+                            </script><a class="nav-link" onclick="aulas()" href="#">Aulas</a>
+                        </li>
+
                         </li>
                         <li class="nav-item"><a class="nav-link"
                                 href="http://127.0.0.1:5500/createapage.html#">Sobre</a></li>
@@ -123,6 +155,25 @@
                 </div>
             </div>
         </nav>
+        <div class="menu" id="menu">
+            <h1>JavaScript</h1>
+            <h3>Modulo 01</h3>
+            <ul>
+                <li><a href='1.JavaScript_Tipos.html'>1.JavaScript_Tipos.html</a></li>
+                <li><a href='2.VariaveisJs.html'>2.VariaveisJs.html</a></li>
+                <li><a href='3.TrutyAndFalse.html'>3.TrutyAndFalse.html</a></li>
+                <li><a href='4.Conversão.html'>4.Conversão.html</a></li>
+                <li><a href='5.Errors.html'>5.Errors.html</a></li>
+                <li><a href='6.Console.api.html'>6.Console.api.html</a></li>
+                <li><a href='7.Operadores.html'>7.Operadores.html</a></li>
+                <li><a href='8.TemplateL.html'>8.TemplateL.html</a></li>
+                <li><a href='9.Funções.html'>9.Funções.html</a></li>
+                <li><a href='10.Parametros.html'>10.Parametros.html</a></li>
+                <li><a href='11.Expressões_de_funções.html'>11.Expressões_de_funções.html</a></li>
+                <li><a href='12.Arrow_function.html'>12.Arrow_function.html</a></li>
+            </ul>
+        </div>
+
         <!-- Container para os cards -->
         <div class="row" id="cards-container">
             <div class="mb-2">
@@ -131,7 +182,8 @@
             <div class="col-md-12">
                 <div class="vscode-explanation">
                     <h3>1. Erros de Sintaxe (Syntax Errors)</h3>
-                    <p>São causados por problemas na estrutura do código, como palavras-chave escritas incorretamente ou
+                    <p>São causados por problemas na estrutura do código, como palavras-chave escritas
+                        incorretamente ou
                         falta de caracteres necessários, como ponto e vírgula ou chaves.</p>
                 </div>
             </div>
@@ -146,14 +198,24 @@
                         <span>fechamento da aspa</span>
                     </div>
                     <div class="vscode-content">
-                        <pre>console.log("Olá mundo) // Falta o fechamento da aspa</pre>
+                        <pre><span class="keyword">console</span>.<span class="function">log</span>(<span class="string">"Olá mundo</span>) <span class="comment">// Falta o fechamento da aspa</span></pre>
                     </div>
-                    <div class="vscode-terminal">
+                    <div class="vscode-terminal" id="terminal1">
                         <span>Syntax Errors</span>
                     </div>
                     <div class="vscode-footer">
-                        <button onclick="executeCode(this)">Executar Código</button>
-
+                        <script>
+                            function card1() {
+                                let terminal = document.getElementById('terminal1')
+                                terminal.innerHTML = 'C:User/Project><br><br>SyntaxError: Invalid or unexpected token'
+                                if (terminal.style.display === "flex") {
+                                    terminal.style.display = "none"
+                                } else {
+                                    terminal.style.display = "flex"
+                                }
+                            }
+                        </script>
+                        <button onclick="card1()">Executar Código</button>
                     </div>
                 </div>
             </div>
@@ -171,21 +233,32 @@
                         <span>Correção:</span>
                     </div>
                     <div class="vscode-content">
-                        <pre>console.log("Olá mundo");</pre>
+                        <pre><span class="keyword">console</span>.<span class="function">log</span>(<span class="string">"Olá mundo"</span>);</pre>
                     </div>
-                    <div class="vscode-terminal">
+                    <div class="vscode-terminal" id="terminal2">
                         <span>Olá mundo</span>
                     </div>
                     <div class="vscode-footer">
-                        <button onclick="executeCode(this)">Executar Código</button>
-
+                        <script>
+                            function card2() {
+                                let terminal = document.getElementById('terminal2')
+                                terminal.innerHTML = 'C:User/Project><br><br>Olá mundo'
+                                if (terminal.style.display === "flex") {
+                                    terminal.style.display = "none"
+                                } else {
+                                    terminal.style.display = "flex"
+                                }
+                            }
+                        </script>
+                        <button onclick="card2()">Executar Código</button>
                     </div>
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="vscode-explanation">
                     <h3>2. Erros de Execução (Runtime Errors)</h3>
-                    <p>Acontecem quando o código está correto sintaticamente, mas tenta realizar uma operação inválida
+                    <p>Acontecem quando o código está correto sintaticamente, mas tenta realizar uma operação
+                        inválida
                         durante a execução, como acessar uma variável inexistente.</p>
                 </div>
             </div>
@@ -200,14 +273,24 @@
                         <span>Runtime Errors</span>
                     </div>
                     <div class="vscode-content">
-                        <pre>console.log(nome); // Variável 'nome' não foi definida</pre>
+                        <pre><span class="keyword">console</span>.<span class="function">log</span>(<span class="variable">nome</span>); <span class="comment">// Variável 'nome' não foi definida</span></pre>
                     </div>
-                    <div class="vscode-terminal">
+                    <div class="vscode-terminal" id="terminal3">
                         <span>Variável 'nome' não foi definida</span>
                     </div>
                     <div class="vscode-footer">
-                        <button onclick="executeCode(this)">Executar Código</button>
-
+                        <script>
+                            function card3() {
+                                let terminal = document.getElementById('terminal3')
+                                terminal.innerHTML = 'C:User/Project><br><br>ReferenceError: nome is not defined'
+                                if (terminal.style.display === "flex") {
+                                    terminal.style.display = "none"
+                                } else {
+                                    terminal.style.display = "flex"
+                                }
+                            }
+                        </script>
+                        <button onclick="card3()">Executar Código</button>
                     </div>
                 </div>
             </div>
@@ -225,99 +308,62 @@
                         <span>Correção:</span>
                     </div>
                     <div class="vscode-content">
-                        <pre>let nome = "Bruno";
-console.log(nome);</pre>
+                        <pre><code><span class="keyword">let</span> nome = <span class="string">"Bruno"</span>;
+<span class="keyword">console</span>.<span class="function">log</span>(nome);</code></pre>
                     </div>
-                    <div class="vscode-terminal">
+                    <div class="vscode-terminal" id="terminal4">
                         <span>Bruno</span>
                     </div>
                     <div class="vscode-footer">
-                        <button onclick="executeCode(this)">Executar Código</button>
+                        <script>
+                            function card4() {
+                                let terminal = document.getElementById('terminal4')
+                                terminal.innerHTML = 'C:User/Project><br><br>Bruno'
+                                if (terminal.style.display === "flex") {
+                                    terminal.style.display = "none"
+                                } else {
+                                    terminal.style.display = "flex"
+                                }
+                            }
+                        </script>
+                        <button onclick="card4()">Executar Código</button>
+                    </div>
+                </div>
+            </div>
 
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="vscode-explanation">
-                    <h3>3. Erros Lógicos (Logical Errors)</h3>
-                    <p>O código é executado sem problemas, mas o resultado não é o esperado, geralmente devido a falhas
-                        na lógica implementada.</p>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="vscode-card">
-                    <div class="vscode-header">
-                        <div class="dots">
-                            <div class="dot red"></div>
-                            <div class="dot yellow"></div>
-                            <div class="dot green"></div>
-                        </div>
-                        <span>Logical Errors</span>
-                    </div>
-                    <div class="vscode-content">
-                        <pre>let total = 10;
-total = total - 5 * 2; // Resultado incorreto: -10
-console.log(total);</pre>
-                    </div>
-                    <div class="vscode-terminal">
-                        <span>Bruno</span>
-                    </div>
-                    <div class="vscode-footer">
-                        <button onclick="executeCode(this)">Executar Código</button>
 
-                    </div>
-                </div>
-            </div>
-            <div class="mb-2">
-                <h3>Correção:</h3>
-            </div>
-            <div class="col-md-12">
-                <div class="vscode-card">
-                    <div class="vscode-header">
-                        <div class="dots">
-                            <div class="dot red"></div>
-                            <div class="dot yellow"></div>
-                            <div class="dot green"></div>
-                        </div>
-                        <span>Correção:</span>
-                    </div>
-                    <div class="vscode-content">
-                        <pre>let total = 10;
-total = (total - 5) * 2; // Resultado correto: 10
-console.log(total);</pre>
-                    </div>
-                    <div class="vscode-terminal">
-                        <span>Bruno</span>
-                    </div>
-                    <div class="vscode-footer">
-                        <button onclick="executeCode(this)">Executar Código</button>
 
-                    </div>
-                </div>
-            </div>
             <div class="mb-2"></div>
             <div class="mb-2">
                 <h1>Dicas para Evitar Erros:</h1>
             </div>
             <div class="col-md-12 mb-4">
                 <ul class="styled-list list-group">
-                    <li class="list-group-item d-flex justify-content-between align-items-center"><span><strong>Use o
-                                Console do Navegador:</strong> Utilize console.log() para depurar o código e entender o
-                            fluxo.</span></li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center"><span><strong>Leia as
-                                Mensagens de Erro:</strong> O navegador informa onde o problema ocorreu</span></li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center"><span><strong>Escreva
-                                Código Limpo:</strong> ajudando a identificar a causa.</span></li>
                     <li class="list-group-item d-flex justify-content-between align-items-center"><span><strong>Use
-                                Ferramentas de Lint:</strong> Ferramentas como ESLint ajudam a detectar erros antes da
+                                o
+                                Console do Navegador:</strong> Utilize console.log() para depurar o código e
+                            entender o
+                            fluxo.</span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center"><span><strong>Leia
+                                as
+                                Mensagens de Erro:</strong> O navegador informa onde o problema ocorreu</span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span><strong>Escreva
+                                Código Limpo:</strong> ajudando a identificar a causa.</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center"><span><strong>Use
+                                Ferramentas de Lint:</strong> Ferramentas como ESLint ajudam a detectar erros antes
+                            da
                             execução.</span></li>
                 </ul>
             </div>
             <div class="col-md-12">
                 <div class="vscode-explanation">
                     <h3></h3>
-                    <p>Entender e corrigir erros no JavaScript é uma habilidade essencial para qualquer desenvolvedor.
-                        Cada erro é uma oportunidade de aprendizado, e a prática constante torna você mais confiante e
+                    <p>Entender e corrigir erros no JavaScript é uma habilidade essencial para qualquer
+                        desenvolvedor.
+                        Cada erro é uma oportunidade de aprendizado, e a prática constante torna você mais confiante
+                        e
                         eficiente. Use ferramentas como o console e linters para facilitar o processo, e lembre-se:
                         errar faz parte do aprendizado. Continue praticando e explorando o JavaScript! 🚀</p>
                 </div>
@@ -781,4 +827,4 @@ console.log(total);</pre>
 
 </body>
 
-</html>
+</html>>

@@ -1,74 +1,78 @@
 <!DOCTYPE html>
 <!-- saved from url=(0038)http://127.0.0.1:5500/createapage.html -->
-<html lang="pt-br" data-lt-installed="true"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="pt-br" data-lt-installed="true">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Card estilo VS Code</title>
     <!-- Link para o Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
-<style>
-    body {
-        background-color: #121212;
-        color: #f8f9fa;
-    }
+    <style>
+        body {
+            background-color: #121212;
+            color: #f8f9fa;
+        }
 
-    .form-control {
-        background-color: #1f1f1f;
-        color: #f8f9fa;
-        /* Garante que o texto seja branco */
-        border: 1px solid #333333;
-    }
+        .form-control {
+            background-color: #1f1f1f;
+            color: #f8f9fa;
+            /* Garante que o texto seja branco */
+            border: 1px solid #333333;
+        }
 
-    .form-control:focus {
-        background-color: #1f1f1f;
-        /* Mantém a consistência do fundo */
-        color: #f8f9fa;
-        border-color: #0d6efd;
-        /* Realça o foco no campo */
-        box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
-    }
+        .form-control:focus {
+            background-color: #1f1f1f;
+            /* Mantém a consistência do fundo */
+            color: #f8f9fa;
+            border-color: #0d6efd;
+            /* Realça o foco no campo */
+            box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
+        }
 
-    .form-control::placeholder {
-        color: #888888;
-        /* Contraste adequado para o placeholder */
-    }
+        .form-control::placeholder {
+            color: #888888;
+            /* Contraste adequado para o placeholder */
+        }
 
-    .btn-primary {
-        background-color: #0d6efd;
-        border: none;
-    }
+        .btn-primary {
+            background-color: #0d6efd;
+            border: none;
+        }
 
-    .btn-secondary {
-        background-color: #6c757d;
-        border: none;
-    }
+        .btn-secondary {
+            background-color: #6c757d;
+            border: none;
+        }
 
-    .btn-warning {
-        background-color: #ffc107;
-        border: none;
-        color: #121212;
-    }
+        .btn-warning {
+            background-color: #ffc107;
+            border: none;
+            color: #121212;
+        }
 
-    .btn-success {
-        background-color: #198754;
-        border: none;
-    }
+        .btn-success {
+            background-color: #198754;
+            border: none;
+        }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        color: #f8f9fa;
-    }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #f8f9fa;
+        }
 
-    #final {
-        font-size: 55px;
-        margin-top: 150px;
-    }
-</style></head>
+        #final {
+            font-size: 55px;
+            margin-top: 150px;
+        }
+    </style>
+</head>
 
 
 <body>
@@ -76,270 +80,396 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="http://127.0.0.1:5500/createapage.html#">Minha Marca</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5500/createapage.html#">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5500/createapage.html#">Sobre</a></li>
+                        <li class="nav-item">
+                            <script>
+                                function aulas() {
+                                    let menu = document.getElementById('menu'); // Obtém o menu pelo ID
+                                    let items = menu.querySelectorAll("ul li"); // Pega todos os itens da lista
+                                    let h1 = menu.querySelector("h1"); // Pega o h1
+                                    let h3 = menu.querySelector("h3"); // Pega o h3
+
+                                    if (menu.classList.contains("show")) {
+                                        // Se o menu já está visível, apenas remove a classe para escondê-lo sem animação
+                                        menu.classList.remove("show");
+
+                                    } else {
+                                        // Se o menu está fechado, abre ele com animação normal
+                                        menu.classList.add("show");
+
+                                        // Aplica animação de entrada para h1 e h3
+                                        h1.style.animation = `slideInText 0.4s ease forwards`;
+                                        h1.style.animationDelay = "0.1s";  // h1 aparece antes
+
+                                        h3.style.animation = `slideInText 0.4s ease forwards`;
+                                        h3.style.animationDelay = "0.1s";  // h3 aparece logo depois
+
+                                        // Aplica animação de entrada para os itens da lista
+                                        items.forEach((item, index) => {
+                                            item.style.animation = `slideIn 0.3s ease forwards`;
+                                            item.style.animationDelay = `${0.1 * (index + 1) + 0.1}s`; // Adiciona delay progressivo e espera o h1 e h3 aparecerem
+                                        });
+                                    }
+                                }
+                            </script><a class="nav-link" onclick="aulas()" href="#">Aulas</a>
+                        </li>
+
+                        </li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="http://127.0.0.1:5500/createapage.html#">Sobre</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="http://127.0.0.1:5500/createapage.html#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="http://127.0.0.1:5500/createapage.html#"
+                                id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Serviços
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                                <li><a class="dropdown-item" href="http://127.0.0.1:5500/createapage.html#">Serviço 1</a></li>
-                                <li><a class="dropdown-item" href="http://127.0.0.1:5500/createapage.html#">Serviço 2</a></li>
-                                <li><a class="dropdown-item" href="http://127.0.0.1:5500/createapage.html#">Serviço 3</a></li>
+                                <li><a class="dropdown-item" href="http://127.0.0.1:5500/createapage.html#">Serviço
+                                        1</a></li>
+                                <li><a class="dropdown-item" href="http://127.0.0.1:5500/createapage.html#">Serviço
+                                        2</a></li>
+                                <li><a class="dropdown-item" href="http://127.0.0.1:5500/createapage.html#">Serviço
+                                        3</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="http://127.0.0.1:5500/createapage.html#" id="contactDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="http://127.0.0.1:5500/createapage.html#"
+                                id="contactDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Contato
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="contactDropdown">
-                                <li><a class="dropdown-item" href="http://127.0.0.1:5500/createapage.html#">Email</a></li>
-                                <li><a class="dropdown-item" href="http://127.0.0.1:5500/createapage.html#">Telefone</a></li>
-                                <li><a class="dropdown-item" href="http://127.0.0.1:5500/createapage.html#">Suporte</a></li>
+                                <li><a class="dropdown-item" href="http://127.0.0.1:5500/createapage.html#">Email</a>
+                                </li>
+                                <li><a class="dropdown-item" href="http://127.0.0.1:5500/createapage.html#">Telefone</a>
+                                </li>
+                                <li><a class="dropdown-item" href="http://127.0.0.1:5500/createapage.html#">Suporte</a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
+        <div class="menu" id="menu">
+            <h1>JavaScript</h1>
+            <h3>Modulo 01</h3>
+            <ul>
+                <li><a href='1.JavaScript_Tipos.html'>1.JavaScript_Tipos.html</a></li>
+                <li><a href='2.VariaveisJs.html'>2.VariaveisJs.html</a></li>
+                <li><a href='3.TrutyAndFalse.html'>3.TrutyAndFalse.html</a></li>
+                <li><a href='4.Conversão.html'>4.Conversão.html</a></li>
+                <li><a href='5.Errors.html'>5.Errors.html</a></li>
+                <li><a href='6.Console.api.html'>6.Console.api.html</a></li>
+                <li><a href='7.Operadores.html'>7.Operadores.html</a></li>
+                <li><a href='8.TemplateL.html'>8.TemplateL.html</a></li>
+                <li><a href='9.Funções.html'>9.Funções.html</a></li>
+                <li><a href='10.Parametros.html'>10.Parametros.html</a></li>
+                <li><a href='11.Expressões_de_funções.html'>11.Expressões_de_funções.html</a></li>
+                <li><a href='12.Arrow_function.html'>12.Arrow_function.html</a></li>
+            </ul>
+        </div>
+
         <!-- Container para os cards -->
-        <div class="row" id="cards-container"><div class="col-md-12"><div class="vscode-explanation"><h3>Operadores em JavaScript</h3><p>Os operadores em JavaScript são símbolos que realizam operações em valores ou variáveis. Eles podem ser usados para atribuir valores, comparar dados, realizar cálculos e muito mais.</p></div></div><div class="mb-2"><h1>1. Operadores Aritméticos</h1><h3>Utilizados para realizar cálculos matemáticos.</h3></div><div class="col-md-12 mb-4"><div class="table-responsive"><table class="table styled-table"><thead><tr><th>#</th><th>Operador</th><th>Descrição</th><th>Exemplo</th><th>Resultado</th></tr></thead><tbody><tr>
-        <td>1</td>
-        <td>+</td>
-        <td>Adição</td>
-        
-    <td>5 + 3</td><td>8</td></tr><tr>
-        <td>2</td>
-        <td>-</td>
-        <td>Subtração</td>
-        
-    <td>5 - 3</td><td>2</td></tr><tr>
-        <td>3</td>
-        <td>*</td>
-        <td>Multiplicação</td>
-        
-    <td>5 * 3</td><td>15</td></tr><tr>
-        <td>4</td>
-        <td>/</td>
-        <td>Divisão</td>
-        
-    <td>5 / 2</td><td>2.5</td></tr><tr>
-        <td>5</td>
-        <td>%</td>
-        <td>Módulo (resto)</td>
-        
-    <td>5 % 2</td><td>1</td></tr><tr>
-        <td>6</td>
-        <td>**</td>
-        <td>Exponenciação</td>
-        
-    <td>5 ** 2</td><td>25</td></tr></tbody></table></div></div><div class="mb-2"><h1>2. Operadores de Atribuição</h1></div><div class="mb-2"><h3>Usados para atribuir valores às variáveis.</h3></div><div class="col-md-12 mb-4"><div class="table-responsive"><table class="table styled-table"><thead><tr><th>#</th><th>Operador</th><th>Descrição</th><th>Exemplo</th><th>Equivalente a</th></tr></thead><tbody><tr>
-        <td>1</td>
-        <td>=</td>
-        
-        
-    <td>Atribuição simples</td><td>x = 10</td><td><br></td></tr><tr>
-        <td>2</td>
-        <td>&nbsp;+=</td>
-        
-        
-    <td>Adição e atribuição</td><td>x += 5</td><td>x = x + 5</td></tr><tr>
-        <td>3</td>
-        <td>-=</td>
-        
-        
-    <td>Subtração e atribuição</td><td>x -= 5</td><td>x = x - 5</td></tr><tr>
-        <td>4</td>
-        <td>*=</td>
-        
-        
-    <td>Multiplicação e atribuição</td><td>x *= 5</td><td>x = x * 5</td></tr><tr>
-        <td>5</td>
-        <td>/=</td>
-        
-        
-    <td>Divisão e atribuição</td><td>x /= 5&nbsp;</td><td>x = x / 5</td></tr><tr>
-        <td>6</td>
-        <td>%=</td>
-        
-        
-    <td>Módulo e atribuição</td><td>x %= 2</td><td>x = x % 5</td></tr></tbody></table></div></div><div class="mb-2"></div><div class="mb-2"></div><div class="mb-2"><h1>3. Operadores de Comparação</h1></div><div class="mb-2"><h3>Usados para comparar valores, retornando true ou false.</h3></div><div class="col-md-12 mb-4"><div class="table-responsive"><table class="table styled-table"><thead><tr><th>#</th><th>Operador</th><th>Descrição</th><th>Exemplo</th><th>Resultado</th></tr></thead><tbody><tr>
-        <td>1</td>
-        <td>==</td>
-        <td>Igual a</td>
-        
-    <td>5 == '5'</td><td>true</td></tr><tr>
-        <td>2</td>
-        <td>===</td>
-        <td>Estritamente igual</td>
-        
-    <td>5 === '5'</td><td>false</td></tr><tr>
-        <td>3</td>
-        <td>!=</td>
-        <td>Nova Descrição</td>
-        
-    <td>5 != '5'</td><td>false</td></tr><tr>
-        <td>4</td>
-        <td>!==</td>
-        <td>Estritamente diferente</td>
-        
-    <td>5 !== '5'</td><td>true</td></tr><tr>
-        <td>5</td>
-        <td>&gt;</td>
-        <td>Maior que</td>
-        
-    <td>5 &gt; 3</td><td>true</td></tr><tr>
-        <td>6</td>
-        <td>&lt;</td>
-        <td>Menor que</td>
-        
-    <td>5 &lt; 3</td><td>false</td></tr><tr>
-        <td>7</td>
-        <td>&gt;=</td>
-        <td>Maior ou igual a&nbsp;</td>
-        
-    <td>5 &gt;= 5</td><td>true</td></tr><tr>
-        <td>8</td>
-        <td>&lt;=</td>
-        <td>Menor ou igual a</td>
-        
-    <td>5 &lt;= 3</td><td>false</td></tr></tbody></table></div></div><div class="mb-2"></div><div class="mb-2"><h1>4. Operadores Lógicos</h1></div><div class="mb-2"><h3>Usados para combinar expressões condicionais.</h3></div><div class="col-md-12 mb-4"><div class="table-responsive"><table class="table styled-table"><thead><tr><th>#</th><th>Operador</th><th>Descrição</th><th>Exemplo</th><th>Resultado</th></tr></thead><tbody><tr>
-        <td>1</td>
-        <td>&amp;&amp;</td>
-        <td>E (AND)</td>
-        
-    <td>true &amp;&amp; false</td><td>false</td></tr><tr>
-        <td>2</td>
-        <td>`</td>
-        <td><br></td>
-        
-    <td>`</td><td>Ou (OR)</td></tr><tr>
-        <td>3</td>
-        <td>!</td>
-        <td>Não (NOT)</td>
-        
-    <td>!true</td><td>false</td></tr></tbody></table></div></div><div class="mb-2"><h3>Exemplo prático:</h3></div><div class="col-md-12">
-                <div class="vscode-card">
-                    <div class="vscode-header">
-                        <div class="dots">
-                            <div class="dot red"></div>
-                            <div class="dot yellow"></div>
-                            <div class="dot green"></div>
-                        </div>
-                        <span>Exemplo:</span>
-                    </div>
-                    <div class="vscode-content">
-                        <pre>const a = true;
-const b = false;
+        <div class="row" id="cards-container">
+            <div class="col-md-12">
+                <div class="vscode-explanation">
+                    <h3>Operadores em JavaScript</h3>
+                    <p>Os operadores em JavaScript são símbolos que realizam operações em valores ou variáveis. Eles
+                        podem ser usados para atribuir valores, comparar dados, realizar cálculos e muito mais.</p>
+                </div>
+            </div>
+            <div class="mb-2">
+                <h1>1. Operadores Aritméticos</h1>
+                <h3>Utilizados para realizar cálculos matemáticos.</h3>
+            </div>
+            <div class="col-md-12 mb-4">
+                <div class="table-responsive">
+                    <table class="table styled-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Operador</th>
+                                <th>Descrição</th>
+                                <th>Exemplo</th>
+                                <th>Resultado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>+</td>
+                                <td>Adição</td>
 
-console.log(a &amp;&amp; b); // false
-console.log(a || b); // true
-console.log(!a);     // false</pre>
-                    </div>
-                    <div class="vscode-terminal">
-                        <span>1</span>
-                    </div>
-                    <div class="vscode-footer">
-                        <button onclick="executeCode(this)">Executar Código</button>
-                        
-                    </div>
-                </div>
-            </div><div class="mb-2"><h1>5. Operador Ternário</h1></div><div class="mb-2"><h3>O operador ternário é uma forma simplificada de escrever uma condição if-else. Ele segue a estrutura:</h3></div><div class="col-md-12">
-                <div class="vscode-card">
-                    <div class="vscode-header">
-                        <div class="dots">
-                            <div class="dot red"></div>
-                            <div class="dot yellow"></div>
-                            <div class="dot green"></div>
-                        </div>
-                        <span>Exemplo:</span>
-                    </div>
-                    <div class="vscode-content">
-                        <pre>condição ? valorSeVerdadeiro : valorSeFalso;</pre>
-                    </div>
-                    <div class="vscode-terminal">
-                        <span>1</span>
-                    </div>
-                    <div class="vscode-footer">
-                        <button onclick="executeCode(this)">Executar Código</button>
-                        
-                    </div>
-                </div>
-            </div><div class="mb-2"><h3>Exemplo prático:</h3></div><div class="col-md-12">
-                <div class="vscode-card">
-                    <div class="vscode-header">
-                        <div class="dots">
-                            <div class="dot red"></div>
-                            <div class="dot yellow"></div>
-                            <div class="dot green"></div>
-                        </div>
-                        <span>Exemplo:</span>
-                    </div>
-                    <div class="vscode-content">
-                        <pre>const idade = 20;
-const status = idade &gt;= 18 ? "Adulto" : "Menor";
-console.log(status); // "Adulto"</pre>
-                    </div>
-                    <div class="vscode-terminal">
-                        <span>1</span>
-                    </div>
-                    <div class="vscode-footer">
-                        <button onclick="executeCode(this)">Executar Código</button>
-                        
-                    </div>
-                </div>
-            </div><div class="col-md-12"><div class="vscode-explanation"><h3></h3><p>Se a condição for verdadeira (true), retorna o valor antes dos dois pontos (:).   Caso contrário, retorna o valor após os dois pontos.</p></div></div><div class="mb-2"><h1>6. Operadores de Incremento e Decremento</h1></div><div class="mb-2"><h3>São usados para aumentar ou diminuir o valor de uma variável.</h3></div><div class="col-md-12 mb-4"><div class="table-responsive"><table class="table styled-table"><thead><tr><th>#</th><th>Operador</th><th>Descrição</th><th>Exemplo</th><th>Resultado</th></tr></thead><tbody><tr>
-        <td>1</td>
-        <td>++</td>
-        <td>Incrementando (+1)</td>
-        
-    <td>let x = 5; x++</td><td>6</td></tr><tr>
-        <td>2</td>
-        <td>--</td>
-        <td>Decrementando (-1)</td>
-        
-    <td>let x = 5; x--</td><td>4</td></tr></tbody></table></div></div><div class="mb-2"><h3>Importante:</h3></div><div class="col-md-12 mb-4"><ul class="styled-list list-group"><li class="list-group-item d-flex justify-content-between align-items-center"><span><strong>x++ ou x-- (pós-incremento/decremento)::</strong> Retorna o valor antes de alterar.</span></li><li class="list-group-item d-flex justify-content-between align-items-center"><span><strong>++x ou --x (pré-incremento/decremento)::</strong> Altera o valor antes de retornar.</span></li></ul></div><div class="mb-2"><h3>Exemplo prático:  javascript Copiar Editar</h3></div><div class="col-md-12">
-                <div class="vscode-card">
-                    <div class="vscode-header">
-                        <div class="dots">
-                            <div class="dot red"></div>
-                            <div class="dot yellow"></div>
-                            <div class="dot green"></div>
-                        </div>
-                        <span>Exemplo:</span>
-                    </div>
-                    <div class="vscode-content">
-                        <pre>let x = 5;
-console.log(x++); // 5 (retorna primeiro, depois incrementa)
-console.log(x);   // 6
+                                <td>5 + 3</td>
+                                <td>8</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>-</td>
+                                <td>Subtração</td>
 
-let y = 5;
-console.log(++y); // 6 (incrementa primeiro, depois retorna)</pre>
-                    </div>
-                    <div class="vscode-terminal">
-                        <span>1</span>
-                    </div>
-                    <div class="vscode-footer">
-                        <button onclick="executeCode(this)">Executar Código</button>
-                        
-                    </div>
+                                <td>5 - 3</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>*</td>
+                                <td>Multiplicação</td>
+
+                                <td>5 * 3</td>
+                                <td>15</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>/</td>
+                                <td>Divisão</td>
+
+                                <td>5 / 2</td>
+                                <td>2.5</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>%</td>
+                                <td>Módulo (resto)</td>
+
+                                <td>5 % 2</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>**</td>
+                                <td>Exponenciação</td>
+
+                                <td>5 ** 2</td>
+                                <td>25</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-            </div><div class="mb-2"><h1>7. Operadores de Tipo</h1></div><div class="mb-2"><h3>Esses operadores permitem verificar o tipo de dado ou validar a relação entre objetos.</h3></div><div class="col-md-12 mb-4"><div class="table-responsive"><table class="table styled-table"><thead><tr><th>#</th><th>Operador</th><th>Descrição</th><th>Exemplo</th><th>Resultado</th></tr></thead><tbody><tr>
-        <td>1</td>
-        <td>typeof</td>
-        <td>Retorna o tipo do dado</td>
-        
-    <td>typeof "JavaScript"</td><td>"String"</td></tr><tr>
-        <td>2</td>
-        <td>Novo Nome</td>
-        <td>Nova Descrição</td>
-        
-    <td>new Date() instanceof Date</td><td>true</td></tr></tbody></table></div></div><div class="mb-2"><h3>Exemplo prático:</h3></div><div class="col-md-12">
+            </div>
+            <div class="mb-2">
+                <h1>2. Operadores de Atribuição</h1>
+            </div>
+            <div class="mb-2">
+                <h3>Usados para atribuir valores às variáveis.</h3>
+            </div>
+            <div class="col-md-12 mb-4">
+                <div class="table-responsive">
+                    <table class="table styled-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Operador</th>
+                                <th>Descrição</th>
+                                <th>Exemplo</th>
+                                <th>Equivalente a</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>=</td>
+
+
+                                <td>Atribuição simples</td>
+                                <td>x = 10</td>
+                                <td><br></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>&nbsp;+=</td>
+
+
+                                <td>Adição e atribuição</td>
+                                <td>x += 5</td>
+                                <td>x = x + 5</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>-=</td>
+
+
+                                <td>Subtração e atribuição</td>
+                                <td>x -= 5</td>
+                                <td>x = x - 5</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>*=</td>
+
+
+                                <td>Multiplicação e atribuição</td>
+                                <td>x *= 5</td>
+                                <td>x = x * 5</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>/=</td>
+
+
+                                <td>Divisão e atribuição</td>
+                                <td>x /= 5&nbsp;</td>
+                                <td>x = x / 5</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>%=</td>
+
+
+                                <td>Módulo e atribuição</td>
+                                <td>x %= 2</td>
+                                <td>x = x % 5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="mb-2"></div>
+            <div class="mb-2"></div>
+            <div class="mb-2">
+                <h1>3. Operadores de Comparação</h1>
+            </div>
+            <div class="mb-2">
+                <h3>Usados para comparar valores, retornando true ou false.</h3>
+            </div>
+            <div class="col-md-12 mb-4">
+                <div class="table-responsive">
+                    <table class="table styled-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Operador</th>
+                                <th>Descrição</th>
+                                <th>Exemplo</th>
+                                <th>Resultado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>==</td>
+                                <td>Igual a</td>
+
+                                <td>5 == '5'</td>
+                                <td>true</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>===</td>
+                                <td>Estritamente igual</td>
+
+                                <td>5 === '5'</td>
+                                <td>false</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>!=</td>
+                                <td>Nova Descrição</td>
+
+                                <td>5 != '5'</td>
+                                <td>false</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>!==</td>
+                                <td>Estritamente diferente</td>
+
+                                <td>5 !== '5'</td>
+                                <td>true</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>&gt;</td>
+                                <td>Maior que</td>
+
+                                <td>5 &gt; 3</td>
+                                <td>true</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>&lt;</td>
+                                <td>Menor que</td>
+
+                                <td>5 &lt; 3</td>
+                                <td>false</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>&gt;=</td>
+                                <td>Maior ou igual a&nbsp;</td>
+
+                                <td>5 &gt;= 5</td>
+                                <td>true</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>&lt;=</td>
+                                <td>Menor ou igual a</td>
+
+                                <td>5 &lt;= 3</td>
+                                <td>false</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="mb-2"></div>
+            <div class="mb-2">
+                <h1>4. Operadores Lógicos</h1>
+            </div>
+            <div class="mb-2">
+                <h3>Usados para combinar expressões condicionais.</h3>
+            </div>
+            <div class="col-md-12 mb-4">
+                <div class="table-responsive">
+                    <table class="table styled-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Operador</th>
+                                <th>Descrição</th>
+                                <th>Exemplo</th>
+                                <th>Resultado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>&amp;&amp;</td>
+                                <td>E (AND)</td>
+
+                                <td>true &amp;&amp; false</td>
+                                <td>false</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>`</td>
+                                <td><br></td>
+
+                                <td>`</td>
+                                <td>Ou (OR)</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>!</td>
+                                <td>Não (NOT)</td>
+
+                                <td>!true</td>
+                                <td>false</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="mb-2">
+                <h3>Exemplo prático:</h3>
+            </div>
+            <div class="col-md-12" id="card-1">
                 <div class="vscode-card">
                     <div class="vscode-header">
                         <div class="dots">
@@ -347,60 +477,353 @@ console.log(++y); // 6 (incrementa primeiro, depois retorna)</pre>
                             <div class="dot yellow"></div>
                             <div class="dot green"></div>
                         </div>
-                        <span>Exemplo:</span>
+                        <span>Card.Exemple</span>
                     </div>
                     <div class="vscode-content">
-                        <pre>// typeof
-console.log(typeof 42);           // "number"
-console.log(typeof "Hello");      // "string"
-console.log(typeof true);         // "boolean"
-
-// instanceof
-const data = new Date();
-console.log(data instanceof Date); // true
-console.log(data instanceof Array); // false</pre>
+                        <pre><span class="comment">// &nbsp;Exemplo&nbsp;de&nbsp;operadores&nbsp;lógicos:</span><br><span class="keyword">const</span>&nbsp;a&nbsp;=&nbsp;true;<br><span class="keyword">const</span>&nbsp;b&nbsp;=&nbsp;false;<br><br><span class="keyword">console</span>.<span class="function">log</span>(a&nbsp;&amp;&amp;&nbsp;b);&nbsp;<span class="comment">// &nbsp;false</span><br><span class="keyword">console</span>.<span class="function">log</span>(a&nbsp;||&nbsp;b);&nbsp;<span class="comment">// &nbsp;true</span><br><span class="keyword">console</span>.<span class="function">log</span>(!a);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// &nbsp;false</span></pre>
                     </div>
-                    <div class="vscode-terminal">
-                        <span>1</span>
+                    <div class="vscode-terminal" id="terminal8">
+                        C:UserProject&gt;<br><br>
+                        <pre><span>false 
+            false 
+            false</span>
+                        </pre>
                     </div>
                     <div class="vscode-footer">
-                        <button onclick="executeCode(this)">Executar Código</button>
-                        
-                    </div>
-                </div>
-            </div><div class="col-md-12"><div class="vscode-explanation"><h3></h3><p>Os operadores são fundamentais para a programação em JavaScript, permitindo que você execute cálculos, manipule variáveis, avalie condições e controle o fluxo do seu código. Desde operadores aritméticos e de comparação até os mais avançados, como lógicos e ternários, cada um tem seu papel em tornar suas aplicações mais dinâmicas e eficientes.
-<br><br>
-Praticar é essencial para entender como e quando usar cada operador. Experimente criar exemplos próprios e testar diferentes combinações no console do navegador ou em um editor de código. Quanto mais você praticar, mais natural será o uso desses operadores no dia a dia.
-<br><br>
-Compreender bem esses conceitos é um passo importante para avançar no aprendizado de JavaScript e na criação de projetos mais complexos. Vamos continuar explorando! 🚀</p></div></div></div>
-        <!-- Formulário para criar novos cards -->
-
-        <!-- footer -->
-        <footer class="site-footer bg-dark text-light py-4">
-            <div class="container">
-                <div class="row">
-                    <!-- Coluna para texto de copyright -->
-                    <div class="col-12 col-md-6 text-center text-md-left">
-                        <p class="footer-text mb-0">© 2025 - Todos os direitos reservados</p>
-                    </div>
-                    <!-- Coluna para links -->
-                    <div class="col-12 col-md-6 text-center text-md-right">
-                        <ul class="footer-links list-unstyled mb-0">
-                            <li class="d-inline-block mr-3">
-                                <a href="http://127.0.0.1:5500/createapage.html#" class="footer-link text-light">Sobre</a>
-                            </li>
-                            <li class="d-inline-block mr-3">
-                                <a href="http://127.0.0.1:5500/createapage.html#" class="footer-link text-light">Serviços</a>
-                            </li>
-                            <li class="d-inline-block">
-                                <a href="http://127.0.0.1:5500/createapage.html#" class="footer-link text-light">Contato</a>
-                            </li>
-                        </ul>
+                        <script>
+                            function card8() {
+                                terminal = document.getElementById('terminal8')
+                                terminal.innerHTML = "C:User/Project><br><br>false<br>true<br>false"
+                                if (terminal.style.display === "flex") {
+                                    terminal.style.display = "none"
+                                } else {
+                                    terminal.style.display = "flex"
+                                }
+                            }
+                        </script>
+                        <button onclick="card8()">Executar Código</button>
                     </div>
                 </div>
             </div>
-        </footer>
-        <div class="deletarCode"></div>
+            <p>Este exemplo demonstra o uso de operadores lógicos em JavaScript. O operador <code>&amp;&amp;</code>
+                (AND) retorna <code>true</code> somente se ambos os valores forem <code>true</code>. O operador
+                <code>||</code> (OR) retorna <code>true</code> se pelo menos um dos valores for <code>true</code>. O
+                operador <code>!</code> (NOT) inverte o valor booleano.
+            </p>
+
+            <div class="mb-2">
+                <h1>5. Operador Ternário</h1>
+            </div>
+            <div class="mb-2">
+                <h3>O operador ternário é uma forma simplificada de escrever uma condição if-else. Ele segue a
+                    estrutura:</h3>
+            </div>
+            <!-- Card de Código -->
+            <div class="col-md-12">
+                <div class="vscode-card">
+                    <div class="vscode-header">
+                        <div class="dots">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                        <span>Exemplo: Expressão Ternária</span>
+                    </div>
+                    <div class="vscode-content">
+                        <pre><span class="keyword">let</span>&nbsp;podeDirigir&nbsp;=&nbsp;idade&nbsp;&gt;=&nbsp;18&nbsp;?&nbsp;<span class="string">"Pode&nbsp;dirigir"</span>&nbsp;:&nbsp;<span class="string">"Não&nbsp;pode&nbsp;dirigir"</span>;</pre>
+                    </div>
+                    <div class="vscode-terminal" id='terminal'>
+                        <span>1</span>
+                    </div>
+                    <div class="vscode-footer">
+                        <script>
+
+                        </script>
+                        <button onclick="">Executar Código</button>
+                    </div>
+                </div>
+            </div>
+            <p>O código usa a expressão ternária, onde a variável "resultado" recebe "Valor Verdadeiro" se a condição
+                for verdadeira, e "Valor Falso" caso contrário.</p>
+
+            <div class="mb-2">
+                <h3>Exemplo prático:</h3>
+            </div>
+            <div class="col-md-12">
+                <div class="vscode-card">
+                    <div class="vscode-header">
+                        <div class="dots">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                        <span>Exemplo: Expressão Ternária</span>
+                    </div>
+                    <div class="vscode-content">
+                        <pre><span class="keyword">let</span>&nbsp;idade&nbsp;=&nbsp;18;<br><span class="keyword">let</span>&nbsp;podeDirigir&nbsp;=&nbsp;idade&nbsp;&gt;=&nbsp;18&nbsp;?&nbsp;<span class="string">"Pode&nbsp;dirigir"</span>&nbsp;:&nbsp;<span class="string">"Não&nbsp;pode&nbsp;dirigir"</span>;<br><br><span class="keyword">console</span>.<span class="function">log</span>(podeDirigir);&nbsp;<span class="comment">// &nbsp;Saída:&nbsp;<span class="comment">"Pode&nbsp;dirigir"</span></span></pre>
+                    </div>
+                    <div class="vscode-terminal" id='terminal1'>
+                        <span>1</span>
+                    </div>
+                    <div class="vscode-footer">
+                        <script>
+                            function card1() {
+                                terminal = document.getElementById('terminal1')
+                                terminal.innerHTML = "C:User/Project><br><br>Pode dirigir"
+                                if (terminal.style.display === "flex") {
+                                    terminal.style.display = "none"
+                                } else {
+                                    terminal.style.display = "flex"
+                                }
+                            }
+                        </script>
+                        <button onclick="card1()">Executar Código</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>O código verifica se a variável "idade" é maior ou igual a 18. Se for, retorna "Adulto", caso contrário,
+            retorna "Menor". O resultado é mostrado no console.</p>
+
+        <div class="col-md-12">
+            <div class="vscode-explanation">
+                <h3></h3>
+                <p>Se a condição for verdadeira (true), retorna o valor antes dos dois pontos (:). Caso contrário,
+                    retorna o valor após os dois pontos.</p>
+            </div>
+        </div>
+        <div class="mb-2">
+            <h1>6. Operadores de Incremento e Decremento</h1>
+        </div>
+        <div class="mb-2">
+            <h3>São usados para aumentar ou diminuir o valor de uma variável.</h3>
+        </div>
+        <div class="col-md-12 mb-4">
+            <div class="table-responsive">
+                <table class="table styled-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Operador</th>
+                            <th>Descrição</th>
+                            <th>Exemplo</th>
+                            <th>Resultado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>++</td>
+                            <td>Incrementando (+1)</td>
+
+                            <td>let x = 5; x++</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>--</td>
+                            <td>Decrementando (-1)</td>
+
+                            <td>let x = 5; x--</td>
+                            <td>4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="mb-2">
+            <h3>Importante:</h3>
+        </div>
+        <div class="col-md-12 mb-4">
+            <ul class="styled-list list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center"><span><strong>x++ ou
+                            x-- (pós-incremento/decremento)::</strong> Retorna o valor antes de alterar.</span></li>
+                <li class="list-group-item d-flex justify-content-between align-items-center"><span><strong>++x ou
+                            --x (pré-incremento/decremento)::</strong> Altera o valor antes de retornar.</span></li>
+            </ul>
+        </div>
+        <div class="mb-2">
+            <h3>Exemplo prático: javascript Copiar Editar</h3>
+        </div>
+        <!-- Card de Código -->
+        <div class="col-md-12">
+            <div class="vscode-card">
+                <div class="vscode-header">
+                    <div class="dots">
+                        <div class="dot red"></div>
+                        <div class="dot yellow"></div>
+                        <div class="dot green"></div>
+                    </div>
+                    <span>Exemplo: Incremento Pós-fixado e Pré-fixado</span>
+                </div>
+                <div class="vscode-content">
+                    <pre>
+<span class="comment">// Este exemplo mostra a diferença entre incremento pós-fixado e pré-fixado</span>
+<span class="keyword">let</span> <span class="variable">x</span> = <span class="number">5</span>;
+<span class="keyword">console</span>.<span class="function">log</span>(<span class="variable">x</span>++); <span class="comment">// 5 (retorna primeiro, depois incrementa)</span>
+<span class="keyword">console</span>.<span class="function">log</span>(<span class="variable">x</span>);   <span class="comment">// 6</span>
+
+<span class="keyword">let</span> <span class="variable">y</span> = <span class="number">5</span>;
+<span class="keyword">console</span>.<span class="function">log</span>(++<span class="variable">y</span>); <span class="comment">// 6 (incrementa primeiro, depois retorna)</span>
+            </pre>
+                </div>
+                <div class="vscode-terminal" id='terminal2'>
+                    <span>1</span>
+                </div>
+                <div class="vscode-footer">
+                    <script>
+                        function card2() {
+                            let terminal = document.getElementById('terminal2')
+                            terminal.innerHTML = "C:User/Project><br><br>5<br>6<br>6"
+                            if (terminal.style.display === "none") {
+                                terminal.style.display = "flex"
+                            } else {
+                                terminal.style.display = "none"
+                            }
+                        }
+                    </script>
+                    <button onclick="card2()">Executar Código</button>
+                </div>
+            </div>
+        </div>
+        <p>O código mostra como o operador de incremento pós-fixado (`x++`) retorna o valor antes de incrementar,
+            enquanto o operador pré-fixado (`++y`) incrementa primeiro e depois retorna o valor.</p>
+
+        <div class="mb-2">
+            <h1>7. Operadores de Tipo</h1>
+        </div>
+        <div class="mb-2">
+            <h3>Esses operadores permitem verificar o tipo de dado ou validar a relação entre objetos.</h3>
+        </div>
+        <div class="col-md-12 mb-4">
+            <div class="table-responsive">
+                <table class="table styled-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Operador</th>
+                            <th>Descrição</th>
+                            <th>Exemplo</th>
+                            <th>Resultado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>typeof</td>
+                            <td>Retorna o tipo do dado</td>
+
+                            <td>typeof "JavaScript"</td>
+                            <td>"String"</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Novo Nome</td>
+                            <td>Nova Descrição</td>
+
+                            <td>new Date() instanceof Date</td>
+                            <td>true</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="mb-2">
+            <h3>Exemplo prático:</h3>
+        </div>
+        <!-- Card de Código -->
+        <div class="col-md-12">
+            <div class="vscode-card">
+                <div class="vscode-header">
+                    <div class="dots">
+                        <div class="dot red"></div>
+                        <div class="dot yellow"></div>
+                        <div class="dot green"></div>
+                    </div>
+                    <span>Exemplo: `typeof` e `instanceof`</span>
+                </div>
+                <div class="vscode-content">
+                    <pre>
+<span class="comment">// typeof</span>
+<span class="keyword">console</span>.<span class="function">log</span>(<span class="string">typeof 42</span>);           <span class="comment">// "number"</span>
+<span class="keyword">console</span>.<span class="function">log</span>(<span class="string">typeof "Hello"</span>);      <span class="comment">// "string"</span>
+<span class="keyword">console</span>.<span class="function">log</span>(<span class="string">typeof true</span>);         <span class="comment">// "boolean"</span>
+
+<span class="comment">// instanceof</span>
+<span class="keyword">const</span> <span class="variable">data</span> = <span class="keyword">new</span> <span class="function">Date</span>();
+<span class="keyword">console</span>.<span class="function">log</span>(<span class="variable">data</span> <span class="operator">instanceof</span> <span class="function">Date</span>);  <span class="comment">// true</span>
+<span class="keyword">console</span>.<span class="function">log</span>(<span class="variable">data</span> <span class="operator">instanceof</span> <span class="function">Array</span>); <span class="comment">// false</span>
+            </pre>
+                </div>
+                <div class="vscode-terminal" id="terminal3">
+                    <span>1</span>
+                </div>
+                <div class="vscode-footer">
+                    <script>
+                        function card3() {
+                            let terminal = document.getElementById('terminal3')
+                            terminal.innerHTML = "C:User/Project><br><br>number<br>string<br>boolean<br>true<br>false"
+                            if (terminal.style.display === "none") {
+                                terminal.style.display = "flex"
+                            } else {
+                                terminal.style.display = "none"
+                            }
+                        }
+                    </script>
+                    <button onclick="card3()">Executar Código</button>
+                </div>
+            </div>
+        </div>
+        <p>O operador `typeof` é utilizado para verificar o tipo de uma variável, enquanto `instanceof` verifica se
+            um objeto é uma instância de uma determinada classe ou construtor.</p>
+
+        <div class="col-md-12">
+            <div class="vscode-explanation">
+                <h3></h3>
+                <p>Os operadores são fundamentais para a programação em JavaScript, permitindo que você execute
+                    cálculos, manipule variáveis, avalie condições e controle o fluxo do seu código. Desde
+                    operadores aritméticos e de comparação até os mais avançados, como lógicos e ternários, cada um
+                    tem seu papel em tornar suas aplicações mais dinâmicas e eficientes.
+                    <br><br>
+                    Praticar é essencial para entender como e quando usar cada operador. Experimente criar exemplos
+                    próprios e testar diferentes combinações no console do navegador ou em um editor de código.
+                    Quanto mais você praticar, mais natural será o uso desses operadores no dia a dia.
+                    <br><br>
+                    Compreender bem esses conceitos é um passo importante para avançar no aprendizado de JavaScript
+                    e na criação de projetos mais complexos. Vamos continuar explorando! 🚀
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Formulário para criar novos cards -->
+
+    <!-- footer -->
+    <footer class="site-footer bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <!-- Coluna para texto de copyright -->
+                <div class="col-12 col-md-6 text-center text-md-left">
+                    <p class="footer-text mb-0">© 2025 - Todos os direitos reservados</p>
+                </div>
+                <!-- Coluna para links -->
+                <div class="col-12 col-md-6 text-center text-md-right">
+                    <ul class="footer-links list-unstyled mb-0">
+                        <li class="d-inline-block mr-3">
+                            <a href="http://127.0.0.1:5500/createapage.html#" class="footer-link text-light">Sobre</a>
+                        </li>
+                        <li class="d-inline-block mr-3">
+                            <a href="http://127.0.0.1:5500/createapage.html#"
+                                class="footer-link text-light">Serviços</a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a href="http://127.0.0.1:5500/createapage.html#" class="footer-link text-light">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="deletarCode"></div>
 
     </div>
 
@@ -411,7 +834,7 @@ Compreender bem esses conceitos é um passo importante para avançar no aprendiz
 
 
 
-    
+
     <div class="deletarCode">
         <script>
             // Função para criar um card dinamicamente
@@ -789,44 +1212,46 @@ Compreender bem esses conceitos é um passo importante para avançar no aprendiz
         }
     </script>
 
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
 
 
-</body></html>
+</body>
+
+</html>

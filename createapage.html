@@ -84,7 +84,39 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item">
+                            <script>
+                                function aulas() {
+                                    let menu = document.getElementById('menu'); // Obtém o menu pelo ID
+                                    let items = menu.querySelectorAll("ul li"); // Pega todos os itens da lista
+                                    let h1 = menu.querySelector("h1"); // Pega o h1
+                                    let h3 = menu.querySelector("h3"); // Pega o h3
+
+                                    if (menu.classList.contains("show")) {
+                                        // Se o menu já está visível, apenas remove a classe para escondê-lo sem animação
+                                        menu.classList.remove("show");
+
+                                    } else {
+                                        // Se o menu está fechado, abre ele com animação normal
+                                        menu.classList.add("show");
+
+                                        // Aplica animação de entrada para h1 e h3
+                                        h1.style.animation = `slideInText 0.4s ease forwards`;
+                                        h1.style.animationDelay = "0.1s";  // h1 aparece antes
+
+                                        h3.style.animation = `slideInText 0.4s ease forwards`;
+                                        h3.style.animationDelay = "0.1s";  // h3 aparece logo depois
+
+                                        // Aplica animação de entrada para os itens da lista
+                                        items.forEach((item, index) => {
+                                            item.style.animation = `slideIn 0.3s ease forwards`;
+                                            item.style.animationDelay = `${0.1 * (index + 1) + 0.1}s`; // Adiciona delay progressivo e espera o h1 e h3 aparecerem
+                                        });
+                                    }
+                                }
+
+                            </script><a class="nav-link" onclick="aulas()" href="#">Aulas</a>
+                        </li>
                         <li class="nav-item"><a class="nav-link" href="#">Sobre</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button"
@@ -112,6 +144,24 @@
                 </div>
             </div>
         </nav>
+        <div class="menu" id="menu">
+            <h1>JavaScript</h1>
+            <h3>Modulo 01</h3>
+            <ul>
+                <li><a href='1.JavaScript_Tipos.html'>1.JavaScript_Tipos.html</a></li>
+                <li><a href='2.VariaveisJs.html'>2.VariaveisJs.html</a></li>
+                <li><a href='3.TrutyAndFalse.html'>3.TrutyAndFalse.html</a></li>
+                <li><a href='4.Conversão.html'>4.Conversão.html</a></li>
+                <li><a href='5.Errors.html'>5.Errors.html</a></li>
+                <li><a href='6.Console.api.html'>6.Console.api.html</a></li>
+                <li><a href='7.Operadores.html'>7.Operadores.html</a></li>
+                <li><a href='8.TemplateL.html'>8.TemplateL.html</a></li>
+                <li><a href='9.Funções.html'>9.Funções.html</a></li>
+                <li><a href='10.Parametros.html'>10.Parametros.html</a></li>
+                <li><a href='11.Expressões_de_funções.html'>11.Expressões_de_funções.html</a></li>
+                <li><a href='12.Arrow_function.html'>12.Arrow_function.html</a></li>
+            </ul>
+        </div>
         <!-- Container para os cards -->
         <div class="row" id="cards-container"></div>
         <!-- Formulário para criar novos cards -->
@@ -252,60 +302,81 @@
     </div>
     <div class="deletarCode">
         <script>
-            // Função para criar um card dinamicamente
+            let num = 1;
+
+            function highlightCode(codeContent) {
+                // Substituindo espaços em branco por &nbsp;
+                codeContent = codeContent.replace(/ /g, '&nbsp;');
+                // Substituindo strings com aspas duplas
+                codeContent = codeContent.replace(/"([^"]+)"/g, '<span class="string">"$1"</span>'); // Strings com aspas duplas
+
+                // Substituindo strings com aspas simples
+                codeContent = codeContent.replace(/'([^']+)'/g, '<span class="string">\'$1\'</span>'); // Strings com aspas simples
+                codeContent = codeContent.replace(/`([^`]+)`/g, '<span class="string">\`$1\`</span>'); // Strings com aspas simples
+
+                // Substituindo comentários
+                codeContent = codeContent.replace(/\/\/(.*)$/gm, '<span class="comment">// $1</span>'); // Comentários
+
+                // Substituindo palavras-chave var, let, const
+                codeContent = codeContent.replace(/\b(var|let|const|console)\b/g, '<span class="keyword">$1</span>'); // Palavras-chave
+                codeContent = codeContent.replace(/\b(function|log)\b/g, '<span class="function">$1</span>');
+
+                // Substituindo palavras entre # com a tag <span class="keyword">
+                codeContent = codeContent.replace(/#([^#]+)#/g, '<span class="keyword">$1</span>'); // Palavras entre #
+                codeContent = codeContent.replace(/\n/g, '<br>'); // Adiciona <br> nas quebras de linha do código
+
+                return codeContent;
+            }
+
+
+
             function createCodeCard(fileName, codeContent, terminalContent) {
                 const container = document.getElementById("cards-container");
 
                 const card = document.createElement("div");
                 card.className = "col-md-12";
+                card.id = `card-${num}`;
+
+                // Aplicando a formatação no código
+                const formattedCodeContent = highlightCode(codeContent);
 
                 card.innerHTML = `
-                <div class="vscode-card">
-                    <div class="vscode-header">
-                        <div class="dots">
-                            <div class="dot red"></div>
-                            <div class="dot yellow"></div>
-                            <div class="dot green"></div>
-                        </div>
-                        <span>${fileName}</span>
-                    </div>
-                    <div class="vscode-content">
-                        <pre>${codeContent}</pre>
-                    </div>
-                    <div class="vscode-terminal">
-                        <span>${terminalContent}</span>
-                    </div>
-                    <div class="vscode-footer">
-                        <button onclick="executeCode(this)">Executar Código</button>
-                        <button onclick="deleteCard(this)" id="btndel">Deletar Card</button>
-                    </div>
-                </div>
-            `;
+    <div class="vscode-card">
+        <div class="vscode-header">
+            <div class="dots">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+            </div>
+            <span>${fileName}</span>
+        </div>
+        <div class="vscode-content">
+            <pre>${formattedCodeContent}</pre>
+        </div>
+        <div class="vscode-terminal" id="terminal${num}">
+            C:UserProject><br><br><pre><span>${terminalContent}</span>
+            </pre>
+        </div>
+        <div class="vscode-footer">
+            <button id="btn-${num}">Executar Código</button>
+        </div>
+    </div>`;
 
-                container.appendChild(card);
+                container.appendChild(card); // Adiciona o card ao DOM antes de capturar elementos
+
+                // Capturar botão e terminal DEPOIS de adicionar ao DOM
+                const btn = document.getElementById(`btn-${num}`);
+                const terminal = document.getElementById(`terminal${num}`);
+
+                btn.addEventListener("click", function () {
+                    terminal.style.display = terminal.style.display === "flex" ? "none" : "flex";
+                });
+
+                num++; // Incrementa o ID para o próximo card
             }
 
-            // Função para executar o código de um card
-            function executeCode(button) {
-                const card = button.closest(".vscode-card");
-                const codeContent = card.querySelector(".vscode-content pre").textContent;
-                const terminal = card.querySelector(".vscode-terminal");
 
-                try {
-                    const result = eval(codeContent);
-                    terminal.textContent = result !== undefined ? result : "Código executado com sucesso.";
-                } catch (error) {
-                    terminal.textContent = `Erro: ${error.message}`;
-                }
-            }
-
-            // Função para deletar um card
-            function deleteCard(button) {
-                const card = button.closest(".col-md-12");
-                card.remove();
-            }
-
-            // Função para adicionar um novo card usando o formulário
+            // Função para adicionar um novo card
             function addNewCard() {
                 const fileName = document.getElementById("file-name").value.trim();
                 const codeContent = document.getElementById("code-content").value.trim();
@@ -317,8 +388,6 @@
                 }
 
                 createCodeCard(fileName, codeContent, terminalContent);
-
-
             }
 
             // Função para adicionar o conteúdo de explicação no card
@@ -344,7 +413,7 @@
                 const deleteButton = document.createElement('button');
                 deleteButton.textContent = 'Deletar';
                 deleteButton.classList.add('btn', 'btn-danger', 'delete-button');
-                deleteButton.id = 'btndel';  // Corrigido aqui
+                deleteButton.id = 'btndel'; // Corrigido aqui
                 deleteButton.style.marginTop = '10px';
 
                 // Adicionar funcionalidade ao botão de deletar
@@ -392,7 +461,7 @@
                     // Botão para deletar o item individual
                     const deleteLiButton = document.createElement('button');
                     deleteLiButton.classList.add('btn', 'btn-danger', 'btn-sm');
-                    deleteLiButton.id = 'btndel';  // Corrigido aqui
+                    deleteLiButton.id = 'btndel'; // Corrigido aqui
                     deleteLiButton.textContent = 'Deletar';
                     deleteLiButton.onclick = () => li.remove();
 
@@ -403,7 +472,7 @@
                 // Botão para deletar a lista inteira
                 const deleteUlButton = document.createElement('button');
                 deleteUlButton.classList.add('btn', 'btn-danger', 'mt-2');
-                deleteUlButton.id = 'btndel';  // Corrigido aqui
+                deleteUlButton.id = 'btndel'; // Corrigido aqui
                 deleteUlButton.textContent = 'Deletar Lista';
                 deleteUlButton.onclick = () => colDiv.remove();
 
@@ -453,7 +522,7 @@
         <td contenteditable="true">Exemplo</td>
         <td contenteditable="true">Descrição inicial</td>
         <td contenteditable="true"><span class="status active">Ativo</span></td>
-    `;
+        `;
 
                 // Adicionar a tabela à estrutura
                 tableResponsiveDiv.appendChild(table);
@@ -478,7 +547,7 @@
         <td contenteditable="true">Novo Nome</td>
         <td contenteditable="true">Nova Descrição</td>
         <td contenteditable="true"><span class="status active">Ativo</span></td>
-    `;
+        `;
             }
 
             // Função para adicionar uma coluna à tabela
@@ -588,7 +657,7 @@
                 // Criar o botão para deletar o título
                 const deleteButton = document.createElement('button');
                 deleteButton.classList.add('btn', 'btn-danger', 'ml-3');
-                deleteButton.id = 'btndel';  // Corrigido aqui
+                deleteButton.id = 'btndel'; // Corrigido aqui
                 deleteButton.textContent = 'Deletar';
 
                 // Adicionar evento de deletação

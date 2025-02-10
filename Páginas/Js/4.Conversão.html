@@ -87,7 +87,39 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5500/createapage.html#">Home</a>
+                        <li class="nav-item">
+                            <script>
+                                function aulas() {
+                                    let menu = document.getElementById('menu'); // Obtém o menu pelo ID
+                                    let items = menu.querySelectorAll("ul li"); // Pega todos os itens da lista
+                                    let h1 = menu.querySelector("h1"); // Pega o h1
+                                    let h3 = menu.querySelector("h3"); // Pega o h3
+
+                                    if (menu.classList.contains("show")) {
+                                        // Se o menu já está visível, apenas remove a classe para escondê-lo sem animação
+                                        menu.classList.remove("show");
+
+                                    } else {
+                                        // Se o menu está fechado, abre ele com animação normal
+                                        menu.classList.add("show");
+
+                                        // Aplica animação de entrada para h1 e h3
+                                        h1.style.animation = `slideInText 0.4s ease forwards`;
+                                        h1.style.animationDelay = "0.1s";  // h1 aparece antes
+
+                                        h3.style.animation = `slideInText 0.4s ease forwards`;
+                                        h3.style.animationDelay = "0.1s";  // h3 aparece logo depois
+
+                                        // Aplica animação de entrada para os itens da lista
+                                        items.forEach((item, index) => {
+                                            item.style.animation = `slideIn 0.3s ease forwards`;
+                                            item.style.animationDelay = `${0.1 * (index + 1) + 0.1}s`; // Adiciona delay progressivo e espera o h1 e h3 aparecerem
+                                        });
+                                    }
+                                }
+                            </script><a class="nav-link" onclick="aulas()" href="#">Aulas</a>
+                        </li>
+
                         </li>
                         <li class="nav-item"><a class="nav-link"
                                 href="http://127.0.0.1:5500/createapage.html#">Sobre</a></li>
@@ -123,6 +155,25 @@
                 </div>
             </div>
         </nav>
+        <div class="menu" id="menu">
+            <h1>JavaScript</h1>
+            <h3>Modulo 01</h3>
+            <ul>
+                <li><a href='1.JavaScript_Tipos.html'>1.JavaScript_Tipos.html</a></li>
+                <li><a href='2.VariaveisJs.html'>2.VariaveisJs.html</a></li>
+                <li><a href='3.TrutyAndFalse.html'>3.TrutyAndFalse.html</a></li>
+                <li><a href='4.Conversão.html'>4.Conversão.html</a></li>
+                <li><a href='5.Errors.html'>5.Errors.html</a></li>
+                <li><a href='6.Console.api.html'>6.Console.api.html</a></li>
+                <li><a href='7.Operadores.html'>7.Operadores.html</a></li>
+                <li><a href='8.TemplateL.html'>8.TemplateL.html</a></li>
+                <li><a href='9.Funções.html'>9.Funções.html</a></li>
+                <li><a href='10.Parametros.html'>10.Parametros.html</a></li>
+                <li><a href='11.Expressões_de_funções.html'>11.Expressões_de_funções.html</a></li>
+                <li><a href='12.Arrow_function.html'>12.Arrow_function.html</a></li>
+            </ul>
+        </div>
+
         <!-- Container para os cards -->
         <div class="row" id="cards-container">
             <div class="col-md-12">
@@ -138,11 +189,14 @@
             <div class="col-md-12 mb-4">
                 <ul class="styled-list list-group">
                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <span><strong>String():</strong> Converte um valor para uma string.</span></li>
+                        <span><strong>String():</strong> Converte um valor para uma string.</span>
+                    </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <span><strong>Number():</strong> Converte um valor para um número.</span></li>
+                        <span><strong>Number():</strong> Converte um valor para um número.</span>
+                    </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <span><strong>Boolean():</strong> Converte um valor para um booleano.</span></li>
+                        <span><strong>Boolean():</strong> Converte um valor para um booleano.</span>
+                    </li>
                 </ul>
             </div>
             <div class="mb-2"></div>
@@ -160,21 +214,22 @@
                         <span>Conversão Explícita:</span>
                     </div>
                     <div class="vscode-content">
-                        <pre>const num = 42;
-const str = String(num); // "42"
-
-const bool = Boolean(0); // false
-const numFromString = Number("3.14"); // 3.14</pre>
+                        <pre>
+<span class="keyword">const</span> <span class="variable">num</span> = <span class="literal">42</span>;
+<span class="keyword">const</span> <span class="variable">str</span> = <span class="function">String</span>(<span class="variable">num</span>); <span class="comment">// "42"</span>
+            
+<span class="keyword">const</span> <span class="variable">bool</span> = <span class="function">Boolean</span>(<span class="literal">0</span>); <span class="comment">// false</span>
+<span class="keyword">const</span> <span class="variable">numFromString</span> = <span class="function">Number</span>(<span class="literal">"3.14"</span>); <span class="comment">// 3.14</span>
+                        </pre>
                     </div>
                     <div class="vscode-terminal">
-                        <span>1</span>
+                        <span>false <br> 3.14</span>
                     </div>
                     <div class="vscode-footer">
-                        <button onclick="executeCode(this)">Executar Código</button>
-
                     </div>
                 </div>
             </div>
+
             <div class="col-md-12">
                 <div class="vscode-explanation">
                     <h3>Conversão Implícita:</h3>
@@ -196,19 +251,20 @@ const numFromString = Number("3.14"); // 3.14</pre>
                         <span>Conversão Implícita</span>
                     </div>
                     <div class="vscode-content">
-                        <pre>const result1 = "5" + 2; // "52" (número convertido para string)
-const result2 = "5" - 2; // 3 (string convertida para número)
-const result3 = true + 1; // 2 (true convertido para 1)</pre>
+                        <pre>
+<span class="keyword">const</span> <span class="variable">result1</span> = <span class="literal">"5"</span> + <span class="literal">2</span>; <span class="comment">// "52" (número convertido para string)</span>
+<span class="keyword">const</span> <span class="variable">result2</span> = <span class="literal">"5"</span> - <span class="literal">2</span>; <span class="comment">// 3 (string convertida para número)</span>
+<span class="keyword">const</span> <span class="variable">result3</span> = <span class="literal">true</span> + <span class="literal">1</span>; <span class="comment">// 2 (true convertido para 1)</span>
+                        </pre>
                     </div>
                     <div class="vscode-terminal">
-                        <span>1</span>
+                        <span>"52" <br> 3 <br> 2</span>
                     </div>
                     <div class="vscode-footer">
-                        <button onclick="executeCode(this)">Executar Código</button>
-
                     </div>
                 </div>
             </div>
+
             <div class="col-md-12">
                 <div class="vscode-explanation">
                     <h3>Valores que se Comportam Estranhamente</h3>
@@ -220,7 +276,8 @@ const result3 = true + 1; // 2 (true convertido para 1)</pre>
                     <li class="list-group-item d-flex justify-content-between align-items-center"><span><strong>null
                                 para número::</strong> 0</span></li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <span><strong>undefined para número::</strong> NaN (Not-a-Number)</span></li>
+                        <span><strong>undefined para número::</strong> NaN (Not-a-Number)</span>
+                    </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center"><span><strong>Strings
                                 vazias para número::</strong> 0</span></li>
                 </ul>
@@ -239,19 +296,20 @@ const result3 = true + 1; // 2 (true convertido para 1)</pre>
                         <span>Valores que se Comportam Estranhamente</span>
                     </div>
                     <div class="vscode-content">
-                        <pre>Number(null); // 0
-Number(undefined); // NaN
-Number(""); // 0</pre>
+                        <pre>
+<span class="keyword">Number</span>(<span class="literal">null</span>); <span class="comment">// 0</span>
+<span class="keyword">Number</span>(<span class="literal">undefined</span>); <span class="comment">// NaN</span>
+<span class="keyword">Number</span>(<span class="literal">""</span>); <span class="comment">// 0</span>
+                        </pre>
                     </div>
                     <div class="vscode-terminal">
-                        <span>1</span>
+                        <span>0 <br> NaN <br> 0</span>
                     </div>
                     <div class="vscode-footer">
-                        <button onclick="executeCode(this)">Executar Código</button>
-
                     </div>
                 </div>
             </div>
+
             <div class="col-md-12">
                 <div class="vscode-explanation">
                     <h3>Dicas</h3>
@@ -262,10 +320,12 @@ Number(""); // 0</pre>
                 <ul class="styled-list list-group">
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         <span><strong>●:</strong> Sempre que possível prefira a conversão explícita para evitar
-                            comportamentos inesperados.</span></li>
+                            comportamentos inesperados.</span>
+                    </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         <span><strong>●:</strong> Use o operador typeof para verificar o tipo de uma variável antes e
-                            depois da conversão.</span></li>
+                            depois da conversão.</span>
+                    </li>
                 </ul>
             </div>
             <div class="mb-2">
@@ -282,21 +342,34 @@ Number(""); // 0</pre>
                         <span>typeof</span>
                     </div>
                     <div class="vscode-content">
-                        <pre>const value = "123";
-console.log(typeof value); // "string"
-
-const numberValue = Number(value);
-console.log(typeof numberValue); // "number"</pre>
+                        <pre>
+<span class="keyword">const</span> value = <span class="literal">"123"</span>;
+<span class="keyword">console</span>.log(typeof value); <span class="comment">// "string"</span>
+            
+<span class="keyword">const</span> numberValue = <span class="keyword">Number</span>(value);
+<span class="keyword">console</span>.log(typeof numberValue); <span class="comment">// "number"</span>
+                        </pre>
                     </div>
-                    <div class="vscode-terminal">
-                        <span>1</span>
+                    <div class="vscode-terminal" id="terminal">
+
                     </div>
                     <div class="vscode-footer">
-                        <button onclick="executeCode(this)">Executar Código</button>
-
+                        <script>
+                            function card() {
+                                let terminal1 = document.getElementById('terminal')
+                                terminal1.innerHTML = 'C:UserProject><br><br>string<br>number';
+                                if (terminal1.style.display === "flex") {
+                                    terminal1.style.display = "none"
+                                } else {
+                                    terminal1.style.display = "flex"
+                                }
+                            }
+                        </script>
+                        <button onclick="card(this)">Executar Código</button>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-12">
                 <div class="vscode-explanation">
                     <h3></h3>
@@ -341,432 +414,3 @@ console.log(typeof numberValue); // "number"</pre>
                 </div>
             </div>
         </footer>
-        <div class="deletarCode"></div>
-
-    </div>
-
-
-
-
-
-
-
-
-
-    <div class="deletarCode">
-        <script>
-            // Função para criar um card dinamicamente
-            function createCodeCard(fileName, codeContent, terminalContent) {
-                const container = document.getElementById("cards-container");
-
-                const card = document.createElement("div");
-                card.className = "col-md-12";
-
-                card.innerHTML = `
-                <div class="vscode-card">
-                    <div class="vscode-header">
-                        <div class="dots">
-                            <div class="dot red"></div>
-                            <div class="dot yellow"></div>
-                            <div class="dot green"></div>
-                        </div>
-                        <span>${fileName}</span>
-                    </div>
-                    <div class="vscode-content">
-                        <pre>${codeContent}</pre>
-                    </div>
-                    <div class="vscode-terminal">
-                        <span>${terminalContent}</span>
-                    </div>
-                    <div class="vscode-footer">
-                        <button onclick="executeCode(this)">Executar Código</button>
-                        <button onclick="deleteCard(this)" id="btndel">Deletar Card</button>
-                    </div>
-                </div>
-            `;
-
-                container.appendChild(card);
-            }
-
-            // Função para executar o código de um card
-            function executeCode(button) {
-                const card = button.closest(".vscode-card");
-                const codeContent = card.querySelector(".vscode-content pre").textContent;
-                const terminal = card.querySelector(".vscode-terminal");
-
-                try {
-                    const result = eval(codeContent);
-                    terminal.textContent = result !== undefined ? result : "Código executado com sucesso.";
-                } catch (error) {
-                    terminal.textContent = `Erro: ${error.message}`;
-                }
-            }
-
-            // Função para deletar um card
-            function deleteCard(button) {
-                const card = button.closest(".col-md-12");
-                card.remove();
-            }
-
-            // Função para adicionar um novo card usando o formulário
-            function addNewCard() {
-                const fileName = document.getElementById("file-name").value.trim();
-                const codeContent = document.getElementById("code-content").value.trim();
-                const terminalContent = document.getElementById("terminal-content").value.trim();
-
-                if (!fileName || !codeContent || !terminalContent) {
-                    alert("Por favor, preencha todos os campos!");
-                    return;
-                }
-
-                createCodeCard(fileName, codeContent, terminalContent);
-
-
-            }
-
-            // Função para adicionar o conteúdo de explicação no card
-            function addContent(event) {
-                event.preventDefault(); // Evitar o envio do formulário
-
-                const title = document.getElementById("codeTitle").value.trim();
-                const explanation = document.getElementById("codeExplanation").value.trim();
-
-                const colDiv = document.createElement('div');
-                colDiv.classList.add('col-md-12');
-
-                const vscodeExplanationDiv = document.createElement('div');
-                vscodeExplanationDiv.classList.add('vscode-explanation');
-
-                const h3 = document.createElement('h3');
-                h3.textContent = title;
-
-                const p1 = document.createElement('p');
-                p1.innerHTML = explanation;
-
-                // Criar botão de deletar
-                const deleteButton = document.createElement('button');
-                deleteButton.textContent = 'Deletar';
-                deleteButton.classList.add('btn', 'btn-danger', 'delete-button');
-                deleteButton.id = 'btndel';  // Corrigido aqui
-                deleteButton.style.marginTop = '10px';
-
-                // Adicionar funcionalidade ao botão de deletar
-                deleteButton.addEventListener('click', function () {
-                    colDiv.remove(); // Remove o card do DOM
-                });
-
-                // Adicionar elementos ao card
-                vscodeExplanationDiv.appendChild(h3);
-                vscodeExplanationDiv.appendChild(p1);
-                vscodeExplanationDiv.appendChild(deleteButton);
-                colDiv.appendChild(vscodeExplanationDiv);
-
-                // Adicionar o card ao container
-                document.getElementById('cards-container').appendChild(colDiv);
-            }
-            function addDynamicList(event) {
-                event.preventDefault(); // Evitar o envio do formulário
-
-                // Obter os valores dos inputs e transformá-los em arrays
-                const prefixes = document.getElementById("listPrefix").value.trim().split(',');
-                const listItems = document.getElementById("listItems").value.trim().split(',');
-
-                // Verificar se os arrays possuem o mesmo tamanho
-                if (prefixes.length !== listItems.length) {
-                    alert("O número de prefixos e itens deve ser igual!");
-                    return;
-                }
-
-                // Criar o container para a lista
-                const colDiv = document.createElement('div');
-                colDiv.classList.add('col-md-12', 'mb-4');
-
-                const ul = document.createElement('ul');
-                ul.classList.add('styled-list', 'list-group');
-
-                // Adicionar os itens da lista pareando os prefixos com os itens
-                prefixes.forEach((prefix, index) => {
-                    const li = document.createElement('li');
-                    li.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center'); // Estilo do Bootstrap
-
-                    // Preencher a `li` com o prefixo e o item correspondente
-                    li.innerHTML = `<span><strong>${prefix.trim()}:</strong> ${listItems[index].trim()}</span>`;
-
-                    // Botão para deletar o item individual
-                    const deleteLiButton = document.createElement('button');
-                    deleteLiButton.classList.add('btn', 'btn-danger', 'btn-sm');
-                    deleteLiButton.id = 'btndel';  // Corrigido aqui
-                    deleteLiButton.textContent = 'Deletar';
-                    deleteLiButton.onclick = () => li.remove();
-
-                    li.appendChild(deleteLiButton);
-                    ul.appendChild(li);
-                });
-
-                // Botão para deletar a lista inteira
-                const deleteUlButton = document.createElement('button');
-                deleteUlButton.classList.add('btn', 'btn-danger', 'mt-2');
-                deleteUlButton.id = 'btndel';  // Corrigido aqui
-                deleteUlButton.textContent = 'Deletar Lista';
-                deleteUlButton.onclick = () => colDiv.remove();
-
-                // Adicionar a lista e o botão ao container
-                colDiv.appendChild(ul);
-                colDiv.appendChild(deleteUlButton);
-                document.getElementById('cards-container').appendChild(colDiv);
-
-
-            }
-
-            let table; // Variável global para a tabela dinâmica
-
-            // Função para adicionar uma tabela dinâmica
-            function addDynamicTable() {
-                const container = document.getElementById("table-container");
-                container.innerHTML = ""; // Limpar o container para evitar múltiplas tabelas
-
-                // Criar a estrutura base da tabela
-                const colDiv = document.createElement("div");
-                colDiv.classList.add("col-md-12");
-
-                const tableResponsiveDiv = document.createElement("div");
-                tableResponsiveDiv.classList.add("table-responsive");
-
-                table = document.createElement("table");
-                table.classList.add("table", "table-striped-columns", "styled-table");
-
-                // Criar o cabeçalho da tabela
-                const thead = table.createTHead();
-                const headerRow = thead.insertRow();
-                const headers = ["#", "Nome", "Descrição", "Status"];
-                headers.forEach(headerText => {
-                    const th = document.createElement("th");
-                    th.textContent = headerText;
-                    headerRow.appendChild(th);
-                });
-
-                // Criar o corpo da tabela
-                const tbody = table.createTBody();
-
-                // Adicionar uma linha inicial ao corpo da tabela
-                const row = tbody.insertRow();
-                row.innerHTML = `
-        <td>1</td>
-        <td contenteditable="true">Exemplo</td>
-        <td contenteditable="true">Descrição inicial</td>
-        <td contenteditable="true"><span class="status active">Ativo</span></td>
-    `;
-
-                // Adicionar a tabela à estrutura
-                tableResponsiveDiv.appendChild(table);
-                colDiv.appendChild(tableResponsiveDiv);
-                container.appendChild(colDiv);
-            }
-
-            // Função para adicionar uma linha à tabela
-            function addRow() {
-                if (!table) {
-                    alert("Por favor, adicione uma tabela primeiro!");
-                    return;
-                }
-
-                const tbody = table.tBodies[0];
-                const rowCount = tbody.rows.length + 1;
-                const row = tbody.insertRow();
-
-                // Adicionar células editáveis à nova linha
-                row.innerHTML = `
-        <td>${rowCount}</td>
-        <td contenteditable="true">Novo Nome</td>
-        <td contenteditable="true">Nova Descrição</td>
-        <td contenteditable="true"><span class="status active">Ativo</span></td>
-    `;
-            }
-
-            // Função para adicionar uma coluna à tabela
-            function addColumn() {
-                if (!table) {
-                    alert("Por favor, adicione uma tabela primeiro!");
-                    return;
-                }
-
-                // Adicionar uma nova célula ao cabeçalho
-                const headerRow = table.tHead.rows[0];
-                const th = document.createElement("th");
-                th.textContent = `Nova Coluna`;
-                headerRow.appendChild(th);
-
-                // Adicionar uma nova célula a cada linha do corpo
-                const tbody = table.tBodies[0];
-                for (const row of tbody.rows) {
-                    const cell = row.insertCell();
-                    cell.textContent = "Novo Valor";
-                    cell.contentEditable = "true";
-                }
-            }
-
-            // Função para deletar uma linha
-            function deleteRow() {
-                if (!table) {
-                    alert("Por favor, adicione uma tabela primeiro!");
-                    return;
-                }
-
-                const tbody = table.tBodies[0];
-                if (tbody.rows.length > 0) {
-                    tbody.deleteRow(tbody.rows.length - 1); // Deleta a última linha
-                } else {
-                    alert("Não há linhas para excluir!");
-                }
-            }
-
-            // Função para deletar uma coluna
-            function deleteColumn() {
-                if (!table) {
-                    alert("Por favor, adicione uma tabela primeiro!");
-                    return;
-                }
-
-                const headerRow = table.tHead.rows[0];
-                if (headerRow.cells.length > 0) {
-                    const columnIndex = headerRow.cells.length - 1; // Índice da última coluna
-                    headerRow.deleteCell(columnIndex);
-
-                    const tbody = table.tBodies[0];
-                    for (const row of tbody.rows) {
-                        row.deleteCell(columnIndex);
-                    }
-                } else {
-                    alert("Não há colunas para excluir!");
-                }
-            }
-
-            // Função para finalizar a tabela
-            function finalizeTable() {
-                if (!table) {
-                    alert("Por favor, adicione uma tabela primeiro!");
-                    return;
-                }
-
-                // Clonar a tabela e torná-la não modificável
-                const finalizedTable = table.cloneNode(true);
-                finalizedTable.classList.remove("table-striped-columns");
-                const cells = finalizedTable.querySelectorAll("[contenteditable]");
-                cells.forEach(cell => cell.removeAttribute("contenteditable"));
-
-                // Adicionar a tabela finalizada ao cards-container
-                const cardsContainer = document.getElementById("cards-container");
-                const cardDiv = document.createElement("div");
-                cardDiv.classList.add("col-md-12", "mb-4");
-
-                const tableResponsiveDiv = document.createElement("div");
-                tableResponsiveDiv.classList.add("table-responsive");
-                tableResponsiveDiv.appendChild(finalizedTable);
-
-                cardDiv.appendChild(tableResponsiveDiv);
-                cardsContainer.appendChild(cardDiv);
-
-                // Remover a tabela atual
-                const tableContainer = document.getElementById("table-container");
-                tableContainer.innerHTML = "";
-                table = null; // Limpa a referência da tabela atual
-            }
-            // Função para adicionar títulos dinâmicos
-            function addDynamicTitle() {
-                const titleText = document.getElementById("titleText").value.trim();
-                const titleLevel = document.getElementById("titleLevel").value;
-
-                if (!titleText) {
-                    alert("Por favor, insira o texto do título!");
-                    return;
-                }
-
-                // Criar o título com o nível selecionado
-                const titleElement = document.createElement(`h${titleLevel}`);
-                titleElement.textContent = titleText;
-
-                // Criar o botão para deletar o título
-                const deleteButton = document.createElement('button');
-                deleteButton.classList.add('btn', 'btn-danger', 'ml-3');
-                deleteButton.id = 'btndel';  // Corrigido aqui
-                deleteButton.textContent = 'Deletar';
-
-                // Adicionar evento de deletação
-                deleteButton.onclick = function () {
-                    titleElement.remove(); // Deleta o título
-                    deleteButton.remove(); // Deleta o botão
-                };
-
-                // Adicionar o título e o botão ao container
-                const titlesContainer = document.getElementById("cards-container");
-                const titleWrapper = document.createElement('div');
-                titleWrapper.classList.add('mb-2');
-                titleWrapper.appendChild(titleElement);
-                titleWrapper.appendChild(deleteButton);
-
-                titlesContainer.appendChild(titleWrapper);
-
-            }
-
-
-
-
-        </script>
-    </div>
-    <script>
-        function deletarElementos() {
-            // Deletar todos os elementos com id 'btndel'
-            const btnsDel = document.querySelectorAll('#btndel');
-            btnsDel.forEach(btn => btn.remove());
-
-            // Deletar o conteúdo da div com a classe 'deletarCode'
-            const divDeletar = document.querySelector('.deletarCode');
-            if (divDeletar) {
-                divDeletar.innerHTML = ''; // Limpar o conteúdo
-            }
-        }
-    </script>
-
-    <!-- Code injected by live-server -->
-    <script>
-        // <![CDATA[  <-- For SVG support
-        if ('WebSocket' in window) {
-            (function () {
-                function refreshCSS() {
-                    var sheets = [].slice.call(document.getElementsByTagName("link"));
-                    var head = document.getElementsByTagName("head")[0];
-                    for (var i = 0; i < sheets.length; ++i) {
-                        var elem = sheets[i];
-                        var parent = elem.parentElement || head;
-                        parent.removeChild(elem);
-                        var rel = elem.rel;
-                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-                        }
-                        parent.appendChild(elem);
-                    }
-                }
-                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-                var address = protocol + window.location.host + window.location.pathname + '/ws';
-                var socket = new WebSocket(address);
-                socket.onmessage = function (msg) {
-                    if (msg.data == 'reload') window.location.reload();
-                    else if (msg.data == 'refreshcss') refreshCSS();
-                };
-                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-                    console.log('Live reload enabled.');
-                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-                }
-            })();
-        }
-        else {
-            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-        }
-        // ]]>
-    </script>
-
-
-</body>
-
-</html>

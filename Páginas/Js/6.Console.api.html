@@ -70,6 +70,7 @@
         #final {
             font-size: 55px;
             margin-top: 150px;
+            color: red;
         }
     </style>
 </head>
@@ -87,7 +88,39 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5500/createapage.html#">Home</a>
+                        <li class="nav-item">
+                            <script>
+                                function aulas() {
+                                    let menu = document.getElementById('menu'); // Obtém o menu pelo ID
+                                    let items = menu.querySelectorAll("ul li"); // Pega todos os itens da lista
+                                    let h1 = menu.querySelector("h1"); // Pega o h1
+                                    let h3 = menu.querySelector("h3"); // Pega o h3
+
+                                    if (menu.classList.contains("show")) {
+                                        // Se o menu já está visível, apenas remove a classe para escondê-lo sem animação
+                                        menu.classList.remove("show");
+
+                                    } else {
+                                        // Se o menu está fechado, abre ele com animação normal
+                                        menu.classList.add("show");
+
+                                        // Aplica animação de entrada para h1 e h3
+                                        h1.style.animation = `slideInText 0.4s ease forwards`;
+                                        h1.style.animationDelay = "0.1s";  // h1 aparece antes
+
+                                        h3.style.animation = `slideInText 0.4s ease forwards`;
+                                        h3.style.animationDelay = "0.1s";  // h3 aparece logo depois
+
+                                        // Aplica animação de entrada para os itens da lista
+                                        items.forEach((item, index) => {
+                                            item.style.animation = `slideIn 0.3s ease forwards`;
+                                            item.style.animationDelay = `${0.1 * (index + 1) + 0.1}s`; // Adiciona delay progressivo e espera o h1 e h3 aparecerem
+                                        });
+                                    }
+                                }
+                            </script><a class="nav-link" onclick="aulas()" href="#">Aulas</a>
+                        </li>
+
                         </li>
                         <li class="nav-item"><a class="nav-link"
                                 href="http://127.0.0.1:5500/createapage.html#">Sobre</a></li>
@@ -123,6 +156,25 @@
                 </div>
             </div>
         </nav>
+        <div class="menu" id="menu">
+            <h1>JavaScript</h1>
+            <h3>Modulo 01</h3>
+            <ul>
+                <li><a href='1.JavaScript_Tipos.html'>1.JavaScript_Tipos.html</a></li>
+                <li><a href='2.VariaveisJs.html'>2.VariaveisJs.html</a></li>
+                <li><a href='3.TrutyAndFalse.html'>3.TrutyAndFalse.html</a></li>
+                <li><a href='4.Conversão.html'>4.Conversão.html</a></li>
+                <li><a href='5.Errors.html'>5.Errors.html</a></li>
+                <li><a href='6.Console.api.html'>6.Console.api.html</a></li>
+                <li><a href='7.Operadores.html'>7.Operadores.html</a></li>
+                <li><a href='8.TemplateL.html'>8.TemplateL.html</a></li>
+                <li><a href='9.Funções.html'>9.Funções.html</a></li>
+                <li><a href='10.Parametros.html'>10.Parametros.html</a></li>
+                <li><a href='11.Expressões_de_funções.html'>11.Expressões_de_funções.html</a></li>
+                <li><a href='12.Arrow_function.html'>12.Arrow_function.html</a></li>
+            </ul>
+        </div>
+
         <!-- Container para os cards -->
         <div class="row" id="cards-container">
             <div class="col-md-12">
@@ -156,18 +208,30 @@
                         <span>Uso Do Console.log()</span>
                     </div>
                     <div class="vscode-content">
-                        <pre>console.log("Olá, mundo!");
-console.log("O valor de x é:", 42);</pre>
+                        <pre><code><span class="keyword">console</span>.<span class="function">log</span>(<span class="string">"Olá, mundo!"</span>);
+<span class="keyword">console</span>.<span class="function">log</span>(<span class="string">"O valor de x é:"</span>, <span class="number">42</span>);</code></pre>
                     </div>
-                    <div class="vscode-terminal">
-                        <span>Olá, mundo!</span>
+                    <div class="vscode-terminal" id="terminal">
+                        <span class="terminal-output">Olá, mundo!</span>
                     </div>
                     <div class="vscode-footer">
-                        <button onclick="executeCode(this)">Executar Código</button>
+                        <script>
+                            function card0() {
+                                let terminal = document.getElementById('terminal')
+                                terminal.innerHTML = 'C:User/Project><br><br>Olá, mundo!<br>O valor de x é: 42'
+                                if (terminal.style.display === "flex") {
+                                    terminal.style.display = "none"
+                                } else {
+                                    terminal.style.display = "flex"
+                                }
+                            }
 
+                        </script>
+                        <button onclick="card0()">Executar Código</button>
                     </div>
                 </div>
             </div>
+
             <div class="mb-2">
                 <h3>2. console.error()</h3>
             </div>
@@ -191,17 +255,29 @@ console.log("O valor de x é:", 42);</pre>
                         <span>Uso Do Console.error()</span>
                     </div>
                     <div class="vscode-content">
-                        <pre>console.error("Algo deu errado!");</pre>
+                        <pre><code><span class="keyword">console</span>.<span class="function">error</span>(<span class="string">"Algo deu errado!"</span>);</code></pre>
                     </div>
-                    <div class="vscode-terminal">
-                        <span>Olá, mundo!</span>
+                    <div class="vscode-terminal" id="terminal1">
+                        <span class="terminal-output">Algo deu errado!</span>
                     </div>
                     <div class="vscode-footer">
-                        <button onclick="executeCode(this)">Executar Código</button>
+                        <script>
+                            function card() {
+                                let terminal = document.getElementById('terminal1')
+                                terminal.innerHTML = 'C:User/Project><br><br><span style="color: red;">Algo deu errado!</span>'
+                                if (terminal.style.display === "flex") {
+                                    terminal.style.display = "none"
+                                } else {
+                                    terminal.style.display = "flex"
+                                }
+                            }
 
+                        </script>
+                        <button onclick="card()">Executar Código</button>
                     </div>
                 </div>
             </div>
+
             <h3>3. console.warn()</h3>
             <div class="col-md-12">
                 <div class="vscode-explanation">
@@ -209,6 +285,7 @@ console.log("O valor de x é:", 42);</pre>
                     <p>Mostra avisos no console, com menos destaque que os erros.</p>
                 </div>
             </div>
+
             <div class="col-md-12">
                 <div class="vscode-card">
                     <div class="vscode-header">
@@ -220,17 +297,28 @@ console.log("O valor de x é:", 42);</pre>
                         <span>Uso Do Console.warn()</span>
                     </div>
                     <div class="vscode-content">
-                        <pre>console.warn("Essa funcionalidade será removida em breve!");</pre>
+                        <pre><code><span class="keyword">console</span>.<span class="function">warn</span>(<span class="string">"Essa funcionalidade será removida em breve!"</span>);</code></pre>
                     </div>
-                    <div class="vscode-terminal">
-                        <span>Olá, mundo!</span>
+                    <div class="vscode-terminal" id="terminal3">
+                        <span class="terminal-output">Essa funcionalidade será removida em breve!</span>
                     </div>
                     <div class="vscode-footer">
-                        <button onclick="executeCode(this)">Executar Código</button>
-
+                        <script>
+                            function card3() {
+                                terminal = document.getElementById('terminal3')
+                                terminal.innerHTML = 'C:User/Project><br><br><span style="color: yellow;">Essa funcionalidade será removida em breve!</span>'
+                                if (terminal.style.display === "flex") {
+                                    terminal.style.display = "none"
+                                } else {
+                                    terminal.style.display = "flex"
+                                }
+                            }
+                        </script>
+                        <button onclick="card3()">Executar Código</button>
                     </div>
                 </div>
             </div>
+
             <div class="mb-2"></div>
             <div class="mb-2">
                 <h3>4. console.table()</h3>
@@ -255,21 +343,32 @@ console.log("O valor de x é:", 42);</pre>
                         <span>Uso Do Console.table()</span>
                     </div>
                     <div class="vscode-content">
-                        <pre>const usuarios = [
-  { id: 1, nome: "Bruno", idade: 25 },
-  { id: 2, nome: "Ana", idade: 30 }
-];
-console.table(usuarios);</pre>
+                        <pre><code><span class="keyword">const</span> <span class="variable">usuarios</span> = [
+              { <span class="keyword">id</span>: <span class="number">1</span>, <span class="keyword">nome</span>: <span class="string">"Bruno"</span>, <span class="keyword">idade</span>: <span class="number">25</span> },
+              { <span class="keyword">id</span>: <span class="number">2</span>, <span class="keyword">nome</span>: <span class="string">"Ana"</span>, <span class="keyword">idade</span>: <span class="number">30</span> }
+            ];
+<span class="keyword">console</span>.<span class="function">table</span>(<span class="variable">usuarios</span>);</code></pre>
                     </div>
-                    <div class="vscode-terminal">
+                    <div class="vscode-terminal" id="terminal4">
                         <span>Olá, mundo!</span>
                     </div>
                     <div class="vscode-footer">
-                        <button onclick="executeCode(this)">Executar Código</button>
-
+                        <script>
+                            function card4() {
+                                terminal = document.getElementById('terminal4')
+                                terminal.innerHTML = "C:User/Project><br><br>┌─────────┬────┬─────────┬───────┐<br>│ (index) │ id │ &nbsp;&nbsp; nome    │ idade │<br>├─────────┼────┼─────────┼───────┤<br>│ &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;│ &nbsp;1&nbsp;│ 'Bruno' │ &nbsp;&nbsp;25&nbsp;&nbsp;│<br>│ &nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp; │ &nbsp;2  │ 'Ana'  &nbsp; │ &nbsp;&nbsp;30&nbsp;&nbsp;│<br>└─────────┴────┴─────────┴───────┘"
+                                if (terminal.style.display === "flex") {
+                                    terminal.style.display = "none"
+                                } else {
+                                    terminal.style.display = "flex"
+                                }
+                            }
+                        </script>
+                        <button onclick="card4()">Executar Código</button>
                     </div>
                 </div>
             </div>
+
             <div class="mb-2">
                 <h3>5. console.group() e console.groupEnd()</h3>
             </div>
@@ -293,20 +392,31 @@ console.table(usuarios);</pre>
                         <span>Uso Do Console.group() e Console.groupEnd()</span>
                     </div>
                     <div class="vscode-content">
-                        <pre>console.group("Detalhes do Pedido");
-console.log("Produto: Notebook");
-console.log("Preço: R$3000");
-console.groupEnd();</pre>
+                        <pre><code><span class="keyword">console</span>.<span class="function">group</span>(<span class="string">"Detalhes do Pedido"</span>);
+<span class="keyword">console</span>.<span class="function">log</span>(<span class="string">"Produto: Notebook"</span>);
+<span class="keyword">console</span>.<span class="function">log</span>(<span class="string">"Preço: R$3000"</span>);
+<span class="keyword">console</span>.<span class="function">groupEnd</span>();</code></pre>
                     </div>
-                    <div class="vscode-terminal">
+                    <div class="vscode-terminal" id='terminal5'>
                         <span>Olá, mundo!</span>
                     </div>
                     <div class="vscode-footer">
-                        <button onclick="executeCode(this)">Executar Código</button>
-
+                        <script>
+                            function card5() {
+                                terminal = document.getElementById('terminal5')
+                                terminal.innerHTML = "C:User/Project><br>Detalhes do Pedido<br>&nbsp;&nbsp;Produto: Notebook<br>&nbsp;&nbsp;Preço: R$3000  "
+                                if (terminal.style.display === "flex") {
+                                    terminal.style.display = "none"
+                                } else {
+                                    terminal.style.display = "flex"
+                                }
+                            }
+                        </script>
+                        <button onclick="card5()">Executar Código</button>
                     </div>
                 </div>
             </div>
+
             <div class="mb-2">
                 <h3>6. console.time() e console.timeEnd()</h3>
             </div>
@@ -330,20 +440,49 @@ console.groupEnd();</pre>
                         <span>Uso Do Console.time() e Console.timeEnd()</span>
                     </div>
                     <div class="vscode-content">
-                        <pre>console.time("Tempo de execução");
-// Algum código
-for (let i = 0; i &lt; 1000000; i++) {}
-console.timeEnd("Tempo de execução");</pre>
+                        <pre><code><span class="keyword">console</span>.<span class="function">time</span>(<span class="string">"Tempo de execução"</span>);
+<span class="comment">// Algum código</span>
+<span class="keyword">for</span> (<span class="keyword">let</span> <span class="variable">i</span> = <span class="number">0</span>; <span class="variable">i</span> < <span class="number">1000000</span>; <span class="variable">i</span>++) {}
+<span class="keyword">console</span>.<span class="function">timeEnd</span>(<span class="string">"Tempo de execução"</span>);</code></pre>
                     </div>
-                    <div class="vscode-terminal">
+                    <div class="vscode-terminal" id='terminal6'>
                         <span>Olá, mundo!</span>
                     </div>
                     <div class="vscode-footer">
-                        <button onclick="executeCode(this)">Executar Código</button>
+                        <script>
+                            function medirTempoExecucao() {
+                                const inicio = performance.now();  // Marca o tempo de início
 
+                                for (let i = 0; i < 1000000; i++) {
+                                    // Algum código que você queira medir o tempo de execução
+                                }
+
+                                const fim = performance.now();  // Marca o tempo de fim
+                                const tempoExecucao = fim - inicio;  // Calcula o tempo de execução
+                                return tempoExecucao;  // Retorna o tempo de execução
+                            }
+
+                            function card6() {
+                                const terminal = document.getElementById('terminal6');
+                                const time = medirTempoExecucao();  // Mede o tempo de execução
+
+                                // Exibe o tempo de execução no terminal
+                                terminal.innerHTML = `C:User/Project><br>Tempo de execução: ${time.toFixed(4)}ms`;
+
+                                // Alterna a visibilidade do terminal
+                                if (terminal.style.display === "flex") {
+                                    terminal.style.display = "none";
+                                } else {
+                                    terminal.style.display = "flex";
+                                }
+                            }
+                        </script>
+
+                        <button onclick="card6()">Executar Código</button>
                     </div>
                 </div>
             </div>
+
             <div class="mb-2">
                 <h3>7. Console.assert()</h3>
             </div>
@@ -367,18 +506,29 @@ console.timeEnd("Tempo de execução");</pre>
                         <span>Uso Do Console.assert()</span>
                     </div>
                     <div class="vscode-content">
-                        <pre>const idade = 15;
-console.assert(idade &gt;= 18, "Idade mínima não alcançada!");</pre>
+                        <pre><code><span class="keyword">const</span> <span class="variable">idade</span> = <span class="number">15</span>;
+<span class="keyword">console</span>.<span class="function">assert</span>(<span class="variable">idade</span> &gt;= <span class="number">18</span>, <span class="string">"Idade mínima não alcançada!"</span>);</code></pre>
                     </div>
-                    <div class="vscode-terminal">
+                    <div class="vscode-terminal" id='terminal7'>
                         <span>Olá, mundo!</span>
                     </div>
                     <div class="vscode-footer">
-                        <button onclick="executeCode(this)">Executar Código</button>
-
+                        <script>
+                            function card7() {
+                                terminal = document.getElementById('terminal7')
+                                terminal.innerHTML = "C:User/Project><span style='color:  yellow'>Assertion failed: Idade mínima não alcançada!</span>"
+                                if (terminal.style.display === "flex") {
+                                    terminal.style.display = "none"
+                                } else {
+                                    terminal.style.display = "flex"
+                                }
+                            }
+                        </script>
+                        <button onclick="card7()">Executar Código</button>
                     </div>
                 </div>
             </div>
+
             <div class="mb-2">
                 <h3>8. Console.clear()</h3>
             </div>
@@ -402,61 +552,71 @@ console.assert(idade &gt;= 18, "Idade mínima não alcançada!");</pre>
                         <span>Uso Do Console.clear()</span>
                     </div>
                     <div class="vscode-content">
-                        <pre>console.clear();</pre>
+                        <pre><code><span class="keyword">console</span>.<span class="function">clear</span>();</code></pre>
                     </div>
-                    <div class="vscode-terminal">
+                    <div class="vscode-terminal" id='terminal8'>
                         <span>Olá, mundo!</span>
                     </div>
                     <div class="vscode-footer">
-                        <button onclick="executeCode(this)">Executar Código</button>
-
+                        <script>
+                            function card8() {
+                                terminal = document.getElementById('terminal8')
+                                terminal.innerHTML = "C:User/Project>"
+                                if (terminal.style.display === "flex") {
+                                    terminal.style.display = "none"
+                                } else {
+                                    terminal.style.display = "flex"
+                                }
+                            }
+                        </script>
+                        <button onclick="card8()">Executar Código</button>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="vscode-explanation">
-                    <h3></h3>
-                    <p>E assim encerramos a aula sobre a Console API no JavaScript! 🎉
-                        <br><br>
-                        Com essas ferramentas, você pode debugar, medir desempenho e inspecionar seus dados de forma
-                        mais eficiente. Pratique bastante e explore cada método para dominar o uso do console!
-                        <br><br>
-                        Até a próxima, e bons códigos! 🚀
-                    </p>
                 </div>
             </div>
         </div>
-        <!-- Formulário para criar novos cards -->
 
-        <!-- footer -->
-        <footer class="site-footer bg-dark text-light py-4">
-            <div class="container">
-                <div class="row">
-                    <!-- Coluna para texto de copyright -->
-                    <div class="col-12 col-md-6 text-center text-md-left">
-                        <p class="footer-text mb-0">© 2025 - Todos os direitos reservados</p>
-                    </div>
-                    <!-- Coluna para links -->
-                    <div class="col-12 col-md-6 text-center text-md-right">
-                        <ul class="footer-links list-unstyled mb-0">
-                            <li class="d-inline-block mr-3">
-                                <a href="http://127.0.0.1:5500/createapage.html#"
-                                    class="footer-link text-light">Sobre</a>
-                            </li>
-                            <li class="d-inline-block mr-3">
-                                <a href="http://127.0.0.1:5500/createapage.html#"
-                                    class="footer-link text-light">Serviços</a>
-                            </li>
-                            <li class="d-inline-block">
-                                <a href="http://127.0.0.1:5500/createapage.html#"
-                                    class="footer-link text-light">Contato</a>
-                            </li>
-                        </ul>
-                    </div>
+        <div class="col-md-12">
+            <div class="vscode-explanation">
+                <h3></h3>
+                <p>E assim encerramos a aula sobre a Console API no JavaScript! 🎉
+                    <br><br>
+                    Com essas ferramentas, você pode debugar, medir desempenho e inspecionar seus dados de forma
+                    mais eficiente. Pratique bastante e explore cada método para dominar o uso do console!
+                    <br><br>
+                    Até a próxima, e bons códigos! 🚀
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Formulário para criar novos cards -->
+
+    <!-- footer -->
+    <footer class="site-footer bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <!-- Coluna para texto de copyright -->
+                <div class="col-12 col-md-6 text-center text-md-left">
+                    <p class="footer-text mb-0">© 2025 - Todos os direitos reservados</p>
+                </div>
+                <!-- Coluna para links -->
+                <div class="col-12 col-md-6 text-center text-md-right">
+                    <ul class="footer-links list-unstyled mb-0">
+                        <li class="d-inline-block mr-3">
+                            <a href="http://127.0.0.1:5500/createapage.html#" class="footer-link text-light">Sobre</a>
+                        </li>
+                        <li class="d-inline-block mr-3">
+                            <a href="http://127.0.0.1:5500/createapage.html#"
+                                class="footer-link text-light">Serviços</a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a href="http://127.0.0.1:5500/createapage.html#" class="footer-link text-light">Contato</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </footer>
-        <div class="deletarCode"></div>
+        </div>
+    </footer>
+    <div class="deletarCode"></div>
 
     </div>
 
@@ -485,13 +645,13 @@ console.assert(idade &gt;= 18, "Idade mínima não alcançada!");</pre>
                             <div class="dot yellow"></div>
                             <div class="dot green"></div>
                         </div>
-                        <span>${fileName}</span>
+            <span>${fileName}</span>
                     </div>
                     <div class="vscode-content">
                         <pre>${codeContent}</pre>
                     </div>
                     <div class="vscode-terminal">
-                        <span>${terminalContent}</span>
+            <span>${terminalContent}</span>
                     </div>
                     <div class="vscode-footer">
                         <button onclick="executeCode(this)">Executar Código</button>

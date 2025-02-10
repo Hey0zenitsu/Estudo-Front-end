@@ -83,7 +83,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                     aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span cllass="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav ms-auto">
@@ -117,6 +117,7 @@
                                         });
                                     }
                                 }
+
                             </script><a class="nav-link" onclick="aulas()" href="#">Aulas</a>
                         </li>
 
@@ -176,31 +177,20 @@
 
         <!-- Container para os cards -->
         <div class="row" id="cards-container">
-            <div class="mb-2">
-                <h1>Funções em JavaScript</h1>
-            </div>
             <div class="col-md-12">
                 <div class="vscode-explanation">
-                    <h3>O que são funções?</h3>
-                    <p>Funções em JavaScript são blocos de código reutilizáveis que podem ser chamados para realizar uma
-                        tarefa específica. Elas ajudam a organizar e reduzir a repetição de código, tornando o programa
-                        mais eficiente e fácil de manter.</p>
+                    <h3>Arrow Function em JavaScript</h3>
+                    <p>As Arrow Functions foram introduzidas no ES6 e fornecem uma sintaxe mais curta para escrever
+                        funções em JavaScript. Elas são especialmente úteis para funções de callback e métodos que não
+                        precisam de um contexto this específico.</p>
                 </div>
             </div>
-            <div class="mb-2"></div>
-            <div class="mb-2"></div>
             <div class="mb-2">
-                <h1>Como declarar uma função?</h1>
+                <h1>Sintaxe Básica</h1>
             </div>
-            <div class="col-md-12">
-                <div class="vscode-explanation">
-                    <h3>Sintaxe básica</h3>
-                    <p>A declaração de uma função pode ser feita utilizando a palavra-chave function, seguida pelo nome
-                        da função, parênteses (que podem conter parâmetros) e chaves para delimitar o bloco de código.
-                    </p>
-                </div>
+            <div class="mb-2">
+                <h3>A sintaxe de uma arrow function é mais concisa do que a de uma função tradicional:</h3>
             </div>
-            <!-- Card de Código -->
             <div class="col-md-12">
                 <div class="vscode-card">
                     <div class="vscode-header">
@@ -209,57 +199,23 @@
                             <div class="dot yellow"></div>
                             <div class="dot green"></div>
                         </div>
-                        <span>Exemplo: Declaração de Função</span>
+                        <span>Exemplo.Card</span>
                     </div>
                     <div class="vscode-content">
                         <pre>
-<span class="keyword">function</span> <span class="function">nomeDaFuncao</span>(<span class="parameter">param1, param2</span>) {
-    <span class="comment">// Código a ser executado</span>
-            }
+<span class="keyword">const</span> <span class="keyword">soma</span> = (<span class="keyword">a</span>, <span class="keyword">b</span>) =&gt; <span class="keyword">a</span> + <span class="keyword">b</span>;
+            
+<span class="function">console</span>.<span class="function">log</span>(<span class="function">soma</span>(<span class="keyword">5</span>, <span class="keyword">3</span>)); <span class="comment">// Saída: 8</span>
                         </pre>
                     </div>
-                    <div class="vscode-terminal">
-                        <span>1</span>
-                    </div>
-                    <div class="vscode-footer">
-                        <button onclick="executeCode(this)">Executar Código</button>
-                    </div>
-                </div>
-            </div>
-
-            <p>Este exemplo mostra a declaração básica de uma função em JavaScript. Ela pode receber parâmetros, como
-                `param1` e `param2`, e executar um bloco de código quando chamada.</p>
-
-            <div class="mb-2">
-                <h3>Exemplo:</h3>
-            </div>
-            <!-- Card de Código -->
-            <div class="col-md-12">
-                <div class="vscode-card">
-                    <div class="vscode-header">
-                        <div class="dots">
-                            <div class="dot red"></div>
-                            <div class="dot yellow"></div>
-                            <div class="dot green"></div>
-                        </div>
-                        <span>Exemplo: Função de Saudação</span>
-                    </div>
-                    <div class="vscode-content">
-                        <pre>
-<span class="keyword">function</span> <span class="function">saudacao</span>(<span class="parameter">nome</span>) {
-    <span class="keyword">console</span>.<span class="function">log</span>(<span class="string">"Olá, "</span> + <span class="variable">nome</span> + <span class="string">"!"</span>);
-            }
-<span class="function">saudacao</span>(<span class="string">"Bruno"</span>);
-                        </pre>
-                    </div>
-                    <div class="vscode-terminal" id='terminal1'>
+                    <div class="vscode-terminal" id='terminal0'>
                         <span>1</span>
                     </div>
                     <div class="vscode-footer">
                         <script>
-                            function card1() {
-                                let terminal = document.getElementById('terminal1')
-                                terminal.innerHTML = "C:User/Project><br><br> Olá,Bruno!"
+                            function card0() {
+                                let terminal = document.getElementById('terminal0')
+                                terminal.innerHTML = "C:User/Project><br><br>8"
 
                                 if (terminal.style.display === "flex") {
                                     terminal.style.display = "none";
@@ -268,26 +224,14 @@
                                 }
                             }
                         </script>
-                        <button onclick="card1()">Executar Código</button>
+                        <button onclick="card0()">Executar Código</button>
                     </div>
                 </div>
             </div>
 
-            <p>Este exemplo define uma função chamada `saudacao` que recebe um parâmetro `nome` e exibe uma mensagem de
-                saudação no console. Quando a função é chamada com o argumento "Bruno", ela imprime "Olá, Bruno!" no
-                terminal.</p>
-
             <div class="mb-2">
-                <h1>Tipos de funções</h1>
+                <h3>Se houver apenas um parâmetro, os parênteses podem ser omitidos: </h3>
             </div>
-            <div class="col-md-12">
-                <div class="vscode-explanation">
-                    <h3>1. Funções Declaradas</h3>
-                    <p>São aquelas definidas usando a palavra-chave function e possuem um nome. Elas são elevadas
-                        (hoisting), ou seja, podem ser chamadas antes de serem declaradas.</p>
-                </div>
-            </div>
-            <!-- Card de Código -->
             <div class="col-md-12">
                 <div class="vscode-card">
                     <div class="vscode-header">
@@ -296,24 +240,23 @@
                             <div class="dot yellow"></div>
                             <div class="dot green"></div>
                         </div>
-                        <span>Exemplo: Função de Soma</span>
+                        <span>Exemplo.Card</span>
                     </div>
                     <div class="vscode-content">
                         <pre>
-<span class="keyword">function</span> <span class="function">somar</span>(<span class="parameter">a, b</span>) {
-    <span class="keyword">return</span> <span class="variable">a</span> + <span class="variable">b</span>;
-            }
-<span class="keyword">console</span>.<span class="function">log</span>(<span class="function">somar</span>(<span class="number">2</span>, <span class="number">3</span>)); <span class="comment">// 5</span>
+<span cllass="keyword">const</span> <span class="keyword">dobro</span> = <span class="keyword">x</span> =&gt; <span class="keyword">x</span> * <span class="keyword">2</span>;
+            
+<span cllass="function">console</span>.<span class="function">log</span>(<span class="function">dobro</span>(<span class="keyword">4</span>)); <span class="comment">// Saída: 8</span>
                         </pre>
                     </div>
-                    <div class="vscode-terminal" id="terminal2">
+                    <div class="vscode-terminal" id='terminal2'>
                         <span>1</span>
                     </div>
                     <div class="vscode-footer">
                         <script>
                             function card2() {
                                 let terminal = document.getElementById('terminal2')
-                                terminal.innerHTML = "C:User/Project><br><br> 5"
+                                terminal.innerHTML = "C:User/Project><br><br>8"
 
                                 if (terminal.style.display === "flex") {
                                     terminal.style.display = "none";
@@ -327,17 +270,9 @@
                 </div>
             </div>
 
-            <p>Este exemplo define uma função chamada `somar`, que recebe dois parâmetros `a` e `b`, e retorna a soma
-                desses valores. Quando a função é chamada com os argumentos `2` e `3`, o resultado `5` é impresso no
-                console.</p>
-
-            <div class="col-md-12">
-                <div class="vscode-explanation">
-                    <h3>2. Funções Anônimas</h3>
-                    <p>São funções sem nome, geralmente atribuídas a uma variável.</p>
-                </div>
+            <div class="mb-2">
+                <h3>Se não houver parâmetros, os parênteses são obrigatórios:</h3>
             </div>
-            <!-- Card de Código -->
             <div class="col-md-12">
                 <div class="vscode-card">
                     <div class="vscode-header">
@@ -346,14 +281,13 @@
                             <div class="dot yellow"></div>
                             <div class="dot green"></div>
                         </div>
-                        <span>Exemplo: Função de Multiplicação</span>
+                        <span>Exemplo.Card</span>
                     </div>
                     <div class="vscode-content">
                         <pre>
-<span class="keyword">const</span> <span class="function">multiplicar</span> = <span class="keyword">function</span>(<span class="parameter">a, b</span>) {
-    <span class="keyword">return</span> <span class="variable">a</span> * <span class="variable">b</span>;
-            };
-<span class="keyword">console</span>.<span class="function">log</span>(<span class="function">multiplicar</span>(<span class="number">2</span>, <span class="number">3</span>)); <span class="comment">// 6</span>
+<span cllass="keyword">const</span> <span class="keyword">mensagem</span> = () =&gt; <span class="string">"Olá, mundo!"</span>;
+            
+<span cllass="function">console</span>.<span class="function">log</span>(<span class="function">mensagem</span>()); <span class="comment">// Saída: "Olá, mundo!"</span>
                         </pre>
                     </div>
                     <div class="vscode-terminal" id='terminal3'>
@@ -363,7 +297,7 @@
                         <script>
                             function card3() {
                                 let terminal = document.getElementById('terminal3')
-                                terminal.innerHTML = "C:User/Project><br><br> 6"
+                                terminal.innerHTML = "C:User/Project><br><br> Olá, mundo!"
 
                                 if (terminal.style.display === "flex") {
                                     terminal.style.display = "none";
@@ -377,17 +311,19 @@
                 </div>
             </div>
 
-            <p>Este exemplo mostra como declarar uma função anônima chamada `multiplicar`, que recebe dois parâmetros e
-                retorna o produto desses números. Quando a função é chamada com os argumentos `2` e `3`, o resultado `6`
-                é impresso no console.</p>
-
-            <div class="col-md-12">
-                <div class="vscode-explanation">
-                    <h3>3. Funções de Setas (Arrow Functions)</h3>
-                    <p>São uma forma mais concisa de escrever funções. Elas não possuem seu próprio this.</p>
-                </div>
+            <div class="mb-2">
+                <h1>Características Principais</h1>
             </div>
-            <!-- Card de Código -->
+            <div class="col-md-12 mb-4">
+                <ul class="styled-list list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center"><span><strong>1.
+                                Sintaxe Concisa:</strong> Arrow functions permitem escrever funções de maneira mais
+                            curta e legível.</span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center"><span><strong>2.
+                                Retorno Implícito:</strong> Se a função tem apenas uma expressão o retorno é implícito
+                            (sem necessidade de return).</span></li>
+                </ul>
+            </div>
             <div class="col-md-12">
                 <div class="vscode-card">
                     <div class="vscode-header">
@@ -396,12 +332,12 @@
                             <div class="dot yellow"></div>
                             <div class="dot green"></div>
                         </div>
-                        <span>Exemplo: Função de Divisão</span>
+                        <span>Exemplo.Card</span>
                     </div>
                     <div class="vscode-content">
                         <pre>
-<span class="keyword">const</span> <span class="function">dividir</span> = (<span class="parameter">a, b</span>) =&gt; <span class="variable">a</span> / <span class="variable">b</span>;
-<span class="keyword">console</span>.<span class="function">log</span>(<span class="function">dividir</span>(<span class="number">6</span>, <span class="number">3</span>)); <span class="comment">// 2</span>
+<span cllass="keyword">const</span> <span class="keyword">quadrado</span> = <span class="keyword">num</span> =&gt; <span class="keyword">num</span> * <span class="keyword">num</span>;
+<span cllass="function">console</span>.<span class="function">log</span>(<span class="function">quadrado</span>(<span class="keyword">5</span>)); <span class="comment">// Saída: 25</span>
                         </pre>
                     </div>
                     <div class="vscode-terminal" id='terminal4'>
@@ -411,7 +347,7 @@
                         <script>
                             function card4() {
                                 let terminal = document.getElementById('terminal4')
-                                terminal.innerHTML = "C:User/Project><br><br> 2"
+                                terminal.innerHTML = "C:User/Project><br><br> 25"
 
                                 if (terminal.style.display === "flex") {
                                     terminal.style.display = "none";
@@ -425,17 +361,12 @@
                 </div>
             </div>
 
-            <p>Esse exemplo mostra como declarar uma função de divisão utilizando a sintaxe de arrow function. Quando a
-                função `dividir(6, 3)` é chamada, o resultado `2` é exibido no console.</p>
-
-            <div class="mb-2">
-                <h1>Parâmetros e Argumentos</h1>
-            </div>
-            <div class="mb-2">
-                <h1>Parâmetros</h1>
-            </div>
-            <div class="mb-2">
-                <h3>Os valores que uma função espera receber ao ser chamada. javascript Copiar Editar</h3>
+            <div class="col-md-12 mb-4">
+                <ul class="styled-list list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center"><span><strong>3. Não
+                                Possuem this Próprio:</strong> O this dentro de uma arrow function referencia o escopo
+                            onde a função foi definida e não onde foi chamada.</span></li>
+                </ul>
             </div>
             <div class="col-md-12">
                 <div class="vscode-card">
@@ -445,15 +376,18 @@
                             <div class="dot yellow"></div>
                             <div class="dot green"></div>
                         </div>
-                        <span>Exemplo: Função de Saudação</span>
+                        <span>Exemplo.Card</span>
                     </div>
                     <div class="vscode-content">
                         <pre>
-<span class="keyword">function</span> <span class="function">cumprimentar</span>(<span class="parameter">nome</span>) {
-    <span class="function">console</span>.<span class="function">log</span>(<span class="string">"Olá, "</span> + <span class="parameter">nome</span> + <span class="string">"!"</span>);
-}
-<span class="function">cumprimentar</span>("Bruno")
-
+<span cllass="function">function</span> <span class="keyword">Pessoa</span>() {
+this.<span class="keyword">nome</span> = <span class="string">"Bruno"</span>;
+<span clclass="function">setTimeout</span>(() =&gt; {
+  <span class="function">console</span>.<span class="function">log</span>(<span class="string">`Olá, ${this.nome}`</span>); <span class="comment">// "this" se refere a Pessoa</span>
+                                }, <span class="keyword">1000</span>);
+                            }
+            
+<span cllass="function">new</span> <span class="function">Pessoa</span>();
                         </pre>
                     </div>
                     <div class="vscode-terminal" id='terminal5'>
@@ -463,7 +397,7 @@
                         <script>
                             function card5() {
                                 let terminal = document.getElementById('terminal5')
-                                terminal.innerHTML = "C:User/Project><br><br> Olá, Bruno!"
+                                terminal.innerHTML = "C:User/Project><br><br> Olá,Bruno"
 
                                 if (terminal.style.display === "flex") {
                                     terminal.style.display = "none";
@@ -477,38 +411,44 @@
                 </div>
             </div>
 
-            <p>Esse código JavaScript define uma função chamada <code>cumprimentar()</code>, que recebe um nome e
-                imprime uma saudação personalizada no terminal. Ao chamar <code>cumprimentar("Bruno")</code>, a mensagem
-                <strong>"Olá, Bruno!"</strong> será exibida no terminal.
-            </p>
-            <div class="mb-2">
-                <h1>Argumentos</h1>
+            <div class="col-md-12">
+                <div class="vscode-explanation">
+                    <h3></h3>
+                    <p>Se fosse uma função tradicional, this dentro de setTimeout seria undefined ou referenciaria o
+                        objeto global.</p>
+                </div>
             </div>
-            <div class="mb-2">
-                <h3>Os valores reais passados para os parâmetros quando a função é chamada. javascript Copiar Editar
-                </h3>
+            <div class="col-md-12 mb-4">
+                <ul class="styled-list list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center"><span><strong>4. Não
+                                Possuem arguments Próprio::</strong> Diferente das funções tradicionais arguments não
+                            está disponível dentro de uma arrow function.</span></li>
+                </ul>
             </div>
             <div class="col-md-12">
-                <div class="vscode-card custom-vscode-card">
-                    <div class="vscode-header custom-vscode-header">
+                <div class="vscode-card">
+                    <div class="vscode-header">
                         <div class="dots">
                             <div class="dot red"></div>
                             <div class="dot yellow"></div>
                             <div class="dot green"></div>
                         </div>
-                        <span>Exemplo: Chamando a Função</span>
+                        <span>Exemplo.Card</span>
                     </div>
-                    <div class="vscode-content custom-vscode-content">
-                        <pre><span class="function">cumprimentar</span>(<span class="string">"Bruno"</span>);  <span class="comment">// "Olá, Bruno!"</span></pre>
+                    <div class="vscode-content">
+                        <pre>
+<span cllass="keyword">const</span> <span class="keyword">exemplo</span> = () =&gt; <span class="function">console</span>.<span class="function">log</span>(<span class="keyword">argumentos</span>);
+<span cllass="function">exemplo</span>(<span class="keyword">1</span>, <span class="keyword">2</span>, <span class="keyword">3</span>); <span class="comment">// Erro: arguments não está definido</span>
+                        </pre>
                     </div>
-                    <div class="vscode-terminal custom-vscode-terminal" id='terminal6'>
+                    <div class="vscode-terminal" id='terminal6'>
                         <span>1</span>
                     </div>
-                    <div class="vscode-footer custom-vscode-footer">
+                    <div class="vscode-footer">
                         <script>
                             function card6() {
                                 let terminal = document.getElementById('terminal6')
-                                terminal.innerHTML = "C:User/Project><br><br> Olá, Bruno!"
+                                terminal.innerHTML = "C:User/Project><br><br>ReferenceError: argumentos is not defined"
 
                                 if (terminal.style.display === "flex") {
                                     terminal.style.display = "none";
@@ -522,23 +462,11 @@
                 </div>
             </div>
 
-
-
-
-
-            <p>Esse exemplo demonstra como chamar uma função em JavaScript. Ao executar o código, o resultado será uma
-                saudação personalizada: "Olá, Bruno!"</p>
-
-
-
-
-
-            <div class="mb-2">
-                <h1>Parâmetros Padrão</h1>
-            </div>
-            <div class="mb-2">
-                <h3>Se nenhum valor for passado, os parâmetros podem assumir um valor padrão. javascript Copiar Editar
-                </h3>
+            <div class="col-md-12">
+                <div class="vscode-explanation">
+                    <h3></h3>
+                    <p>Para acessar argumentos, deve-se usar uma função tradicional ou o operador rest (...args).</p>
+                </div>
             </div>
             <div class="col-md-12">
                 <div class="vscode-card">
@@ -548,13 +476,13 @@
                             <div class="dot yellow"></div>
                             <div class="dot green"></div>
                         </div>
-                        <span>Exemplo: Função com Valor Padrão</span>
+                        <span>Exemplo.Card</span>
                     </div>
                     <div class="vscode-content">
-                        <pre><span class="keyword">function</span> <span class="function">saudacao</span>(<span class="parameter">nome</span> = <span class="string">"Visitante"</span>) {
-    <span class="keyword">console</span>.<span class="function">log</span>(<span class="string">"Bem-vindo, "</span> + <span class="parameter">nome</span> + <span class="string">"!"</span>);
-            }
-<span class="function">saudacao</span>(); <span class="comment">// "Bem-vindo, Visitante!"</span></pre>
+                        <pre>
+<span cllass="keyword">const</span> <span class="keyword">exemplo</span> = (...<span class="keyword">args</span>) =&gt; <span class="function">console</span>.<span class="function">log</span>(<span class="keyword">args</span>);
+<span cllass="function">exemplo</span>(<span class="keyword">1</span>, <span class="keyword">2</span>, <span class="keyword">3</span>); <span class="comment">// Saída: [1, 2, 3]</span>
+                        </pre>
                     </div>
                     <div class="vscode-terminal" id='terminal7'>
                         <span>1</span>
@@ -563,7 +491,7 @@
                         <script>
                             function card7() {
                                 let terminal = document.getElementById('terminal7')
-                                terminal.innerHTML = "C:User/Project><br><br>Bem-vindo, Visitante!"
+                                terminal.innerHTML = "C:User/Project><br><br>[1, 2, 3]"
 
                                 if (terminal.style.display === "flex") {
                                     terminal.style.display = "none";
@@ -577,17 +505,15 @@
                 </div>
             </div>
 
-            <p>Este exemplo demonstra uma função com um valor padrão para o parâmetro `nome`. Quando não é passado um
-                argumento, a função utiliza o valor `"Visitante"`.</p>
-
             <div class="mb-2">
-                <h1>Escopo</h1>
+                <h1>Exemplos de Uso:</h1>
             </div>
-            <div class="col-md-12">
-                <div class="vscode-explanation">
-                    <h3>Escopo Local</h3>
-                    <p>Uma variável declarada dentro de uma função só pode ser acessada dentro dela.</p>
-                </div>
+            <div class="mb-2">
+                <h3>1. Arrow Function como Callback</h3>
+            </div>
+            <div class="mb-2">
+                <h4>Arrow functions são muito usadas em métodos de array, como map, filter e reduce: javascript Copiar
+                    Editar</h4>
             </div>
             <div class="col-md-12">
                 <div class="vscode-card">
@@ -597,14 +523,17 @@
                             <div class="dot yellow"></div>
                             <div class="dot green"></div>
                         </div>
-                        <span>Exemplo: Escopo de Variáveis</span>
+                        <span>Exemplo.Card</span>
                     </div>
                     <div class="vscode-content">
-                        <pre><span class="keyword">function</span> <span class="function">exemplo</span>() {
-    <span class="keyword">let</span> <span class="variable">mensagem</span> = <span class="string">"Olá!"</span>;
-    <span class="keyword">console</span>.<span class="function">log</span>(<span class="variable">mensagem</span>); <span class="comment">// Funciona</span>
-            }
-<span class="keyword">console</span>.<span class="function">log</span>(<span class="variable">mensagem</span>); <span class="comment">// Erro</span></pre>
+                        <pre>
+<span cllass="keyword">const</span> <span class="keyword">numeros</span> = [<span class="keyword">1</span>, <span class="keyword">2</span>, <span class="keyword">3</span>, <span class="keyword">4</span>, <span class="keyword">5</span>];
+            
+<span cllass="comment">// Usando map para dobrar os números</span>
+<span cllass="keyword">const</span> <span class="keyword">dobrados</span> = <span class="keyword">numeros</span>.<span class="function">map</span>(<span class="keyword">n</span> =&gt; <span class="keyword">n</span> * <span class="keyword">2</span>);
+            
+<span cllass="function">console</span>.<span class="function">log</span>(<span class="keyword">dobrados</span>); <span class="comment">// Saída: [2, 4, 6, 8, 10]</span>
+                        </pre>
                     </div>
                     <div class="vscode-terminal" id='terminal8'>
                         <span>1</span>
@@ -613,7 +542,8 @@
                         <script>
                             function card8() {
                                 let terminal = document.getElementById('terminal8')
-                                terminal.innerHTML = "C:User/Project><br><br>ReferenceError: mensagem is not defined"
+                                terminal.innerHTML = "C:User/Project><br><br>[2, 4, 6, 8, 10]"
+
 
                                 if (terminal.style.display === "flex") {
                                     terminal.style.display = "none";
@@ -627,15 +557,12 @@
                 </div>
             </div>
 
-            <p>Este exemplo mostra a diferença entre o escopo de uma variável dentro de uma função e fora dela. A
-                variável `mensagem` é definida dentro da função `exemplo`, então ela não é acessível fora dessa função,
-                resultando em erro.</p>
-
-            <div class="col-md-12">
-                <div class="vscode-explanation">
-                    <h3>Escopo Global</h3>
-                    <p>Variáveis declaradas fora de qualquer função podem ser acessadas em qualquer parte do código.</p>
-                </div>
+            <div class="mb-2">
+                <h3>2. Arrow Function em Funções Assíncronas</h3>
+            </div>
+            <div class="mb-2">
+                <h3>Quando usamos setTimeout ou setInterval, arrow functions mantêm o contexto do this: javascript
+                    Copiar Editar</h3>
             </div>
             <div class="col-md-12">
                 <div class="vscode-card">
@@ -645,45 +572,58 @@
                             <div class="dot yellow"></div>
                             <div class="dot green"></div>
                         </div>
-                        <span>Exemplo: Variável Global</span>
+                        <span>Exemplo.Card</span>
                     </div>
                     <div class="vscode-content">
-                        <pre><span class="keyword">let</span> <span class="variable">mensagem</span> = <span class="string">"Global!"</span>;
-<span class="keyword">function</span> <span class="function">exemplo</span>() {
-    <span class="keyword">console</span>.<span class="function">log</span>(<span class="variable">mensagem</span>); <span class="comment">// "Global!"</span>
-            }
-<span class="function">exemplo</span>();</pre>
+                        <pre>
+<span cllass="keyword">class</span> <span class="keyword">Temporizador</span> {
+<span clclass="function">iniciar</span>() {
+  <span class="function">setInterval</span>(() =&gt; {
+      <span class="function">console</span>.<span class="function">log</span>(<span class="string">"Executando..."</span>);
+              }, <span class="keyword">1000</span>);
+        }
+}
+            
+<span cllass="keyword">const</span> <span class="keyword">t</span> = <span class="function">new</span> <span class="function">Temporizador</span>();
+<span cllass="function">t.iniciar</span>();
+                        </pre>
                     </div>
                     <div class="vscode-terminal" id='terminal9'>
-                        <span>1</span>
+                        <span>C:User/Project><br><br></span>
                     </div>
                     <div class="vscode-footer">
                         <script>
                             function card9() {
-                                let terminal = document.getElementById('terminal9')
-                                terminal.innerHTML = "C:User/Project><br><br>Global!"
-
-                                if (terminal.style.display === "flex") {
-                                    terminal.style.display = "none";
-                                } else {
-                                    terminal.style.display = "flex";
+                                let terminal = document.getElementById('terminal9');
+                                class Temporizador {
+                                    iniciar() {
+                                        setInterval(() => {
+                                            terminal.innerHTML += "Executando...<br>";
+                                        }, 1000);
+                                    }
                                 }
+
+                                const t = new Temporizador();
+                                t.iniciar();
+
+                                // Alterna a visibilidade do terminal
+                                terminal.style.display = terminal.style.display === "flex" ? "none" : "flex";
                             }
+
                         </script>
                         <button onclick="card9()">Executar Código</button>
                     </div>
                 </div>
             </div>
 
-            <p>Este exemplo mostra como uma variável global, como `mensagem`, pode ser acessada dentro de uma função.
-                Mesmo dentro de `exemplo`, a variável `mensagem` mantém seu valor e pode ser usada sem problemas.</p>
-
             <div class="mb-2">
-                <h1>Funções como Valores</h1>
+                <h1>Quando Não Usar Arrow Function?</h1>
             </div>
             <div class="mb-2">
-                <h3>Em JavaScript, funções podem ser atribuídas a variáveis, armazenadas em arrays ou passadas como
-                    argumentos para outras funções.</h3>
+                <h2>Apesar de ser útil, a arrow function não é ideal em alguns casos:</h2>
+            </div>
+            <div class="mb-2">
+                <h3>Quando precisamos de um this dinâmico, como em métodos de objetos: javascript Copiar Editar</h3>
             </div>
             <div class="col-md-12">
                 <div class="vscode-card">
@@ -693,16 +633,17 @@
                             <div class="dot yellow"></div>
                             <div class="dot green"></div>
                         </div>
-                        <span>Exemplo</span>
+                        <span>Exemplo.Card</span>
                     </div>
                     <div class="vscode-content">
-                        <pre><span class="keyword">const</span> <span class="variable">dobro</span> = (<span class="parameter">x</span>) =&gt; <span class="variable">x</span> * <span class="number">2</span>;
+                        <pre>
+<span cllass="keyword">const</span> <span class="keyword">usuario</span> = {
+<span clclass="keyword">nome</span>: <span class="string">"Bruno"</span>,
+<span clclass="keyword">falar</span>: () =&gt; <span class="function">console</span>.<span class="function">log</span>(<span class="string">`Olá, ${this.nome}`</span>) <span class="comment">// this será undefined</span>
+                            };
             
-<span class="keyword">function</span> <span class="function">aplicarFuncao</span>(<span class="parameter">numero</span>, <span class="parameter">funcao</span>) {
-    <span class="keyword">return</span> <span class="function">funcao</span>(<span class="variable">numero</span>);
-            }
-            
-<span class="keyword">console</span>.<span class="function">log</span>(<span class="function">aplicarFuncao</span>(<span class="number">5</span>, <span class="variable">dobro</span>)); <span class="comment">// 10</span></pre>
+<span cllass="keyword">usuario</span>.<span class="function">falar</span>(); <span class="comment">// Saída: "Olá, undefined"</span>
+                        </pre>
                     </div>
                     <div class="vscode-terminal" id='terminal10'>
                         <span>1</span>
@@ -711,7 +652,7 @@
                         <script>
                             function card10() {
                                 let terminal = document.getElementById('terminal10')
-                                terminal.innerHTML = "C:User/Project><br><br>10"
+                                terminal.innerHTML = "C:User/Project><br><br>Olá, undefined"
 
                                 if (terminal.style.display === "flex") {
                                     terminal.style.display = "none";
@@ -726,11 +667,7 @@
             </div>
 
             <div class="mb-2">
-                <h1>Funções Aninhadas</h1>
-            </div>
-            <div class="mb-2">
-                <h3>Uma função pode estar contida dentro de outra função, permitindo a criação de escopos mais
-                    restritos.</h3>
+                <h3>Para corrigir isso, use uma função tradicional: javascript Copiar Editar</h3>
             </div>
             <div class="col-md-12">
                 <div class="vscode-card">
@@ -740,16 +677,19 @@
                             <div class="dot yellow"></div>
                             <div class="dot green"></div>
                         </div>
-                        <span>Exemplo</span>
+                        <span>Exemplo.Card</span>
                     </div>
                     <div class="vscode-content">
-                        <pre><span class="keyword">function</span> <span class="function">externa</span>() {
-    <span class="keyword">function</span> <span class="function">interna</span>() {
-        <span class="keyword">console</span>.<span class="function">log</span>("<span class="string">Sou uma função interna!</span>");
-                }
-    <span class="function">interna</span>();
-            }
-<span class="function">externa</span>(); <span class="comment">// "Sou uma função interna!"</span></pre>
+                        <pre>
+<span class="keyword">const</span> <span class="keyword">usuario</span> = {
+<span clclass="keyword">nome</span>: <span class="string">"Bruno"</span>,
+<span clclass="keyword">falar</span>() {
+<span clclass="function">console</span>.<span class="function">log</span>(<span class="string">`Olá, ${this.nome}`</span>);
+                                }
+                            };
+            
+<span cllass="keyword">usuario</span>.<span class="function">falar</span>(); <span class="comment">// Saída: "Olá, Bruno"</span>
+                        </pre>
                     </div>
                     <div class="vscode-terminal" id='terminal11'>
                         <span>1</span>
@@ -758,7 +698,7 @@
                         <script>
                             function card11() {
                                 let terminal = document.getElementById('terminal11')
-                                terminal.innerHTML = "C:User/Project><br><br>Sou uma função interna!"
+                                terminal.innerHTML = "C:User/Project><br><br> Olá,Bruno"
 
                                 if (terminal.style.display === "flex") {
                                     terminal.style.display = "none";
@@ -772,12 +712,19 @@
                 </div>
             </div>
 
+            <div class="mb-2">
+                <h3>Quando precisamos do objeto arguments, que não existe em arrow functions.</h3>
+            </div>
+            <div class="mb-2">
+                <h3>Quando usamos funções como construtores (new não funciona com arrow functions).</h3>
+            </div>
             <div class="col-md-12">
                 <div class="vscode-explanation">
-                    <h3>Conclusão</h3>
-                    <p>Funções são uma das ferramentas mais poderosas do JavaScript. Elas permitem modularizar o código,
-                        reduzir redundâncias e criar programas mais organizados e reutilizáveis. Pratique bastante para
-                        dominar os diferentes tipos e usos de funções!</p>
+                    <h3></h3>
+                    <p>As arrow functions são uma alternativa poderosa às funções tradicionais, oferecendo uma sintaxe
+                        mais curta e clara. Elas são ideais para callbacks, manipulação de arrays e funções assíncronas,
+                        mas não devem ser usadas quando this dinâmico ou arguments forem necessários. Dominar essa
+                        funcionalidade pode tornar seu código mais moderno e eficiente!</p>
                 </div>
             </div>
         </div>
@@ -840,13 +787,13 @@
                             <div class="dot yellow"></div>
                             <div class="dot green"></div>
                         </div>
- <span>${fileName}</span>
+                        <span>${fileName}</span>
                     </div>
                     <div class="vscode-content">
                         <pre>${codeContent}</pre>
                     </div>
                     <div class="vscode-terminal">
- <span>${terminalContent}</span>
+                        <span>${terminalContent}</span>
                     </div>
                     <div class="vscode-footer">
                         <button onclick="executeCode(this)">Executar Código</button>

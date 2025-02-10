@@ -1,0 +1,1 @@
+personalise os card que eu enviar dessa seguinte forma (variaveis let,var e const devem estar entre a tag span com class name keyword. os nomes de função devem estar entre span com clas function. as strings devem estar com o clas string. os domentarios devem estar com o class comment)
