@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)http://127.0.0.1:5500/createapage.html -->
+<html lang="pt-br">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card estilo VS Code</title>
+    <!-- Link para o Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background-color: #121212;
+            color: #f8f9fa;
+        }
+
+        .form-control {
+            background-color: #1f1f1f;
+            color: #f8f9fa;
+            /* Garante que o texto seja branco */
+            border: 1px solid #333333;
+        }
+
+        .form-control:focus {
+            background-color: #1f1f1f;
+            /* Mantém a consistência do fundo */
+            color: #f8f9fa;
+            border-color: #0d6efd;
+            /* Realça o foco no campo */
+            box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
+        }
+
+        .form-control::placeholder {
+            color: #888888;
+            /* Contraste adequado para o placeholder */
+        }
+
+        .btn-primary {
+            background-color: #0d6efd;
+            border: none;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            border: none;
+        }
+
+        .btn-warning {
+            background-color: #ffc107;
+            border: none;
+            color: #121212;
+        }
+
+        .btn-success {
+            background-color: #198754;
+            border: none;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #f8f9fa;
+        }
+
+        #final {
+            font-size: 55px;
+            margin-top: 150px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Minha Marca</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <script>
+                                function aulas() {
+                                    let menu = document.getElementById('menu'); // Obtém o menu pelo ID
+                                    let items = menu.querySelectorAll("ul li"); // Pega todos os itens da lista
+                                    let h1 = menu.querySelector("h1"); // Pega o h1
+                                    let h3 = menu.querySelector("h3"); // Pega o h3
+
+                                    if (menu.classList.contains("show")) {
+                                        // Se o menu já está visível, apenas remove a classe para escondê-lo sem animação
+                                        menu.classList.remove("show");
+
+                                    } else {
+                                        // Se o menu está fechado, abre ele com animação normal
+                                        menu.classList.add("show");
+
+                                        // Aplica animação de entrada para h1 e h3
+                                        h1.style.animation = `slideInText 0.4s ease forwards`;
+                                        h1.style.animationDelay = "0.1s";  // h1 aparece antes
+
+                                        h3.style.animation = `slideInText 0.4s ease forwards`;
+                                        h3.style.animationDelay = "0.1s";  // h3 aparece logo depois
+
+                                        // Aplica animação de entrada para os itens da lista
+                                        items.forEach((item, index) => {
+                                            item.style.animation = `slideIn 0.3s ease forwards`;
+                                            item.style.animationDelay = `${0.1 * (index + 1) + 0.1}s`; // Adiciona delay progressivo e espera o h1 e h3 aparecerem
+                                        });
+                                    }
+                                }
+
+                            </script><a class="nav-link" onclick="aulas()" href="#">Aulas</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#">Sobre</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Serviços
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                                <li><a class="dropdown-item" href="#">Serviço
+                                        1</a></li>
+                                <li><a class="dropdown-item" href="#">Serviço
+                                        2</a></li>
+                                <li><a class="dropdown-item" href="#">Serviço
+                                        3</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Contato
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="contactDropdown">
+                                <li><a class="dropdown-item" href="#">Email</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#">Telefone</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#">Suporte</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="menu" id="menu">
+            <h1>JavaScript</h1>
+            <h3>Modulo 01</h3>
+            <ul>
+                <li><a href='1.JavaScript_Tipos.html'>1.JavaScript_Tipos.html</a></li>
+                <li><a href='2.VariaveisJs.html'>2.VariaveisJs.html</a></li>
+                <li><a href='3.TrutyAndFalse.html'>3.TrutyAndFalse.html</a></li>
+                <li><a href='4.Conversão.html'>4.Conversão.html</a></li>
+                <li><a href='5.Errors.html'>5.Errors.html</a></li>
+                <li><a href='6.Console.api.html'>6.Console.api.html</a></li>
+                <li><a href='7.Operadores.html'>7.Operadores.html</a></li>
+                <li><a href='8.TemplateL.html'>8.TemplateL.html</a></li>
+                <li><a href='9.Funções.html'>9.Funções.html</a></li>
+                <li><a href='10.Parametros.html'>10.Parametros.html</a></li>
+                <li><a href='11.Expressões_de_funções.html'>11.Expressões_de_funções.html</a></li>
+                <li><a href='12.Arrow_function.html'>12.Arrow_function.html</a></li>
+                <li><a href='13.Operador_ternario.html'>13.Operador_ternario.html</a></li>
+                <li><a href='14.if_and_else.html'>14.if_and_else.html</a></li>
+            </ul>
+            <h3>Modulo 02</h3>
+            <ul>
+                <li><a href='15.2.Arrays_criar.html'>15.2.Arrays_criar.html</a></li>
+                <li><a href='16.2.alterando_array.html'>16.2.alterando_array.html</a></li>
+                <li><a href='17.2.Metodos_array.html'>17.2.Metodos_array.html</a></li>
+                <li><a href='18.2.metodos_mod_inte.html'>18.2.metodos_mod_inte.html</a></li>
+                <li><a href='19.2.transform_array.html'>19.2.transform_array.html</a></li>
+                <li><a href='20.2.loops.html'>20.2.loops.html</a></li>
+                <li><a href='21.2.Arrays Multidimensionais.html'>21.2.Arrays Multidimensionais.html</a></li>
+                <li><a href='22.2.ordenação.html'>22.2.ordenação.html</a></li>
+                <li><a href='menu.html'>menu.html</a></li>
+            </ul>
+        </div>
+        <!-- Container para os cards -->
+        <div class="row" id="cards-container">
+            <div class="mb-2">
+                <h1>Acessando e Alterando Elementos em Arrays</h1>
+            </div>
+            <div class="col-md-12">
+                <div class="vscode-explanation">
+                    <h3>Acessando Elementos</h3>
+                    <p>Os elementos de um array são acessados por meio do índice (começando do 0).</p>
+                </div>
+            </div>
+            <div class="col-md-12" id="card-1">
+                <div class="vscode-card">
+                    <div class="vscode-header">
+                        <div class="dots">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                        <span>Card.Exemplo</span>
+                    </div>
+                    <div class="vscode-content">
+                        <pre><span class="keyword">let</span>&nbsp;frutas&nbsp;=&nbsp;[<span class="string">'maçã'</span>,&nbsp;<span class="string">'banana'</span>,&nbsp;<span class="string">'laranja'</span>];<br><br><span class="keyword">console</span>.<span class="function">log</span>(frutas[0]);&nbsp;<span class="comment">// &nbsp;saída:&nbsp;maçã</span><br><span class="keyword">console</span>.<span class="function">log</span>(frutas[1]);&nbsp;<span class="comment">// &nbsp;saída:&nbsp;banana</span></pre>
+                    </div>
+                    <div class="vscode-terminal" id="terminal1" style="display: none;">
+                        C:UserProject&gt;<br><br>
+                        <pre><span>'maçã'
+'banana'</span>
+            </pre>
+                    </div>
+                    <div class="vscode-footer">
+                        <button id="btn-1">Executar Código</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-2">
+                <h1>Alterando Elementos</h1>
+            </div>
+            <div class="mb-2"></div>
+            <div class="mb-2">
+                <h5>Você pode alterar o valor de um elemento do array diretamente, acessando pelo índice. javascript
+                    Copiar</h5>
+            </div>
+            <div class="col-md-12" id="card-2">
+                <div class="vscode-card">
+                    <div class="vscode-header">
+                        <div class="dots">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                        <span>Card.Exemplo</span>
+                    </div>
+                    <div class="vscode-content">
+                        <pre><span class="keyword">let</span>&nbsp;frutas&nbsp;=&nbsp;[<span class="string">'maçã'</span>,&nbsp;<span class="string">'banana'</span>,&nbsp;<span class="string">'laranja'</span>];<br><br>frutas[1]&nbsp;=&nbsp;<span class="string">'uva'</span>;<br><span class="keyword">console</span>.<span class="function">log</span>(frutas);&nbsp;<span class="comment">// &nbsp;saída:&nbsp;[<span class="string">'maçã'</span>,&nbsp;<span class="string">'uva'</span>,&nbsp;<span class="string">'laranja'</span>]</span></pre>
+                    </div>
+                    <div class="vscode-terminal" id="terminal2" style="display: none;">
+                        C:UserProject&gt;<br><br>
+                        <pre><span>['maçã', 'uva', 'laranja']</span>
+            </pre>
+                    </div>
+                    <div class="vscode-footer">
+                        <button id="btn-2">Executar Código</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Formulário para criar novos cards -->
+
+        <!-- footer -->
+        <footer class="site-footer bg-dark text-light py-4">
+            <div class="container">
+                <div class="row">
+                    <!-- Coluna para texto de copyright -->
+                    <div class="col-12 col-md-6 text-center text-md-left">
+                        <p class="footer-text mb-0">© 2025 - Todos os direitos reservados</p>
+                    </div>
+                    <!-- Coluna para links -->
+                    <div class="col-12 col-md-6 text-center text-md-right">
+                        <ul class="footer-links list-unstyled mb-0">
+                            <li class="d-inline-block mr-3">
+                                <a href="#" class="footer-link text-light">Sobre</a>
+                            </li>
+                            <li class="d-inline-block mr-3">
+                                <a href="#" class="footer-link text-light">Serviços</a>
+                            </li>
+                            <li class="d-inline-block">
+                                <a href="#" class="footer-link text-light">Contato</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="deletarCode"></div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="deletarCode">
+        <script>
+            let num = 1;
+
+            function highlightCode(codeContent) {
+                // Substituindo espaços em branco por &nbsp;
+                codeContent = codeContent.replace(/ /g, '&nbsp;');
+                // Substituindo strings com aspas duplas
+                codeContent = codeContent.replace(/"([^"]+)"/g, '<span class="string">"$1"</span>'); // Strings com aspas duplas
+
+                // Substituindo strings com aspas simples
+                codeContent = codeContent.replace(/'([^']+)'/g, '<span class="string">\'$1\'</span>'); // Strings com aspas simples
+                codeContent = codeContent.replace(/`([^`]+)`/g, '<span class="string">\`$1\`</span>'); // Strings com aspas simples
+
+                // Substituindo comentários
+                codeContent = codeContent.replace(/\/\/(.*)$/gm, '<span class="comment">// $1</span>'); // Comentários
+
+                // Substituindo palavras-chave var, let, const
+                codeContent = codeContent.replace(/\b(var|let|const|console)\b/g, '<span class="keyword">$1</span>'); // Palavras-chave
+                codeContent = codeContent.replace(/\b(function|log)\b/g, '<span class="function">$1</span>');
+                codeContent = codeContent.replace(/\b(if|else)\b/g, '<span class="ifelse">$1</span>'); // Palavras-chave
+
+                // Substituindo palavras entre # com a tag <span class="keyword">
+                codeContent = codeContent.replace(/#([^#]+)#/g, '<span class="keyword">$1</span>'); // Palavras entre #
+                codeContent = codeContent.replace(/\n/g, '<br>'); // Adiciona <br> nas quebras de linha do código
+
+                return codeContent;
+            }
+
+
+
+            function createCodeCard(fileName, codeContent, terminalContent) {
+                const container = document.getElementById("cards-container");
+
+                const card = document.createElement("div");
+                card.className = "col-md-12";
+                card.id = `card-${num}`;
+
+                // Aplicando a formatação no código
+                const formattedCodeContent = highlightCode(codeContent);
+
+                card.innerHTML = `
+    <div class="vscode-card">
+        <div class="vscode-header">
+            <div class="dots">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+            </div>
+            <span>${fileName}</span>
+        </div>
+        <div class="vscode-content">
+            <pre>${formattedCodeContent}</pre>
+        </div>
+        <div class="vscode-terminal" id="terminal${num}">
+            C:UserProject><br><br><pre><span>${terminalContent}</span>
+            </pre>
+        </div>
+        <div class="vscode-footer">
+            <button id="btn-${num}">Executar Código</button>
+        </div>
+    </div>`;
+
+                container.appendChild(card); // Adiciona o card ao DOM antes de capturar elementos
+
+                // Capturar botão e terminal DEPOIS de adicionar ao DOM
+                const btn = document.getElementById(`btn-${num}`);
+                const terminal = document.getElementById(`terminal${num}`);
+
+                btn.addEventListener("click", function () {
+                    terminal.style.display = terminal.style.display === "flex" ? "none" : "flex";
+                });
+
+                num++; // Incrementa o ID para o próximo card
+            }
+
+
+            // Função para adicionar um novo card
+            function addNewCard() {
+                const fileName = document.getElementById("file-name").value.trim();
+                const codeContent = document.getElementById("code-content").value.trim();
+                const terminalContent = document.getElementById("terminal-content").value.trim();
+
+                if (!fileName || !codeContent || !terminalContent) {
+                    alert("Por favor, preencha todos os campos!");
+                    return;
+                }
+
+                createCodeCard(fileName, codeContent, terminalContent);
+            }
+
+            // Função para adicionar o conteúdo de explicação no card
+            function addContent(event) {
+                event.preventDefault(); // Evitar o envio do formulário
+
+                const title = document.getElementById("codeTitle").value.trim();
+                const explanation = document.getElementById("codeExplanation").value.trim();
+
+                const colDiv = document.createElement('div');
+                colDiv.classList.add('col-md-12');
+
+                const vscodeExplanationDiv = document.createElement('div');
+                vscodeExplanationDiv.classList.add('vscode-explanation');
+
+                const h3 = document.createElement('h3');
+                h3.textContent = title;
+
+                const p1 = document.createElement('p');
+                p1.innerHTML = explanation;
+
+                // Criar botão de deletar
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Deletar';
+                deleteButton.classList.add('btn', 'btn-danger', 'delete-button');
+                deleteButton.id = 'btndel'; // Corrigido aqui
+                deleteButton.style.marginTop = '10px';
+
+                // Adicionar funcionalidade ao botão de deletar
+                deleteButton.addEventListener('click', function () {
+                    colDiv.remove(); // Remove o card do DOM
+                });
+
+                // Adicionar elementos ao card
+                vscodeExplanationDiv.appendChild(h3);
+                vscodeExplanationDiv.appendChild(p1);
+                vscodeExplanationDiv.appendChild(deleteButton);
+                colDiv.appendChild(vscodeExplanationDiv);
+
+                // Adicionar o card ao container
+                document.getElementById('cards-container').appendChild(colDiv);
+            }
+            function addDynamicList(event) {
+                event.preventDefault(); // Evitar o envio do formulário
+
+                // Obter os valores dos inputs e transformá-los em arrays
+                const prefixes = document.getElementById("listPrefix").value.trim().split(',');
+                const listItems = document.getElementById("listItems").value.trim().split(',');
+
+                // Verificar se os arrays possuem o mesmo tamanho
+                if (prefixes.length !== listItems.length) {
+                    alert("O número de prefixos e itens deve ser igual!");
+                    return;
+                }
+
+                // Criar o container para a lista
+                const colDiv = document.createElement('div');
+                colDiv.classList.add('col-md-12', 'mb-4');
+
+                const ul = document.createElement('ul');
+                ul.classList.add('styled-list', 'list-group');
+
+                // Adicionar os itens da lista pareando os prefixos com os itens
+                prefixes.forEach((prefix, index) => {
+                    const li = document.createElement('li');
+                    li.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center'); // Estilo do Bootstrap
+
+                    // Preencher a `li` com o prefixo e o item correspondente
+                    li.innerHTML = `<span><strong>${prefix.trim()}:</strong> ${listItems[index].trim()}</span>`;
+
+                    // Botão para deletar o item individual
+                    const deleteLiButton = document.createElement('button');
+                    deleteLiButton.classList.add('btn', 'btn-danger', 'btn-sm');
+                    deleteLiButton.id = 'btndel'; // Corrigido aqui
+                    deleteLiButton.textContent = 'Deletar';
+                    deleteLiButton.onclick = () => li.remove();
+
+                    li.appendChild(deleteLiButton);
+                    ul.appendChild(li);
+                });
+
+                // Botão para deletar a lista inteira
+                const deleteUlButton = document.createElement('button');
+                deleteUlButton.classList.add('btn', 'btn-danger', 'mt-2');
+                deleteUlButton.id = 'btndel'; // Corrigido aqui
+                deleteUlButton.textContent = 'Deletar Lista';
+                deleteUlButton.onclick = () => colDiv.remove();
+
+                // Adicionar a lista e o botão ao container
+                colDiv.appendChild(ul);
+                colDiv.appendChild(deleteUlButton);
+                document.getElementById('cards-container').appendChild(colDiv);
+
+
+            }
+
+            let table; // Variável global para a tabela dinâmica
+
+            // Função para adicionar uma tabela dinâmica
+            function addDynamicTable() {
+                const container = document.getElementById("table-container");
+                container.innerHTML = ""; // Limpar o container para evitar múltiplas tabelas
+
+                // Criar a estrutura base da tabela
+                const colDiv = document.createElement("div");
+                colDiv.classList.add("col-md-12");
+
+                const tableResponsiveDiv = document.createElement("div");
+                tableResponsiveDiv.classList.add("table-responsive");
+
+                table = document.createElement("table");
+                table.classList.add("table", "table-striped-columns", "styled-table");
+
+                // Criar o cabeçalho da tabela
+                const thead = table.createTHead();
+                const headerRow = thead.insertRow();
+                const headers = ["#", "Nome", "Descrição", "Status"];
+                headers.forEach(headerText => {
+                    const th = document.createElement("th");
+                    th.textContent = headerText;
+                    th.contentEditable = "true"; // Torna o <th> editável
+                    headerRow.appendChild(th);
+                });
+
+                // Criar o corpo da tabela
+                const tbody = table.createTBody();
+
+                // Adicionar uma linha inicial ao corpo da tabela
+                const row = tbody.insertRow();
+                row.innerHTML = `
+        <td>1</td>
+        <td contenteditable="true">Exemplo</td>
+        <td contenteditable="true">Descrição inicial</td>
+        <td contenteditable="true"><span class="status active">Ativo</span></td>
+        `;
+
+                // Adicionar a tabela à estrutura
+                tableResponsiveDiv.appendChild(table);
+                colDiv.appendChild(tableResponsiveDiv);
+                container.appendChild(colDiv);
+            }
+
+            // Função para adicionar uma linha à tabela
+            function addRow() {
+                if (!table) {
+                    alert("Por favor, adicione uma tabela primeiro!");
+                    return;
+                }
+
+                const tbody = table.tBodies[0];
+                const rowCount = tbody.rows.length + 1;
+                const row = tbody.insertRow();
+
+                // Adicionar células editáveis à nova linha
+                row.innerHTML = `
+        <td>${rowCount}</td>
+        <td contenteditable="true">Novo Nome</td>
+        <td contenteditable="true">Nova Descrição</td>
+        <td contenteditable="true"><span class="status active">Ativo</span></td>
+        `;
+            }
+
+            // Função para adicionar uma coluna à tabela
+            function addColumn() {
+                if (!table) {
+                    alert("Por favor, adicione uma tabela primeiro!");
+                    return;
+                }
+
+                // Adicionar uma nova célula ao cabeçalho
+                const headerRow = table.tHead.rows[0];
+                const th = document.createElement("th");
+                th.textContent = `Nova Coluna`;
+                th.contentEditable = "true"; // Torna o novo <th> editável
+                headerRow.appendChild(th);
+
+                // Adicionar uma nova célula a cada linha do corpo
+                const tbody = table.tBodies[0];
+                for (const row of tbody.rows) {
+                    const cell = row.insertCell();
+                    cell.textContent = "Novo Valor";
+                    cell.contentEditable = "true";
+                }
+            }
+
+            // Função para deletar uma linha
+            function deleteRow() {
+                if (!table) {
+                    alert("Por favor, adicione uma tabela primeiro!");
+                    return;
+                }
+
+                const tbody = table.tBodies[0];
+                if (tbody.rows.length > 0) {
+                    tbody.deleteRow(tbody.rows.length - 1); // Deleta a última linha
+                } else {
+                    alert("Não há linhas para excluir!");
+                }
+            }
+
+            // Função para deletar uma coluna
+            function deleteColumn() {
+                if (!table) {
+                    alert("Por favor, adicione uma tabela primeiro!");
+                    return;
+                }
+
+                const headerRow = table.tHead.rows[0];
+                if (headerRow.cells.length > 0) {
+                    const columnIndex = headerRow.cells.length - 1; // Índice da última coluna
+                    headerRow.deleteCell(columnIndex);
+
+                    const tbody = table.tBodies[0];
+                    for (const row of tbody.rows) {
+                        row.deleteCell(columnIndex);
+                    }
+                } else {
+                    alert("Não há colunas para excluir!");
+                }
+            }
+
+            // Função para finalizar a tabela
+            function finalizeTable() {
+                if (!table) {
+                    alert("Por favor, adicione uma tabela primeiro!");
+                    return;
+                }
+
+                // Clonar a tabela e torná-la não modificável
+                const finalizedTable = table.cloneNode(true);
+                finalizedTable.classList.remove("table-striped-columns");
+                const cells = finalizedTable.querySelectorAll("[contenteditable]");
+                cells.forEach(cell => cell.removeAttribute("contenteditable"));
+
+                // Adicionar a tabela finalizada ao cards-container
+                const cardsContainer = document.getElementById("cards-container");
+                const cardDiv = document.createElement("div");
+                cardDiv.classList.add("col-md-12", "mb-4");
+
+                const tableResponsiveDiv = document.createElement("div");
+                tableResponsiveDiv.classList.add("table-responsive");
+                tableResponsiveDiv.appendChild(finalizedTable);
+
+                cardDiv.appendChild(tableResponsiveDiv);
+                cardsContainer.appendChild(cardDiv);
+
+                // Remover a tabela atual
+                const tableContainer = document.getElementById("table-container");
+                tableContainer.innerHTML = "";
+                table = null; // Limpa a referência da tabela atual
+            }
+
+            // Função para adicionar títulos dinâmicos
+            function addDynamicTitle() {
+                const titleText = document.getElementById("titleText").value.trim();
+                const titleLevel = document.getElementById("titleLevel").value;
+
+                if (!titleText) {
+                    alert("Por favor, insira o texto do título!");
+                    return;
+                }
+
+                // Criar o título com o nível selecionado
+                const titleElement = document.createElement(`h${titleLevel}`);
+                titleElement.textContent = titleText;
+
+                // Criar o botão para deletar o título
+                const deleteButton = document.createElement('button');
+                deleteButton.classList.add('btn', 'btn-danger', 'ml-3');
+                deleteButton.id = 'btndel'; // Corrigido aqui
+                deleteButton.textContent = 'Deletar';
+
+                // Adicionar evento de deletação
+                deleteButton.onclick = function () {
+                    titleElement.remove(); // Deleta o título
+                    deleteButton.remove(); // Deleta o botão
+                };
+
+                // Adicionar o título e o botão ao container
+                const titlesContainer = document.getElementById("cards-container");
+                const titleWrapper = document.createElement('div');
+                titleWrapper.classList.add('mb-2');
+                titleWrapper.appendChild(titleElement);
+                titleWrapper.appendChild(deleteButton);
+
+                titlesContainer.appendChild(titleWrapper);
+
+            }
+
+
+
+
+        </script>
+    </div>
+    <script>
+        function deletarElementos() {
+            // Deletar todos os elementos com id 'btndel'
+            const btnsDel = document.querySelectorAll('#btndel');
+            btnsDel.forEach(btn => btn.remove());
+
+            // Deletar o conteúdo da div com a classe 'deletarCode'
+            const divDeletar = document.querySelector('.deletarCode');
+            if (divDeletar) {
+                divDeletar.innerHTML = ''; // Limpar o conteúdo
+            }
+        }
+    </script>
+
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+
+</body>
+</html>

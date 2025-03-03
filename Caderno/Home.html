@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caderno de Programação - JavaScript</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0a0f1c;
+            color: #fff;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            font-family: 'roboto';
+        }
+
+
+        header {
+            background-color: #0a193d;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+            height: 80vh;
+        }
+
+        .module {
+            background: linear-gradient(145deg, #1e293b, #111827);
+            margin: 15px;
+            padding: 20px;
+            width: 20%;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 6px 8px 14px rgba(0, 0, 0, 1);
+            margin-top: 50px;
+        }
+
+        .module img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 6px 8px 14px rgba(0, 0, 0, 0.2);
+        }
+
+        .module h3 {
+            font-size: 20px;
+            margin: 15px 0;
+
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .module H3 {
+            background: linear-gradient(90deg, #b8c2f0, #4d4fb4, #c1c8eb, #4d4fb4);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientAnimation 2.5s infinite ease-in-out;
+        }
+
+
+        .module button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .module button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .module h3 {
+            font-size: 22px;
+            margin: 15px 0;
+            font-weight: 600;
+        }
+
+        .module p {
+            font-size: 16px;
+            color: #b8c2f0;
+        }
+
+        .button {
+            display: flex;
+            padding: 15px;
+            margin: 10px;
+            text-align: center;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 8px;
+            transition: background 0.3s;
+            box-shadow: 6px 8px 14px rgba(0, 0, 0, 0.5);
+
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="module">
+            <img src="var.jpeg" alt="Variáveis">
+            <h3 class="animated-gradient-text">Modulo 01 - O Essencial</h3>
+            <p>Conteúdo:</p>
+            <a href="Js/1.JavaScript_Tipos.html" class="button">Tipos primitivos</a>
+            <a href="Js/2.VariaveisJs.html" class="button">Declarando variáveis</a>
+            <a href="Js/3.TrutyAndFalse.html" class="button">Truthy e Falsy</a>
+            <a href="Js/4.Conversão.html" class="button">Conversão</a>
+            <a href="Js/5.Errors.html" class="button">Erros</a>
+            <a href="Js/6.Console.api.html" class="button">Console API</a>
+            <a href="Js/7.Operadores.html" class="button">Operadores</a>
+            <a href="Js/8.TemplateL.html" class="button">Template Literals</a>
+            <a href="Js/9.Funções.html" class="button">Funções</a>
+            <a href="Js/10.Parametros.html" class="button">Parâmetros</a>
+            <a href="Js/11.Expressões_de_funções.html" class="button">Expressões de função</a>
+            <a href="Js/12.Arrow_function.html" class="button">Arrow Functions</a>
+            <a href="Js/13.Operador_ternario.html" class="button">Operador Ternário</a>
+            <a href="Js/14.if_and_else.html" class="button">If e Else</a>
+        </div>
+        <div class="module">
+            <img src="array.jpeg" alt="Variáveis">
+            <h3>Modulo 02 - Manipulação De Arrays</h3>
+            <p>Conteúdo:</p>
+            <a href="Js/15.2.Arrays_criar.html" class="button">Criando Arrays</a>
+            <a href="Js/16.2.alterando_array.html" class="button">Alterando Arrays</a>
+            <a href="Js/17.2.Metodos_array.html" class="button">Métodos de Arrays</a>
+            <a href="Js/18.2.metodos_mod_inte.html" class="button">Métodos Modificadores</a>
+            <a href="Js/19.2.transform_array.html" class="button">Transformando Arrays</a>
+            <a href="Js/20.2.loops.html" class="button">Loops</a>
+            <a href="Js/21.2.Arrays Multidimensionais.html" class="button">Arrays Multidimensionais</a>
+            <a href="Js/22.2.ordenação.html" class="button">Ordenação</a>
+        </div>
+        <div class="module">
+            <img src="var.jpeg" alt="Variáveis">
+            <h3>Modulo 01</h3>
+            <p>Aprenda como declarar e usar variáveis em JavaScript.</p>
+            <a href="#" class="button">Tipos primitivos 14 / 14 - 42min</a>
+            <a href="#" class="button">Declarando variáveis 9 / 9 - 46min</a>
+            <a href="#" class="button">O JavaScript e o NodeJS 9 / 9 - 36min</a>
+            <a href="#" class="button">Operadores 8 / 8 - 28min</a>
+            <a href="#" class="button">Funções 15 / 15 - 69min</a>
+        </div>
+        <div class="module">
+            <img src="var.jpeg" alt="Variáveis">
+            <h3>Modulo 01</h3>
+            <p>Aprenda como declarar e usar variáveis em JavaScript.</p>
+            <a href="#" class="button">Tipos primitivos 14 / 14 - 42min</a>
+            <a href="#" class="button">Declarando variáveis 9 / 9 - 46min</a>
+            <a href="#" class="button">O JavaScript e o NodeJS 9 / 9 - 36min</a>
+            <a href="#" class="button">Operadores 8 / 8 - 28min</a>
+            <a href="#" class="button">Funções 15 / 15 - 69min</a>
+        </div>
+
+    </div>
+
+
+</body>
+</html>

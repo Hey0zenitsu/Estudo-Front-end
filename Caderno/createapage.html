@@ -320,6 +320,7 @@
                 // Substituindo palavras-chave var, let, const
                 codeContent = codeContent.replace(/\b(var|let|const|console)\b/g, '<span class="keyword">$1</span>'); // Palavras-chave
                 codeContent = codeContent.replace(/\b(function|log)\b/g, '<span class="function">$1</span>');
+                codeContent = codeContent.replace(/\b(if|else)\b/g, '<span class="ifelse">$1</span>'); // Palavras-chave
 
                 // Substituindo palavras entre # com a tag <span class="keyword">
                 codeContent = codeContent.replace(/#([^#]+)#/g, '<span class="keyword">$1</span>'); // Palavras entre #

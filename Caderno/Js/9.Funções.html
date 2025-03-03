@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)http://127.0.0.1:5500/createapage.html -->
+<html lang="pt-br" data-lt-installed="true">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card estilo VS Code</title>
+    <!-- Link para o Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background-color: #121212;
+            color: #f8f9fa;
+        }
+
+        .form-control {
+            background-color: #1f1f1f;
+            color: #f8f9fa;
+            /* Garante que o texto seja branco */
+            border: 1px solid #333333;
+        }
+
+        .form-control:focus {
+            background-color: #1f1f1f;
+            /* Mantém a consistência do fundo */
+            color: #f8f9fa;
+            border-color: #0d6efd;
+            /* Realça o foco no campo */
+            box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
+        }
+
+        .form-control::placeholder {
+            color: #888888;
+            /* Contraste adequado para o placeholder */
+        }
+
+        .btn-primary {
+            background-color: #0d6efd;
+            border: none;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            border: none;
+        }
+
+        .btn-warning {
+            background-color: #ffc107;
+            border: none;
+            color: #121212;
+        }
+
+        .btn-success {
+            background-color: #198754;
+            border: none;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #f8f9fa;
+        }
+
+        #final {
+            font-size: 55px;
+            margin-top: 150px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Minha Marca</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <script>
+                                function aulas() {
+                                    let menu = document.getElementById('menu'); // Obtém o menu pelo ID
+                                    let items = menu.querySelectorAll("ul li"); // Pega todos os itens da lista
+                                    let h1 = menu.querySelector("h1"); // Pega o h1
+                                    let h3 = menu.querySelector("h3"); // Pega o h3
+
+                                    if (menu.classList.contains("show")) {
+                                        // Se o menu já está visível, apenas remove a classe para escondê-lo sem animação
+                                        menu.classList.remove("show");
+
+                                    } else {
+                                        // Se o menu está fechado, abre ele com animação normal
+                                        menu.classList.add("show");
+
+                                        // Aplica animação de entrada para h1 e h3
+                                        h1.style.animation = `slideInText 0.4s ease forwards`;
+                                        h1.style.animationDelay = "0.1s";  // h1 aparece antes
+
+                                        h3.style.animation = `slideInText 0.4s ease forwards`;
+                                        h3.style.animationDelay = "0.1s";  // h3 aparece logo depois
+
+                                        // Aplica animação de entrada para os itens da lista
+                                        items.forEach((item, index) => {
+                                            item.style.animation = `slideIn 0.3s ease forwards`;
+                                            item.style.animationDelay = `${0.1 * (index + 1) + 0.1}s`; // Adiciona delay progressivo e espera o h1 e h3 aparecerem
+                                        });
+                                    }
+                                }
+                            </script><a class="nav-link" onclick="aulas()" href="#">Aulas</a>
+                        </li>
+
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#">Sobre</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Serviços
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                                <li><a class="dropdown-item" href="#">Serviço
+                                        1</a></li>
+                                <li><a class="dropdown-item" href="#">Serviço
+                                        2</a></li>
+                                <li><a class="dropdown-item" href="#">Serviço
+                                        3</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Contato
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="contactDropdown">
+                                <li><a class="dropdown-item" href="#">Email</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#">Telefone</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#">Suporte</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="menu" id="menu">
+            <h1>JavaScript</h1>
+            <h3>Modulo 01</h3>
+            <ul>
+                <li><a href='1.JavaScript_Tipos.html'>1.JavaScript_Tipos.html</a></li>
+                <li><a href='2.VariaveisJs.html'>2.VariaveisJs.html</a></li>
+                <li><a href='3.TrutyAndFalse.html'>3.TrutyAndFalse.html</a></li>
+                <li><a href='4.Conversão.html'>4.Conversão.html</a></li>
+                <li><a href='5.Errors.html'>5.Errors.html</a></li>
+                <li><a href='6.Console.api.html'>6.Console.api.html</a></li>
+                <li><a href='7.Operadores.html'>7.Operadores.html</a></li>
+                <li><a href='8.TemplateL.html'>8.TemplateL.html</a></li>
+                <li><a href='9.Funções.html'>9.Funções.html</a></li>
+                <li><a href='10.Parametros.html'>10.Parametros.html</a></li>
+                <li><a href='11.Expressões_de_funções.html'>11.Expressões_de_funções.html</a></li>
+                <li><a href='12.Arrow_function.html'>12.Arrow_function.html</a></li>
+                <li><a href='13.Operador_ternario.html'>13.Operador_ternario.html</a></li>
+                <li><a href='14.if_and_else.html'>14.if_and_else.html</a></li>
+            </ul>
+            <h3>Modulo 02</h3>
+            <ul>
+                <li><a href='15.2.Arrays_criar.html'>15.2.Arrays_criar.html</a></li>
+                <li><a href='16.2.alterando_array.html'>16.2.alterando_array.html</a></li>
+                <li><a href='17.2.Metodos_array.html'>17.2.Metodos_array.html</a></li>
+                <li><a href='18.2.metodos_mod_inte.html'>18.2.metodos_mod_inte.html</a></li>
+                <li><a href='19.2.transform_array.html'>19.2.transform_array.html</a></li>
+                <li><a href='20.2.loops.html'>20.2.loops.html</a></li>
+                <li><a href='21.2.Arrays Multidimensionais.html'>21.2.Arrays Multidimensionais.html</a></li>
+                <li><a href='22.2.ordenação.html'>22.2.ordenação.html</a></li>
+                <li><a href='menu.html'>menu.html</a></li>
+            </ul>
+        </div>
+
+        <!-- Container para os cards -->
+        <div class="row" id="cards-container">
+            <div class="mb-2">
+                <h1>Funções em JavaScript</h1>
+            </div>
+            <div class="col-md-12">
+                <div class="vscode-explanation">
+                    <h3>O que são funções?</h3>
+                    <p>Funções em JavaScript são blocos de código reutilizáveis que podem ser chamados para realizar uma
+                        tarefa específica. Elas ajudam a organizar e reduzir a repetição de código, tornando o programa
+                        mais eficiente e fácil de manter.</p>
+                </div>
+            </div>
+            <div class="mb-2"></div>
+            <div class="mb-2"></div>
+            <div class="mb-2">
+                <h1>Como declarar uma função?</h1>
+            </div>
+            <div class="col-md-12">
+                <div class="vscode-explanation">
+                    <h3>Sintaxe básica</h3>
+                    <p>A declaração de uma função pode ser feita utilizando a palavra-chave function, seguida pelo nome
+                        da função, parênteses (que podem conter parâmetros) e chaves para delimitar o bloco de código.
+                    </p>
+                </div>
+            </div>
+            <!-- Card de Código -->
+            <div class="col-md-12">
+                <div class="vscode-card">
+                    <div class="vscode-header">
+                        <div class="dots">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                        <span>Exemplo: Declaração de Função</span>
+                    </div>
+                    <div class="vscode-content">
+                        <pre>
+<span class="keyword">function</span> <span class="function">nomeDaFuncao</span>(<span class="parameter">param1, param2</span>) {
+    <span class="comment">// Código a ser executado</span>
+            }
+                        </pre>
+                    </div>
+                    <div class="vscode-terminal">
+                        <span>1</span>
+                    </div>
+                    <div class="vscode-footer">
+                        <button onclick="executeCode(this)">Executar Código</button>
+                    </div>
+                </div>
+            </div>
+
+            <p>Este exemplo mostra a declaração básica de uma função em JavaScript. Ela pode receber parâmetros, como
+                `param1` e `param2`, e executar um bloco de código quando chamada.</p>
+
+            <div class="mb-2">
+                <h3>Exemplo:</h3>
+            </div>
+            <!-- Card de Código -->
+            <div class="col-md-12">
+                <div class="vscode-card">
+                    <div class="vscode-header">
+                        <div class="dots">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                        <span>Exemplo: Função de Saudação</span>
+                    </div>
+                    <div class="vscode-content">
+                        <pre>
+<span class="keyword">function</span> <span class="function">saudacao</span>(<span class="parameter">nome</span>) {
+    <span class="keyword">console</span>.<span class="function">log</span>(<span class="string">"Olá, "</span> + <span class="variable">nome</span> + <span class="string">"!"</span>);
+            }
+<span class="function">saudacao</span>(<span class="string">"Bruno"</span>);
+                        </pre>
+                    </div>
+                    <div class="vscode-terminal" id='terminal1'>
+                        <span>1</span>
+                    </div>
+                    <div class="vscode-footer">
+                        <script>
+                            function card1() {
+                                let terminal = document.getElementById('terminal1')
+                                terminal.innerHTML = "C:User/Project><br><br> Olá,Bruno!"
+
+                                if (terminal.style.display === "flex") {
+                                    terminal.style.display = "none";
+                                } else {
+                                    terminal.style.display = "flex";
+                                }
+                            }
+                        </script>
+                        <button onclick="card1()">Executar Código</button>
+                    </div>
+                </div>
+            </div>
+
+            <p>Este exemplo define uma função chamada `saudacao` que recebe um parâmetro `nome` e exibe uma mensagem de
+                saudação no console. Quando a função é chamada com o argumento "Bruno", ela imprime "Olá, Bruno!" no
+                terminal.</p>
+
+            <div class="mb-2">
+                <h1>Tipos de funções</h1>
+            </div>
+            <div class="col-md-12">
+                <div class="vscode-explanation">
+                    <h3>1. Funções Declaradas</h3>
+                    <p>São aquelas definidas usando a palavra-chave function e possuem um nome. Elas são elevadas
+                        (hoisting), ou seja, podem ser chamadas antes de serem declaradas.</p>
+                </div>
+            </div>
+            <!-- Card de Código -->
+            <div class="col-md-12">
+                <div class="vscode-card">
+                    <div class="vscode-header">
+                        <div class="dots">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                        <span>Exemplo: Função de Soma</span>
+                    </div>
+                    <div class="vscode-content">
+                        <pre>
+<span class="keyword">function</span> <span class="function">somar</span>(<span class="parameter">a, b</span>) {
+    <span class="keyword">return</span> <span class="variable">a</span> + <span class="variable">b</span>;
+            }
+<span class="keyword">console</span>.<span class="function">log</span>(<span class="function">somar</span>(<span class="number">2</span>, <span class="number">3</span>)); <span class="comment">// 5</span>
+                        </pre>
+                    </div>
+                    <div class="vscode-terminal" id="terminal2">
+                        <span>1</span>
+                    </div>
+                    <div class="vscode-footer">
+                        <script>
+                            function card2() {
+                                let terminal = document.getElementById('terminal2')
+                                terminal.innerHTML = "C:User/Project><br><br> 5"
+
+                                if (terminal.style.display === "flex") {
+                                    terminal.style.display = "none";
+                                } else {
+                                    terminal.style.display = "flex";
+                                }
+                            }
+                        </script>
+                        <button onclick="card2()">Executar Código</button>
+                    </div>
+                </div>
+            </div>
+
+            <p>Este exemplo define uma função chamada `somar`, que recebe dois parâmetros `a` e `b`, e retorna a soma
+                desses valores. Quando a função é chamada com os argumentos `2` e `3`, o resultado `5` é impresso no
+                console.</p>
+
+            <div class="col-md-12">
+                <div class="vscode-explanation">
+                    <h3>2. Funções Anônimas</h3>
+                    <p>São funções sem nome, geralmente atribuídas a uma variável.</p>
+                </div>
+            </div>
+            <!-- Card de Código -->
+            <div class="col-md-12">
+                <div class="vscode-card">
+                    <div class="vscode-header">
+                        <div class="dots">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                        <span>Exemplo: Função de Multiplicação</span>
+                    </div>
+                    <div class="vscode-content">
+                        <pre>
+<span class="keyword">const</span> <span class="function">multiplicar</span> = <span class="keyword">function</span>(<span class="parameter">a, b</span>) {
+    <span class="keyword">return</span> <span class="variable">a</span> * <span class="variable">b</span>;
+            };
+<span class="keyword">console</span>.<span class="function">log</span>(<span class="function">multiplicar</span>(<span class="number">2</span>, <span class="number">3</span>)); <span class="comment">// 6</span>
+                        </pre>
+                    </div>
+                    <div class="vscode-terminal" id='terminal3'>
+                        <span>1</span>
+                    </div>
+                    <div class="vscode-footer">
+                        <script>
+                            function card3() {
+                                let terminal = document.getElementById('terminal3')
+                                terminal.innerHTML = "C:User/Project><br><br> 6"
+
+                                if (terminal.style.display === "flex") {
+                                    terminal.style.display = "none";
+                                } else {
+                                    terminal.style.display = "flex";
+                                }
+                            }
+                        </script>
+                        <button onclick="card3()">Executar Código</button>
+                    </div>
+                </div>
+            </div>
+
+            <p>Este exemplo mostra como declarar uma função anônima chamada `multiplicar`, que recebe dois parâmetros e
+                retorna o produto desses números. Quando a função é chamada com os argumentos `2` e `3`, o resultado `6`
+                é impresso no console.</p>
+
+            <div class="col-md-12">
+                <div class="vscode-explanation">
+                    <h3>3. Funções de Setas (Arrow Functions)</h3>
+                    <p>São uma forma mais concisa de escrever funções. Elas não possuem seu próprio this.</p>
+                </div>
+            </div>
+            <!-- Card de Código -->
+            <div class="col-md-12">
+                <div class="vscode-card">
+                    <div class="vscode-header">
+                        <div class="dots">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                        <span>Exemplo: Função de Divisão</span>
+                    </div>
+                    <div class="vscode-content">
+                        <pre>
+<span class="keyword">const</span> <span class="function">dividir</span> = (<span class="parameter">a, b</span>) =&gt; <span class="variable">a</span> / <span class="variable">b</span>;
+<span class="keyword">console</span>.<span class="function">log</span>(<span class="function">dividir</span>(<span class="number">6</span>, <span class="number">3</span>)); <span class="comment">// 2</span>
+                        </pre>
+                    </div>
+                    <div class="vscode-terminal" id='terminal4'>
+                        <span>1</span>
+                    </div>
+                    <div class="vscode-footer">
+                        <script>
+                            function card4() {
+                                let terminal = document.getElementById('terminal4')
+                                terminal.innerHTML = "C:User/Project><br><br> 2"
+
+                                if (terminal.style.display === "flex") {
+                                    terminal.style.display = "none";
+                                } else {
+                                    terminal.style.display = "flex";
+                                }
+                            }
+                        </script>
+                        <button onclick="card4()">Executar Código</button>
+                    </div>
+                </div>
+            </div>
+
+            <p>Esse exemplo mostra como declarar uma função de divisão utilizando a sintaxe de arrow function. Quando a
+                função `dividir(6, 3)` é chamada, o resultado `2` é exibido no console.</p>
+
+            <div class="mb-2">
+                <h1>Parâmetros e Argumentos</h1>
+            </div>
+            <div class="mb-2">
+                <h1>Parâmetros</h1>
+            </div>
+            <div class="mb-2">
+                <h3>Os valores que uma função espera receber ao ser chamada. javascript Copiar Editar</h3>
+            </div>
+            <div class="col-md-12">
+                <div class="vscode-card">
+                    <div class="vscode-header">
+                        <div class="dots">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                        <span>Exemplo: Função de Saudação</span>
+                    </div>
+                    <div class="vscode-content">
+                        <pre>
+<span class="keyword">function</span> <span class="function">cumprimentar</span>(<span class="parameter">nome</span>) {
+    <span class="function">console</span>.<span class="function">log</span>(<span class="string">"Olá, "</span> + <span class="parameter">nome</span> + <span class="string">"!"</span>);
+}
+<span class="function">cumprimentar</span>("Bruno")
+
+                        </pre>
+                    </div>
+                    <div class="vscode-terminal" id='terminal5'>
+                        <span>1</span>
+                    </div>
+                    <div class="vscode-footer">
+                        <script>
+                            function card5() {
+                                let terminal = document.getElementById('terminal5')
+                                terminal.innerHTML = "C:User/Project><br><br> Olá, Bruno!"
+
+                                if (terminal.style.display === "flex") {
+                                    terminal.style.display = "none";
+                                } else {
+                                    terminal.style.display = "flex";
+                                }
+                            }
+                        </script>
+                        <button onclick="card5()">Executar Código</button>
+                    </div>
+                </div>
+            </div>
+
+            <p>Esse código JavaScript define uma função chamada <code>cumprimentar()</code>, que recebe um nome e
+                imprime uma saudação personalizada no terminal. Ao chamar <code>cumprimentar("Bruno")</code>, a mensagem
+                <strong>"Olá, Bruno!"</strong> será exibida no terminal.
+            </p>
+            <div class="mb-2">
+                <h1>Argumentos</h1>
+            </div>
+            <div class="mb-2">
+                <h3>Os valores reais passados para os parâmetros quando a função é chamada. javascript Copiar Editar
+                </h3>
+            </div>
+            <div class="col-md-12">
+                <div class="vscode-card custom-vscode-card">
+                    <div class="vscode-header custom-vscode-header">
+                        <div class="dots">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                        <span>Exemplo: Chamando a Função</span>
+                    </div>
+                    <div class="vscode-content custom-vscode-content">
+                        <pre><span class="function">cumprimentar</span>(<span class="string">"Bruno"</span>);  <span class="comment">// "Olá, Bruno!"</span></pre>
+                    </div>
+                    <div class="vscode-terminal custom-vscode-terminal" id='terminal6'>
+                        <span>1</span>
+                    </div>
+                    <div class="vscode-footer custom-vscode-footer">
+                        <script>
+                            function card6() {
+                                let terminal = document.getElementById('terminal6')
+                                terminal.innerHTML = "C:User/Project><br><br> Olá, Bruno!"
+
+                                if (terminal.style.display === "flex") {
+                                    terminal.style.display = "none";
+                                } else {
+                                    terminal.style.display = "flex";
+                                }
+                            }
+                        </script>
+                        <button onclick="card6()">Executar Código</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <p>Esse exemplo demonstra como chamar uma função em JavaScript. Ao executar o código, o resultado será uma
+                saudação personalizada: "Olá, Bruno!"</p>
+
+
+
+
+
+            <div class="mb-2">
+                <h1>Parâmetros Padrão</h1>
+            </div>
+            <div class="mb-2">
+                <h3>Se nenhum valor for passado, os parâmetros podem assumir um valor padrão. javascript Copiar Editar
+                </h3>
+            </div>
+            <div class="col-md-12">
+                <div class="vscode-card">
+                    <div class="vscode-header">
+                        <div class="dots">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                        <span>Exemplo: Função com Valor Padrão</span>
+                    </div>
+                    <div class="vscode-content">
+                        <pre><span class="keyword">function</span> <span class="function">saudacao</span>(<span class="parameter">nome</span> = <span class="string">"Visitante"</span>) {
+    <span class="keyword">console</span>.<span class="function">log</span>(<span class="string">"Bem-vindo, "</span> + <span class="parameter">nome</span> + <span class="string">"!"</span>);
+            }
+<span class="function">saudacao</span>(); <span class="comment">// "Bem-vindo, Visitante!"</span></pre>
+                    </div>
+                    <div class="vscode-terminal" id='terminal7'>
+                        <span>1</span>
+                    </div>
+                    <div class="vscode-footer">
+                        <script>
+                            function card7() {
+                                let terminal = document.getElementById('terminal7')
+                                terminal.innerHTML = "C:User/Project><br><br>Bem-vindo, Visitante!"
+
+                                if (terminal.style.display === "flex") {
+                                    terminal.style.display = "none";
+                                } else {
+                                    terminal.style.display = "flex";
+                                }
+                            }
+                        </script>
+                        <button onclick="card7()">Executar Código</button>
+                    </div>
+                </div>
+            </div>
+
+            <p>Este exemplo demonstra uma função com um valor padrão para o parâmetro `nome`. Quando não é passado um
+                argumento, a função utiliza o valor `"Visitante"`.</p>
+
+            <div class="mb-2">
+                <h1>Escopo</h1>
+            </div>
+            <div class="col-md-12">
+                <div class="vscode-explanation">
+                    <h3>Escopo Local</h3>
+                    <p>Uma variável declarada dentro de uma função só pode ser acessada dentro dela.</p>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="vscode-card">
+                    <div class="vscode-header">
+                        <div class="dots">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                        <span>Exemplo: Escopo de Variáveis</span>
+                    </div>
+                    <div class="vscode-content">
+                        <pre><span class="keyword">function</span> <span class="function">exemplo</span>() {
+    <span class="keyword">let</span> <span class="variable">mensagem</span> = <span class="string">"Olá!"</span>;
+    <span class="keyword">console</span>.<span class="function">log</span>(<span class="variable">mensagem</span>); <span class="comment">// Funciona</span>
+            }
+<span class="keyword">console</span>.<span class="function">log</span>(<span class="variable">mensagem</span>); <span class="comment">// Erro</span></pre>
+                    </div>
+                    <div class="vscode-terminal" id='terminal8'>
+                        <span>1</span>
+                    </div>
+                    <div class="vscode-footer">
+                        <script>
+                            function card8() {
+                                let terminal = document.getElementById('terminal8')
+                                terminal.innerHTML = "C:User/Project><br><br>ReferenceError: mensagem is not defined"
+
+                                if (terminal.style.display === "flex") {
+                                    terminal.style.display = "none";
+                                } else {
+                                    terminal.style.display = "flex";
+                                }
+                            }
+                        </script>
+                        <button onclick="card8()">Executar Código</button>
+                    </div>
+                </div>
+            </div>
+
+            <p>Este exemplo mostra a diferença entre o escopo de uma variável dentro de uma função e fora dela. A
+                variável `mensagem` é definida dentro da função `exemplo`, então ela não é acessível fora dessa função,
+                resultando em erro.</p>
+
+            <div class="col-md-12">
+                <div class="vscode-explanation">
+                    <h3>Escopo Global</h3>
+                    <p>Variáveis declaradas fora de qualquer função podem ser acessadas em qualquer parte do código.</p>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="vscode-card">
+                    <div class="vscode-header">
+                        <div class="dots">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                        <span>Exemplo: Variável Global</span>
+                    </div>
+                    <div class="vscode-content">
+                        <pre><span class="keyword">let</span> <span class="variable">mensagem</span> = <span class="string">"Global!"</span>;
+<span class="keyword">function</span> <span class="function">exemplo</span>() {
+    <span class="keyword">console</span>.<span class="function">log</span>(<span class="variable">mensagem</span>); <span class="comment">// "Global!"</span>
+            }
+<span class="function">exemplo</span>();</pre>
+                    </div>
+                    <div class="vscode-terminal" id='terminal9'>
+                        <span>1</span>
+                    </div>
+                    <div class="vscode-footer">
+                        <script>
+                            function card9() {
+                                let terminal = document.getElementById('terminal9')
+                                terminal.innerHTML = "C:User/Project><br><br>Global!"
+
+                                if (terminal.style.display === "flex") {
+                                    terminal.style.display = "none";
+                                } else {
+                                    terminal.style.display = "flex";
+                                }
+                            }
+                        </script>
+                        <button onclick="card9()">Executar Código</button>
+                    </div>
+                </div>
+            </div>
+
+            <p>Este exemplo mostra como uma variável global, como `mensagem`, pode ser acessada dentro de uma função.
+                Mesmo dentro de `exemplo`, a variável `mensagem` mantém seu valor e pode ser usada sem problemas.</p>
+
+            <div class="mb-2">
+                <h1>Funções como Valores</h1>
+            </div>
+            <div class="mb-2">
+                <h3>Em JavaScript, funções podem ser atribuídas a variáveis, armazenadas em arrays ou passadas como
+                    argumentos para outras funções.</h3>
+            </div>
+            <div class="col-md-12">
+                <div class="vscode-card">
+                    <div class="vscode-header">
+                        <div class="dots">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                        <span>Exemplo</span>
+                    </div>
+                    <div class="vscode-content">
+                        <pre><span class="keyword">const</span> <span class="variable">dobro</span> = (<span class="parameter">x</span>) =&gt; <span class="variable">x</span> * <span class="number">2</span>;
+            
+<span class="keyword">function</span> <span class="function">aplicarFuncao</span>(<span class="parameter">numero</span>, <span class="parameter">funcao</span>) {
+    <span class="keyword">return</span> <span class="function">funcao</span>(<span class="variable">numero</span>);
+            }
+            
+<span class="keyword">console</span>.<span class="function">log</span>(<span class="function">aplicarFuncao</span>(<span class="number">5</span>, <span class="variable">dobro</span>)); <span class="comment">// 10</span></pre>
+                    </div>
+                    <div class="vscode-terminal" id='terminal10'>
+                        <span>1</span>
+                    </div>
+                    <div class="vscode-footer">
+                        <script>
+                            function card10() {
+                                let terminal = document.getElementById('terminal10')
+                                terminal.innerHTML = "C:User/Project><br><br>10"
+
+                                if (terminal.style.display === "flex") {
+                                    terminal.style.display = "none";
+                                } else {
+                                    terminal.style.display = "flex";
+                                }
+                            }
+                        </script>
+                        <button onclick="card10()">Executar Código</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-2">
+                <h1>Funções Aninhadas</h1>
+            </div>
+            <div class="mb-2">
+                <h3>Uma função pode estar contida dentro de outra função, permitindo a criação de escopos mais
+                    restritos.</h3>
+            </div>
+            <div class="col-md-12">
+                <div class="vscode-card">
+                    <div class="vscode-header">
+                        <div class="dots">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                        <span>Exemplo</span>
+                    </div>
+                    <div class="vscode-content">
+                        <pre><span class="keyword">function</span> <span class="function">externa</span>() {
+    <span class="keyword">function</span> <span class="function">interna</span>() {
+        <span class="keyword">console</span>.<span class="function">log</span>("<span class="string">Sou uma função interna!</span>");
+                }
+    <span class="function">interna</span>();
+            }
+<span class="function">externa</span>(); <span class="comment">// "Sou uma função interna!"</span></pre>
+                    </div>
+                    <div class="vscode-terminal" id='terminal11'>
+                        <span>1</span>
+                    </div>
+                    <div class="vscode-footer">
+                        <script>
+                            function card11() {
+                                let terminal = document.getElementById('terminal11')
+                                terminal.innerHTML = "C:User/Project><br><br>Sou uma função interna!"
+
+                                if (terminal.style.display === "flex") {
+                                    terminal.style.display = "none";
+                                } else {
+                                    terminal.style.display = "flex";
+                                }
+                            }
+                        </script>
+                        <button onclick="card11()">Executar Código</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="vscode-explanation">
+                    <h3>Conclusão</h3>
+                    <p>Funções são uma das ferramentas mais poderosas do JavaScript. Elas permitem modularizar o código,
+                        reduzir redundâncias e criar programas mais organizados e reutilizáveis. Pratique bastante para
+                        dominar os diferentes tipos e usos de funções!</p>
+                </div>
+            </div>
+        </div>
+        <!-- Formulário para criar novos cards -->
+
+        <!-- footer -->
+        <footer class="site-footer bg-dark text-light py-4">
+            <div class="container">
+                <div class="row">
+                    <!-- Coluna para texto de copyright -->
+                    <div class="col-12 col-md-6 text-center text-md-left">
+                        <p class="footer-text mb-0">© 2025 - Todos os direitos reservados</p>
+                    </div>
+                    <!-- Coluna para links -->
+                    <div class="col-12 col-md-6 text-center text-md-right">
+                        <ul class="footer-links list-unstyled mb-0">
+                            <li class="d-inline-block mr-3">
+                                <a href="#" class="footer-link text-light">Sobre</a>
+                            </li>
+                            <li class="d-inline-block mr-3">
+                                <a href="#" class="footer-link text-light">Serviços</a>
+                            </li>
+                            <li class="d-inline-block">
+                                <a href="#" class="footer-link text-light">Contato</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="deletarCode"></div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="deletarCode">
+        <script>
+            // Função para criar um card dinamicamente
+            function createCodeCard(fileName, codeContent, terminalContent) {
+                const container = document.getElementById("cards-container");
+
+                const card = document.createElement("div");
+                card.className = "col-md-12";
+
+                card.innerHTML = `
+                <div class="vscode-card">
+                    <div class="vscode-header">
+                        <div class="dots">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+ <span>${fileName}</span>
+                    </div>
+                    <div class="vscode-content">
+                        <pre>${codeContent}</pre>
+                    </div>
+                    <div class="vscode-terminal">
+ <span>${terminalContent}</span>
+                    </div>
+                    <div class="vscode-footer">
+                        <button onclick="executeCode(this)">Executar Código</button>
+                        <button onclick="deleteCard(this)" id="btndel">Deletar Card</button>
+                    </div>
+                </div>
+            `;
+
+                container.appendChild(card);
+            }
+
+            // Função para executar o código de um card
+            function executeCode(button) {
+                const card = button.closest(".vscode-card");
+                const codeContent = card.querySelector(".vscode-content pre").textContent;
+                const terminal = card.querySelector(".vscode-terminal");
+
+                try {
+                    const result = eval(codeContent);
+                    terminal.textContent = result !== undefined ? result : "Código executado com sucesso.";
+                } catch (error) {
+                    terminal.textContent = `Erro: ${error.message}`;
+                }
+            }
+
+            // Função para deletar um card
+            function deleteCard(button) {
+                const card = button.closest(".col-md-12");
+                card.remove();
+            }
+
+            // Função para adicionar um novo card usando o formulário
+            function addNewCard() {
+                const fileName = document.getElementById("file-name").value.trim();
+                const codeContent = document.getElementById("code-content").value.trim();
+                const terminalContent = document.getElementById("terminal-content").value.trim();
+
+                if (!fileName || !codeContent || !terminalContent) {
+                    alert("Por favor, preencha todos os campos!");
+                    return;
+                }
+
+                createCodeCard(fileName, codeContent, terminalContent);
+
+
+            }
+
+            // Função para adicionar o conteúdo de explicação no card
+            function addContent(event) {
+                event.preventDefault(); // Evitar o envio do formulário
+
+                const title = document.getElementById("codeTitle").value.trim();
+                const explanation = document.getElementById("codeExplanation").value.trim();
+
+                const colDiv = document.createElement('div');
+                colDiv.classList.add('col-md-12');
+
+                const vscodeExplanationDiv = document.createElement('div');
+                vscodeExplanationDiv.classList.add('vscode-explanation');
+
+                const h3 = document.createElement('h3');
+                h3.textContent = title;
+
+                const p1 = document.createElement('p');
+                p1.innerHTML = explanation;
+
+                // Criar botão de deletar
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Deletar';
+                deleteButton.classList.add('btn', 'btn-danger', 'delete-button');
+                deleteButton.id = 'btndel';  // Corrigido aqui
+                deleteButton.style.marginTop = '10px';
+
+                // Adicionar funcionalidade ao botão de deletar
+                deleteButton.addEventListener('click', function () {
+                    colDiv.remove(); // Remove o card do DOM
+                });
+
+                // Adicionar elementos ao card
+                vscodeExplanationDiv.appendChild(h3);
+                vscodeExplanationDiv.appendChild(p1);
+                vscodeExplanationDiv.appendChild(deleteButton);
+                colDiv.appendChild(vscodeExplanationDiv);
+
+                // Adicionar o card ao container
+                document.getElementById('cards-container').appendChild(colDiv);
+            }
+            function addDynamicList(event) {
+                event.preventDefault(); // Evitar o envio do formulário
+
+                // Obter os valores dos inputs e transformá-los em arrays
+                const prefixes = document.getElementById("listPrefix").value.trim().split(',');
+                const listItems = document.getElementById("listItems").value.trim().split(',');
+
+                // Verificar se os arrays possuem o mesmo tamanho
+                if (prefixes.length !== listItems.length) {
+                    alert("O número de prefixos e itens deve ser igual!");
+                    return;
+                }
+
+                // Criar o container para a lista
+                const colDiv = document.createElement('div');
+                colDiv.classList.add('col-md-12', 'mb-4');
+
+                const ul = document.createElement('ul');
+                ul.classList.add('styled-list', 'list-group');
+
+                // Adicionar os itens da lista pareando os prefixos com os itens
+                prefixes.forEach((prefix, index) => {
+                    const li = document.createElement('li');
+                    li.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center'); // Estilo do Bootstrap
+
+                    // Preencher a `li` com o prefixo e o item correspondente
+                    li.innerHTML = `<span><strong>${prefix.trim()}:</strong> ${listItems[index].trim()}</span>`;
+
+                    // Botão para deletar o item individual
+                    const deleteLiButton = document.createElement('button');
+                    deleteLiButton.classList.add('btn', 'btn-danger', 'btn-sm');
+                    deleteLiButton.id = 'btndel';  // Corrigido aqui
+                    deleteLiButton.textContent = 'Deletar';
+                    deleteLiButton.onclick = () => li.remove();
+
+                    li.appendChild(deleteLiButton);
+                    ul.appendChild(li);
+                });
+
+                // Botão para deletar a lista inteira
+                const deleteUlButton = document.createElement('button');
+                deleteUlButton.classList.add('btn', 'btn-danger', 'mt-2');
+                deleteUlButton.id = 'btndel';  // Corrigido aqui
+                deleteUlButton.textContent = 'Deletar Lista';
+                deleteUlButton.onclick = () => colDiv.remove();
+
+                // Adicionar a lista e o botão ao container
+                colDiv.appendChild(ul);
+                colDiv.appendChild(deleteUlButton);
+                document.getElementById('cards-container').appendChild(colDiv);
+
+
+            }
+
+            let table; // Variável global para a tabela dinâmica
+
+            // Função para adicionar uma tabela dinâmica
+            function addDynamicTable() {
+                const container = document.getElementById("table-container");
+                container.innerHTML = ""; // Limpar o container para evitar múltiplas tabelas
+
+                // Criar a estrutura base da tabela
+                const colDiv = document.createElement("div");
+                colDiv.classList.add("col-md-12");
+
+                const tableResponsiveDiv = document.createElement("div");
+                tableResponsiveDiv.classList.add("table-responsive");
+
+                table = document.createElement("table");
+                table.classList.add("table", "table-striped-columns", "styled-table");
+
+                // Criar o cabeçalho da tabela
+                const thead = table.createTHead();
+                const headerRow = thead.insertRow();
+                const headers = ["#", "Nome", "Descrição", "Status"];
+                headers.forEach(headerText => {
+                    const th = document.createElement("th");
+                    th.textContent = headerText;
+                    th.contentEditable = "true"; // Torna o <th> editável
+                    headerRow.appendChild(th);
+                });
+
+                // Criar o corpo da tabela
+                const tbody = table.createTBody();
+
+                // Adicionar uma linha inicial ao corpo da tabela
+                const row = tbody.insertRow();
+                row.innerHTML = `
+        <td>1</td>
+        <td contenteditable="true">Exemplo</td>
+        <td contenteditable="true">Descrição inicial</td>
+        <td contenteditable="true"><span class="status active">Ativo</span></td>
+    `;
+
+                // Adicionar a tabela à estrutura
+                tableResponsiveDiv.appendChild(table);
+                colDiv.appendChild(tableResponsiveDiv);
+                container.appendChild(colDiv);
+            }
+
+            // Função para adicionar uma linha à tabela
+            function addRow() {
+                if (!table) {
+                    alert("Por favor, adicione uma tabela primeiro!");
+                    return;
+                }
+
+                const tbody = table.tBodies[0];
+                const rowCount = tbody.rows.length + 1;
+                const row = tbody.insertRow();
+
+                // Adicionar células editáveis à nova linha
+                row.innerHTML = `
+        <td>${rowCount}</td>
+        <td contenteditable="true">Novo Nome</td>
+        <td contenteditable="true">Nova Descrição</td>
+        <td contenteditable="true"><span class="status active">Ativo</span></td>
+    `;
+            }
+
+            // Função para adicionar uma coluna à tabela
+            function addColumn() {
+                if (!table) {
+                    alert("Por favor, adicione uma tabela primeiro!");
+                    return;
+                }
+
+                // Adicionar uma nova célula ao cabeçalho
+                const headerRow = table.tHead.rows[0];
+                const th = document.createElement("th");
+                th.textContent = `Nova Coluna`;
+                th.contentEditable = "true"; // Torna o novo <th> editável
+                headerRow.appendChild(th);
+
+                // Adicionar uma nova célula a cada linha do corpo
+                const tbody = table.tBodies[0];
+                for (const row of tbody.rows) {
+                    const cell = row.insertCell();
+                    cell.textContent = "Novo Valor";
+                    cell.contentEditable = "true";
+                }
+            }
+
+            // Função para deletar uma linha
+            function deleteRow() {
+                if (!table) {
+                    alert("Por favor, adicione uma tabela primeiro!");
+                    return;
+                }
+
+                const tbody = table.tBodies[0];
+                if (tbody.rows.length > 0) {
+                    tbody.deleteRow(tbody.rows.length - 1); // Deleta a última linha
+                } else {
+                    alert("Não há linhas para excluir!");
+                }
+            }
+
+            // Função para deletar uma coluna
+            function deleteColumn() {
+                if (!table) {
+                    alert("Por favor, adicione uma tabela primeiro!");
+                    return;
+                }
+
+                const headerRow = table.tHead.rows[0];
+                if (headerRow.cells.length > 0) {
+                    const columnIndex = headerRow.cells.length - 1; // Índice da última coluna
+                    headerRow.deleteCell(columnIndex);
+
+                    const tbody = table.tBodies[0];
+                    for (const row of tbody.rows) {
+                        row.deleteCell(columnIndex);
+                    }
+                } else {
+                    alert("Não há colunas para excluir!");
+                }
+            }
+
+            // Função para finalizar a tabela
+            function finalizeTable() {
+                if (!table) {
+                    alert("Por favor, adicione uma tabela primeiro!");
+                    return;
+                }
+
+                // Clonar a tabela e torná-la não modificável
+                const finalizedTable = table.cloneNode(true);
+                finalizedTable.classList.remove("table-striped-columns");
+                const cells = finalizedTable.querySelectorAll("[contenteditable]");
+                cells.forEach(cell => cell.removeAttribute("contenteditable"));
+
+                // Adicionar a tabela finalizada ao cards-container
+                const cardsContainer = document.getElementById("cards-container");
+                const cardDiv = document.createElement("div");
+                cardDiv.classList.add("col-md-12", "mb-4");
+
+                const tableResponsiveDiv = document.createElement("div");
+                tableResponsiveDiv.classList.add("table-responsive");
+                tableResponsiveDiv.appendChild(finalizedTable);
+
+                cardDiv.appendChild(tableResponsiveDiv);
+                cardsContainer.appendChild(cardDiv);
+
+                // Remover a tabela atual
+                const tableContainer = document.getElementById("table-container");
+                tableContainer.innerHTML = "";
+                table = null; // Limpa a referência da tabela atual
+            }
+
+            // Função para adicionar títulos dinâmicos
+            function addDynamicTitle() {
+                const titleText = document.getElementById("titleText").value.trim();
+                const titleLevel = document.getElementById("titleLevel").value;
+
+                if (!titleText) {
+                    alert("Por favor, insira o texto do título!");
+                    return;
+                }
+
+                // Criar o título com o nível selecionado
+                const titleElement = document.createElement(`h${titleLevel}`);
+                titleElement.textContent = titleText;
+
+                // Criar o botão para deletar o título
+                const deleteButton = document.createElement('button');
+                deleteButton.classList.add('btn', 'btn-danger', 'ml-3');
+                deleteButton.id = 'btndel';  // Corrigido aqui
+                deleteButton.textContent = 'Deletar';
+
+                // Adicionar evento de deletação
+                deleteButton.onclick = function () {
+                    titleElement.remove(); // Deleta o título
+                    deleteButton.remove(); // Deleta o botão
+                };
+
+                // Adicionar o título e o botão ao container
+                const titlesContainer = document.getElementById("cards-container");
+                const titleWrapper = document.createElement('div');
+                titleWrapper.classList.add('mb-2');
+                titleWrapper.appendChild(titleElement);
+                titleWrapper.appendChild(deleteButton);
+
+                titlesContainer.appendChild(titleWrapper);
+
+            }
+
+
+
+
+        </script>
+    </div>
+    <script>
+        function deletarElementos() {
+            // Deletar todos os elementos com id 'btndel'
+            const btnsDel = document.querySelectorAll('#btndel');
+            btnsDel.forEach(btn => btn.remove());
+
+            // Deletar o conteúdo da div com a classe 'deletarCode'
+            const divDeletar = document.querySelector('.deletarCode');
+            if (divDeletar) {
+                divDeletar.innerHTML = ''; // Limpar o conteúdo
+            }
+        }
+    </script>
+
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+
+</body>
+
+</html>

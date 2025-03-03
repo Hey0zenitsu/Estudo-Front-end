@@ -3,7 +3,7 @@
 /* Estilo global */
 body {
     font-family: "Share Tech Mono", Courier, monospace;
-    background-color: #131313;
+    background-color: #1e1e1e;
     color: #d4d4d4;
     font-weight: 500;
     font-style: normal;
@@ -86,6 +86,10 @@ body {
 
 .vscode-content .keyword {
     color: #569cd6;
+}
+
+.vscode-content .ifelse {
+    color: #cc005f;
 }
 
 .vscode-content .function {
@@ -495,6 +499,30 @@ p {
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
     transition: right 0.3s ease-in-out;
     padding-top: 60px;
+    overflow-x: hidden;
+    /* Adiciona a barra de rolagem */
+    scrollbar-width: thin;
+    /* Para navegadores que suportam */
+    scrollbar-color: #888 #1f1f1f;
+    /* Cor da barra e fundo */
+}
+
+/* Personalização da barra de rolagem para Webkit (Chrome, Edge, Safari) */
+.menu::-webkit-scrollbar {
+    width: 5px;
+}
+
+.menu::-webkit-scrollbar-track {
+    background: #1f1f1f;
+}
+
+.menu::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.menu::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 /* Menu visível quando a classe 'show' é adicionada */

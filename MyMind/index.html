@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark UI</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0a0f1c;
+            color: #fff;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            height: 100vh;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            color: #a5b4fc;
+            margin: 50px;
+        }
+
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .category {
+            background: linear-gradient(145deg, #1a2238, #161d31);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            color: #a5b4fc;
+            transition: 0.3s;
+        }
+
+        .category:hover,
+        .category.active {
+            background: #3b82f6;
+            color: #fff;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .product {
+            background: linear-gradient(145deg, #1e293b, #111827);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+            transition: 0.3s;
+        }
+
+        .product a {
+            text-decoration: none;
+            color: #668cdf;
+            font-family: 'roboto';
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            opacity: 0.8;
+        }
+
+        .footer {
+            margin-top: 30px;
+            padding: 20px;
+            background: #161d31;
+            border-top: 2px solid #3b82f6;
+        }
+
+        .products .product {
+            position: relative;
+            border-radius: 8px;
+            /* borda arredondada */
+            overflow: hidden;
+            /* impede que a animação ultrapasse os limites */
+            display: inline-block;
+        }
+
+        .products .product a {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .products .product img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .products .product p {
+            text-align: center;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Pseudo-elemento para a borda neon */
+        .products .product::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            /* espessura da borda */
+            background: rgba(0, 255, 255, 0.6);
+            transition: all 0.5s ease;
+        }
+
+        .products .product::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 2px;
+            /* espessura da borda */
+            background: rgba(0, 255, 255, 0.6);
+            transition: all 0.5s ease;
+        }
+
+        /* Preenchendo a borda ao passar o mouse */
+        .products .product:hover::before {
+            width: 100%;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 1);
+            /* Preenche completamente a borda superior */
+        }
+
+        .products .product:hover::after {
+            width: 100%;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 1);
+            /* Preenche completamente a borda inferior */
+        }
+
+        .products .product:hover::before {
+            top: 0;
+            left: 0;
+            right: 0;
+            left: left;
+            transition: ;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>APLICATIVOS PESSOAIS</h1>
+        <div class="products">
+            <div class="product">
+                <a href="../Caderno/js/1.JavaScript_Tipos.html">
+                    <img src="caderno.jpeg" alt="Product One">
+                    <p>CADERNO</p>
+                </a>
+            </div>
+            <div class="product">
+                <img src="path-to-image.jpg" alt="Product Two">
+                <p>Product Two - $26</p>
+            </div>
+            <div class="product">
+                <img src="path-to-image.jpg" alt="Product Three">
+                <p>Product Three - $30</p>
+            </div>
+            <div class="product">
+                <img src="path-to-image.jpg" alt="Product Four">
+                <p>Product Four - $45</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

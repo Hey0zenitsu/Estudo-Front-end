@@ -88,6 +88,10 @@ body {
     color: #569cd6;
 }
 
+.vscode-content .ifelse {
+    color: #cc005f;
+}
+
 .vscode-content .function {
     color: #dcdcaa;
 }

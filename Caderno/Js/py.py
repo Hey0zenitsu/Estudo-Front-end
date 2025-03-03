@@ -14,5 +14,5 @@ def listar_arquivos_html(pasta):
         print("Pasta não encontrada.")
 
 # Exemplo de uso
-pasta_alvo = "c:/Users/Bruno Lindão/Desktop/teste/Páginas/Js"
+pasta_alvo = "c:/Users/Bruno Lindão/Desktop/teste/Caderno/Js"
 listar_arquivos_html(pasta_alvo)

@@ -10,6 +10,7 @@
     <!-- Link para o Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
     <style>
         body {
             background-color: #121212;
@@ -79,11 +80,11 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="http://127.0.0.1:5500/createapage.html#">Minha Marca</a>
+                <a class="navbar-brand" href="#">Minha Marca</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                     aria-label="Toggle navigation">
-                    <span cllass="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav ms-auto">
@@ -117,38 +118,36 @@
                                         });
                                     }
                                 }
-
                             </script><a class="nav-link" onclick="aulas()" href="#">Aulas</a>
                         </li>
 
                         </li>
-                        <li class="nav-item"><a class="nav-link"
-                                href="http://127.0.0.1:5500/createapage.html#">Sobre</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Sobre</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="http://127.0.0.1:5500/createapage.html#"
-                                id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Serviços
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                                <li><a class="dropdown-item" href="http://127.0.0.1:5500/createapage.html#">Serviço
+                                <li><a class="dropdown-item" href="#">Serviço
                                         1</a></li>
-                                <li><a class="dropdown-item" href="http://127.0.0.1:5500/createapage.html#">Serviço
+                                <li><a class="dropdown-item" href="#">Serviço
                                         2</a></li>
-                                <li><a class="dropdown-item" href="http://127.0.0.1:5500/createapage.html#">Serviço
+                                <li><a class="dropdown-item" href="#">Serviço
                                         3</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="http://127.0.0.1:5500/createapage.html#"
-                                id="contactDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Contato
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="contactDropdown">
-                                <li><a class="dropdown-item" href="http://127.0.0.1:5500/createapage.html#">Email</a>
+                                <li><a class="dropdown-item" href="#">Email</a>
                                 </li>
-                                <li><a class="dropdown-item" href="http://127.0.0.1:5500/createapage.html#">Telefone</a>
+                                <li><a class="dropdown-item" href="#">Telefone</a>
                                 </li>
-                                <li><a class="dropdown-item" href="http://127.0.0.1:5500/createapage.html#">Suporte</a>
+                                <li><a class="dropdown-item" href="#">Suporte</a>
                                 </li>
                             </ul>
                         </li>
@@ -172,24 +171,44 @@
                 <li><a href='10.Parametros.html'>10.Parametros.html</a></li>
                 <li><a href='11.Expressões_de_funções.html'>11.Expressões_de_funções.html</a></li>
                 <li><a href='12.Arrow_function.html'>12.Arrow_function.html</a></li>
+                <li><a href='13.Operador_ternario.html'>13.Operador_ternario.html</a></li>
+                <li><a href='14.if_and_else.html'>14.if_and_else.html</a></li>
+            </ul>
+            <h3>Modulo 02</h3>
+            <ul>
+                <li><a href='15.2.Arrays_criar.html'>15.2.Arrays_criar.html</a></li>
+                <li><a href='16.2.alterando_array.html'>16.2.alterando_array.html</a></li>
+                <li><a href='17.2.Metodos_array.html'>17.2.Metodos_array.html</a></li>
+                <li><a href='18.2.metodos_mod_inte.html'>18.2.metodos_mod_inte.html</a></li>
+                <li><a href='19.2.transform_array.html'>19.2.transform_array.html</a></li>
+                <li><a href='20.2.loops.html'>20.2.loops.html</a></li>
+                <li><a href='21.2.Arrays Multidimensionais.html'>21.2.Arrays Multidimensionais.html</a></li>
+                <li><a href='22.2.ordenação.html'>22.2.ordenação.html</a></li>
+                <li><a href='menu.html'>menu.html</a></li>
             </ul>
         </div>
 
         <!-- Container para os cards -->
         <div class="row" id="cards-container">
+            <div class="mb-2"></div>
+            <div class="mb-2">
+                <h1>Parâmetros em JavaScript</h1>
+            </div>
+            <div class="mb-2">
+                <h3>Os parâmetros em JavaScript são usados para passar valores para funções. Eles permitem que uma
+                    função seja mais flexível, pois os valores podem variar a cada chamada. Vamos explorar os principais
+                    aspectos dos parâmetros:</h3>
+            </div>
             <div class="col-md-12">
                 <div class="vscode-explanation">
-                    <h3>Arrow Function em JavaScript</h3>
-                    <p>As Arrow Functions foram introduzidas no ES6 e fornecem uma sintaxe mais curta para escrever
-                        funções em JavaScript. Elas são especialmente úteis para funções de callback e métodos que não
-                        precisam de um contexto this específico.</p>
+                    <h3>1. Definição de Parâmetros</h3>
+                    <p>Os parâmetros são definidos dentro dos parênteses de uma função. Eles são variáveis locais que
+                        recebem os valores (argumentos) fornecidos na chamada da função.</p>
                 </div>
             </div>
+            <div class="mb-2"></div>
             <div class="mb-2">
-                <h1>Sintaxe Básica</h1>
-            </div>
-            <div class="mb-2">
-                <h3>A sintaxe de uma arrow function é mais concisa do que a de uma função tradicional:</h3>
+                <h3>Exemplo:</h3>
             </div>
             <div class="col-md-12">
                 <div class="vscode-card">
@@ -199,23 +218,22 @@
                             <div class="dot yellow"></div>
                             <div class="dot green"></div>
                         </div>
-                        <span>Exemplo.Card</span>
+                        <span>Exemplo:</span>
                     </div>
                     <div class="vscode-content">
-                        <pre>
-<span class="keyword">const</span> <span class="keyword">soma</span> = (<span class="keyword">a</span>, <span class="keyword">b</span>) =&gt; <span class="keyword">a</span> + <span class="keyword">b</span>;
-            
-<span class="function">console</span>.<span class="function">log</span>(<span class="function">soma</span>(<span class="keyword">5</span>, <span class="keyword">3</span>)); <span class="comment">// Saída: 8</span>
-                        </pre>
+                        <pre><span class="keyword">function</span> <span class="function">saudacao</span>(<span class="parameter">nome</span>) {
+                <span class="keyword">console</span>.<span class="function">log</span>(<span class="string">`Olá, ${<span class="parameter">nome</span>}!`</span>);
+            }
+            <span class="function">saudacao</span>(<span class="string">"Bruno"</span>); <span class="comment">// Saída: Olá, Bruno!</span></pre>
                     </div>
-                    <div class="vscode-terminal" id='terminal0'>
+                    <div class="vscode-terminal" id='terminal1'>
                         <span>1</span>
                     </div>
                     <div class="vscode-footer">
                         <script>
-                            function card0() {
-                                let terminal = document.getElementById('terminal0')
-                                terminal.innerHTML = "C:User/Project><br><br>8"
+                            function card1() {
+                                let terminal = document.getElementById('terminal1')
+                                terminal.innerHTML = "C:User/Project><br><br> Olá,Bruno!"
 
                                 if (terminal.style.display === "flex") {
                                     terminal.style.display = "none";
@@ -224,13 +242,20 @@
                                 }
                             }
                         </script>
-                        <button onclick="card0()">Executar Código</button>
+                        <button onclick="card1()">Executar Código</button>
                     </div>
                 </div>
             </div>
 
+            <div class="col-md-12">
+                <div class="vscode-explanation">
+                    <h3>2. Parâmetros Padrão</h3>
+                    <p>Desde o ES6, é possível definir valores padrão para os parâmetros. Caso nenhum argumento seja
+                        fornecido, o valor padrão será utilizado.</p>
+                </div>
+            </div>
             <div class="mb-2">
-                <h3>Se houver apenas um parâmetro, os parênteses podem ser omitidos: </h3>
+                <h3>Exemplo:</h3>
             </div>
             <div class="col-md-12">
                 <div class="vscode-card">
@@ -240,14 +265,13 @@
                             <div class="dot yellow"></div>
                             <div class="dot green"></div>
                         </div>
-                        <span>Exemplo.Card</span>
+                        <span>Exemplo</span>
                     </div>
                     <div class="vscode-content">
-                        <pre>
-<span cllass="keyword">const</span> <span class="keyword">dobro</span> = <span class="keyword">x</span> =&gt; <span class="keyword">x</span> * <span class="keyword">2</span>;
-            
-<span cllass="function">console</span>.<span class="function">log</span>(<span class="function">dobro</span>(<span class="keyword">4</span>)); <span class="comment">// Saída: 8</span>
-                        </pre>
+                        <pre><span class="keyword">function</span> <span class="function">saudacao</span>(<span class="parameter">nome</span> = <span class="string">"Visitante"</span>) {
+                <span class="keyword">console</span>.<span class="function">log</span>(<span class="string">`Olá, ${<span class="parameter">nome</span>}!`</span>);
+            }
+            <span class="function">saudacao</span>(); <span class="comment">// Saída: Olá, Visitante!</span></pre>
                     </div>
                     <div class="vscode-terminal" id='terminal2'>
                         <span>1</span>
@@ -256,7 +280,7 @@
                         <script>
                             function card2() {
                                 let terminal = document.getElementById('terminal2')
-                                terminal.innerHTML = "C:User/Project><br><br>8"
+                                terminal.innerHTML = "C:User/Project><br><br> Olá, Visitante!"
 
                                 if (terminal.style.display === "flex") {
                                     terminal.style.display = "none";
@@ -270,8 +294,15 @@
                 </div>
             </div>
 
+            <div class="col-md-12">
+                <div class="vscode-explanation">
+                    <h3>3. Parâmetros Rest (...)</h3>
+                    <p>O operador rest (...) permite agrupar múltiplos argumentos em um único array. Ele é útil quando
+                        você não sabe quantos argumentos serão passados.</p>
+                </div>
+            </div>
             <div class="mb-2">
-                <h3>Se não houver parâmetros, os parênteses são obrigatórios:</h3>
+                <h3>Exemplo:</h3>
             </div>
             <div class="col-md-12">
                 <div class="vscode-card">
@@ -281,14 +312,13 @@
                             <div class="dot yellow"></div>
                             <div class="dot green"></div>
                         </div>
-                        <span>Exemplo.Card</span>
+                        <span>Exemplo</span>
                     </div>
                     <div class="vscode-content">
-                        <pre>
-<span cllass="keyword">const</span> <span class="keyword">mensagem</span> = () =&gt; <span class="string">"Olá, mundo!"</span>;
-            
-<span cllass="function">console</span>.<span class="function">log</span>(<span class="function">mensagem</span>()); <span class="comment">// Saída: "Olá, mundo!"</span>
-                        </pre>
+                        <pre><span class="keyword">function</span> <span class="function">soma</span>(<span class="parameter">...numeros</span>) {
+                <span class="keyword">return</span> <span class="function">numeros</span>.<span class="function">reduce</span>((<span class="parameter">total, num</span>) =&gt; <span class="parameter">total</span> + <span class="parameter">num</span>, <span class="number">0</span>);
+            }
+            <span class="keyword">console</span>.<span class="function">log</span>(<span class="function">soma</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)); <span class="comment">// Saída: 10</span></pre>
                     </div>
                     <div class="vscode-terminal" id='terminal3'>
                         <span>1</span>
@@ -297,7 +327,7 @@
                         <script>
                             function card3() {
                                 let terminal = document.getElementById('terminal3')
-                                terminal.innerHTML = "C:User/Project><br><br> Olá, mundo!"
+                                terminal.innerHTML = "C:User/Project><br><br>10"
 
                                 if (terminal.style.display === "flex") {
                                     terminal.style.display = "none";
@@ -311,18 +341,25 @@
                 </div>
             </div>
 
-            <div class="mb-2">
-                <h1>Características Principais</h1>
+            <div class="col-md-12">
+                <div class="vscode-explanation">
+                    <h3>4. Parâmetros vs Argumentos</h3>
+                    <p></p>
+                </div>
             </div>
             <div class="col-md-12 mb-4">
                 <ul class="styled-list list-group">
-                    <li class="list-group-item d-flex justify-content-between align-items-center"><span><strong>1.
-                                Sintaxe Concisa:</strong> Arrow functions permitem escrever funções de maneira mais
-                            curta e legível.</span></li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center"><span><strong>2.
-                                Retorno Implícito:</strong> Se a função tem apenas uma expressão o retorno é implícito
-                            (sem necessidade de return).</span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span><strong>Parâmetros::</strong> são as variáveis definidas na função.</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span><strong>Argumentos::</strong> são os valores reais passados quando a função é
+                            chamada.</span>
+                    </li>
                 </ul>
+            </div>
+            <div class="mb-2">
+                <h3>Exemplo:</h3>
             </div>
             <div class="col-md-12">
                 <div class="vscode-card">
@@ -332,13 +369,13 @@
                             <div class="dot yellow"></div>
                             <div class="dot green"></div>
                         </div>
-                        <span>Exemplo.Card</span>
+                        <span>Exemplo</span>
                     </div>
                     <div class="vscode-content">
-                        <pre>
-<span cllass="keyword">const</span> <span class="keyword">quadrado</span> = <span class="keyword">num</span> =&gt; <span class="keyword">num</span> * <span class="keyword">num</span>;
-<span cllass="function">console</span>.<span class="function">log</span>(<span class="function">quadrado</span>(<span class="keyword">5</span>)); <span class="comment">// Saída: 25</span>
-                        </pre>
+                        <pre><span class="keyword">function</span> <span class="function">multiplicar</span>(<span class="parameter">a, b</span>) {
+                <span class="keyword">return</span> <span class="parameter">a</span> * <span class="parameter">b</span>; <span class="comment">// 'a' e 'b' são parâmetros</span>
+            }
+            <span class="keyword">console</span>.<span class="function">log</span>(<span class="function">multiplicar</span>(<span class="number">5</span>, <span class="number">4</span>)); <span class="comment">// 5 e 4 são argumentos</span></pre>
                     </div>
                     <div class="vscode-terminal" id='terminal4'>
                         <span>1</span>
@@ -347,7 +384,7 @@
                         <script>
                             function card4() {
                                 let terminal = document.getElementById('terminal4')
-                                terminal.innerHTML = "C:User/Project><br><br> 25"
+                                terminal.innerHTML = "C:User/Project><br><br>20"
 
                                 if (terminal.style.display === "flex") {
                                     terminal.style.display = "none";
@@ -360,405 +397,284 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="col-md-12 mb-4">
-                <ul class="styled-list list-group">
-                    <li class="list-group-item d-flex justify-content-between align-items-center"><span><strong>3. Não
-                                Possuem this Próprio:</strong> O this dentro de uma arrow function referencia o escopo
-                            onde a função foi definida e não onde foi chamada.</span></li>
-                </ul>
+        <div class="col-md-12">
+            <div class="vscode-explanation">
+                <h3>5. Ordem dos Argumentos</h3>
+                <p>A ordem dos argumentos importa. Eles serão atribuídos aos parâmetros na mesma sequência.</p>
             </div>
-            <div class="col-md-12">
-                <div class="vscode-card">
-                    <div class="vscode-header">
-                        <div class="dots">
-                            <div class="dot red"></div>
-                            <div class="dot yellow"></div>
-                            <div class="dot green"></div>
-                        </div>
-                        <span>Exemplo.Card</span>
+        </div>
+        <div class="mb-2">
+            <h3>Exemplo:</h3>
+        </div>
+        <div class="col-md-12">
+            <div class="vscode-card">
+                <div class="vscode-header">
+                    <div class="dots">
+                        <div class="dot red"></div>
+                        <div class="dot yellow"></div>
+                        <div class="dot green"></div>
                     </div>
-                    <div class="vscode-content">
-                        <pre>
-<span cllass="function">function</span> <span class="keyword">Pessoa</span>() {
-this.<span class="keyword">nome</span> = <span class="string">"Bruno"</span>;
-<span clclass="function">setTimeout</span>(() =&gt; {
-  <span class="function">console</span>.<span class="function">log</span>(<span class="string">`Olá, ${this.nome}`</span>); <span class="comment">// "this" se refere a Pessoa</span>
-                                }, <span class="keyword">1000</span>);
+                    <span>Exemplo</span>
+                </div>
+                <div class="vscode-content">
+                    <pre><span class="keyword">function</span> <span class="function">calcularArea</span>(<span class="parameter">base, altura</span>) {
+                <span class="keyword">return</span> <span class="parameter">base</span> * <span class="parameter">altura</span>;
+            }
+            <span class="keyword">console</span>.<span class="function">log</span>(<span class="function">calcularArea</span>(<span class="number">5</span>, <span class="number">10</span>)); <span class="comment">// Saída: 50</span></pre>
+                </div>
+                <div class="vscode-terminal" id='terminal5'>
+                    <span>1</span>
+                </div>
+                <div class="vscode-footer">
+                    <script>
+                        function card5() {
+                            let terminal = document.getElementById('terminal5')
+                            terminal.innerHTML = "C:User/Project><br><br>50"
+
+                            if (terminal.style.display === "flex") {
+                                terminal.style.display = "none";
+                            } else {
+                                terminal.style.display = "flex";
                             }
-            
-<span cllass="function">new</span> <span class="function">Pessoa</span>();
-                        </pre>
-                    </div>
-                    <div class="vscode-terminal" id='terminal5'>
-                        <span>1</span>
-                    </div>
-                    <div class="vscode-footer">
-                        <script>
-                            function card5() {
-                                let terminal = document.getElementById('terminal5')
-                                terminal.innerHTML = "C:User/Project><br><br> Olá,Bruno"
-
-                                if (terminal.style.display === "flex") {
-                                    terminal.style.display = "none";
-                                } else {
-                                    terminal.style.display = "flex";
-                                }
-                            }
-                        </script>
-                        <button onclick="card5()">Executar Código</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-12">
-                <div class="vscode-explanation">
-                    <h3></h3>
-                    <p>Se fosse uma função tradicional, this dentro de setTimeout seria undefined ou referenciaria o
-                        objeto global.</p>
-                </div>
-            </div>
-            <div class="col-md-12 mb-4">
-                <ul class="styled-list list-group">
-                    <li class="list-group-item d-flex justify-content-between align-items-center"><span><strong>4. Não
-                                Possuem arguments Próprio::</strong> Diferente das funções tradicionais arguments não
-                            está disponível dentro de uma arrow function.</span></li>
-                </ul>
-            </div>
-            <div class="col-md-12">
-                <div class="vscode-card">
-                    <div class="vscode-header">
-                        <div class="dots">
-                            <div class="dot red"></div>
-                            <div class="dot yellow"></div>
-                            <div class="dot green"></div>
-                        </div>
-                        <span>Exemplo.Card</span>
-                    </div>
-                    <div class="vscode-content">
-                        <pre>
-<span cllass="keyword">const</span> <span class="keyword">exemplo</span> = () =&gt; <span class="function">console</span>.<span class="function">log</span>(<span class="keyword">argumentos</span>);
-<span cllass="function">exemplo</span>(<span class="keyword">1</span>, <span class="keyword">2</span>, <span class="keyword">3</span>); <span class="comment">// Erro: arguments não está definido</span>
-                        </pre>
-                    </div>
-                    <div class="vscode-terminal" id='terminal6'>
-                        <span>1</span>
-                    </div>
-                    <div class="vscode-footer">
-                        <script>
-                            function card6() {
-                                let terminal = document.getElementById('terminal6')
-                                terminal.innerHTML = "C:User/Project><br><br>ReferenceError: argumentos is not defined"
-
-                                if (terminal.style.display === "flex") {
-                                    terminal.style.display = "none";
-                                } else {
-                                    terminal.style.display = "flex";
-                                }
-                            }
-                        </script>
-                        <button onclick="card6()">Executar Código</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-12">
-                <div class="vscode-explanation">
-                    <h3></h3>
-                    <p>Para acessar argumentos, deve-se usar uma função tradicional ou o operador rest (...args).</p>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="vscode-card">
-                    <div class="vscode-header">
-                        <div class="dots">
-                            <div class="dot red"></div>
-                            <div class="dot yellow"></div>
-                            <div class="dot green"></div>
-                        </div>
-                        <span>Exemplo.Card</span>
-                    </div>
-                    <div class="vscode-content">
-                        <pre>
-<span cllass="keyword">const</span> <span class="keyword">exemplo</span> = (...<span class="keyword">args</span>) =&gt; <span class="function">console</span>.<span class="function">log</span>(<span class="keyword">args</span>);
-<span cllass="function">exemplo</span>(<span class="keyword">1</span>, <span class="keyword">2</span>, <span class="keyword">3</span>); <span class="comment">// Saída: [1, 2, 3]</span>
-                        </pre>
-                    </div>
-                    <div class="vscode-terminal" id='terminal7'>
-                        <span>1</span>
-                    </div>
-                    <div class="vscode-footer">
-                        <script>
-                            function card7() {
-                                let terminal = document.getElementById('terminal7')
-                                terminal.innerHTML = "C:User/Project><br><br>[1, 2, 3]"
-
-                                if (terminal.style.display === "flex") {
-                                    terminal.style.display = "none";
-                                } else {
-                                    terminal.style.display = "flex";
-                                }
-                            }
-                        </script>
-                        <button onclick="card7()">Executar Código</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mb-2">
-                <h1>Exemplos de Uso:</h1>
-            </div>
-            <div class="mb-2">
-                <h3>1. Arrow Function como Callback</h3>
-            </div>
-            <div class="mb-2">
-                <h4>Arrow functions são muito usadas em métodos de array, como map, filter e reduce: javascript Copiar
-                    Editar</h4>
-            </div>
-            <div class="col-md-12">
-                <div class="vscode-card">
-                    <div class="vscode-header">
-                        <div class="dots">
-                            <div class="dot red"></div>
-                            <div class="dot yellow"></div>
-                            <div class="dot green"></div>
-                        </div>
-                        <span>Exemplo.Card</span>
-                    </div>
-                    <div class="vscode-content">
-                        <pre>
-<span cllass="keyword">const</span> <span class="keyword">numeros</span> = [<span class="keyword">1</span>, <span class="keyword">2</span>, <span class="keyword">3</span>, <span class="keyword">4</span>, <span class="keyword">5</span>];
-            
-<span cllass="comment">// Usando map para dobrar os números</span>
-<span cllass="keyword">const</span> <span class="keyword">dobrados</span> = <span class="keyword">numeros</span>.<span class="function">map</span>(<span class="keyword">n</span> =&gt; <span class="keyword">n</span> * <span class="keyword">2</span>);
-            
-<span cllass="function">console</span>.<span class="function">log</span>(<span class="keyword">dobrados</span>); <span class="comment">// Saída: [2, 4, 6, 8, 10]</span>
-                        </pre>
-                    </div>
-                    <div class="vscode-terminal" id='terminal8'>
-                        <span>1</span>
-                    </div>
-                    <div class="vscode-footer">
-                        <script>
-                            function card8() {
-                                let terminal = document.getElementById('terminal8')
-                                terminal.innerHTML = "C:User/Project><br><br>[2, 4, 6, 8, 10]"
-
-
-                                if (terminal.style.display === "flex") {
-                                    terminal.style.display = "none";
-                                } else {
-                                    terminal.style.display = "flex";
-                                }
-                            }
-                        </script>
-                        <button onclick="card8()">Executar Código</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mb-2">
-                <h3>2. Arrow Function em Funções Assíncronas</h3>
-            </div>
-            <div class="mb-2">
-                <h3>Quando usamos setTimeout ou setInterval, arrow functions mantêm o contexto do this: javascript
-                    Copiar Editar</h3>
-            </div>
-            <div class="col-md-12">
-                <div class="vscode-card">
-                    <div class="vscode-header">
-                        <div class="dots">
-                            <div class="dot red"></div>
-                            <div class="dot yellow"></div>
-                            <div class="dot green"></div>
-                        </div>
-                        <span>Exemplo.Card</span>
-                    </div>
-                    <div class="vscode-content">
-                        <pre>
-<span cllass="keyword">class</span> <span class="keyword">Temporizador</span> {
-<span clclass="function">iniciar</span>() {
-  <span class="function">setInterval</span>(() =&gt; {
-      <span class="function">console</span>.<span class="function">log</span>(<span class="string">"Executando..."</span>);
-              }, <span class="keyword">1000</span>);
-        }
-}
-            
-<span cllass="keyword">const</span> <span class="keyword">t</span> = <span class="function">new</span> <span class="function">Temporizador</span>();
-<span cllass="function">t.iniciar</span>();
-                        </pre>
-                    </div>
-                    <div class="vscode-terminal" id='terminal9'>
-                        <span>C:User/Project><br><br></span>
-                    </div>
-                    <div class="vscode-footer">
-                        <script>
-                            function card9() {
-                                let terminal = document.getElementById('terminal9');
-                                class Temporizador {
-                                    iniciar() {
-                                        setInterval(() => {
-                                            terminal.innerHTML += "Executando...<br>";
-                                        }, 1000);
-                                    }
-                                }
-
-                                const t = new Temporizador();
-                                t.iniciar();
-
-                                // Alterna a visibilidade do terminal
-                                terminal.style.display = terminal.style.display === "flex" ? "none" : "flex";
-                            }
-
-                        </script>
-                        <button onclick="card9()">Executar Código</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mb-2">
-                <h1>Quando Não Usar Arrow Function?</h1>
-            </div>
-            <div class="mb-2">
-                <h2>Apesar de ser útil, a arrow function não é ideal em alguns casos:</h2>
-            </div>
-            <div class="mb-2">
-                <h3>Quando precisamos de um this dinâmico, como em métodos de objetos: javascript Copiar Editar</h3>
-            </div>
-            <div class="col-md-12">
-                <div class="vscode-card">
-                    <div class="vscode-header">
-                        <div class="dots">
-                            <div class="dot red"></div>
-                            <div class="dot yellow"></div>
-                            <div class="dot green"></div>
-                        </div>
-                        <span>Exemplo.Card</span>
-                    </div>
-                    <div class="vscode-content">
-                        <pre>
-<span cllass="keyword">const</span> <span class="keyword">usuario</span> = {
-<span clclass="keyword">nome</span>: <span class="string">"Bruno"</span>,
-<span clclass="keyword">falar</span>: () =&gt; <span class="function">console</span>.<span class="function">log</span>(<span class="string">`Olá, ${this.nome}`</span>) <span class="comment">// this será undefined</span>
-                            };
-            
-<span cllass="keyword">usuario</span>.<span class="function">falar</span>(); <span class="comment">// Saída: "Olá, undefined"</span>
-                        </pre>
-                    </div>
-                    <div class="vscode-terminal" id='terminal10'>
-                        <span>1</span>
-                    </div>
-                    <div class="vscode-footer">
-                        <script>
-                            function card10() {
-                                let terminal = document.getElementById('terminal10')
-                                terminal.innerHTML = "C:User/Project><br><br>Olá, undefined"
-
-                                if (terminal.style.display === "flex") {
-                                    terminal.style.display = "none";
-                                } else {
-                                    terminal.style.display = "flex";
-                                }
-                            }
-                        </script>
-                        <button onclick="card10()">Executar Código</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mb-2">
-                <h3>Para corrigir isso, use uma função tradicional: javascript Copiar Editar</h3>
-            </div>
-            <div class="col-md-12">
-                <div class="vscode-card">
-                    <div class="vscode-header">
-                        <div class="dots">
-                            <div class="dot red"></div>
-                            <div class="dot yellow"></div>
-                            <div class="dot green"></div>
-                        </div>
-                        <span>Exemplo.Card</span>
-                    </div>
-                    <div class="vscode-content">
-                        <pre>
-<span class="keyword">const</span> <span class="keyword">usuario</span> = {
-<span clclass="keyword">nome</span>: <span class="string">"Bruno"</span>,
-<span clclass="keyword">falar</span>() {
-<span clclass="function">console</span>.<span class="function">log</span>(<span class="string">`Olá, ${this.nome}`</span>);
-                                }
-                            };
-            
-<span cllass="keyword">usuario</span>.<span class="function">falar</span>(); <span class="comment">// Saída: "Olá, Bruno"</span>
-                        </pre>
-                    </div>
-                    <div class="vscode-terminal" id='terminal11'>
-                        <span>1</span>
-                    </div>
-                    <div class="vscode-footer">
-                        <script>
-                            function card11() {
-                                let terminal = document.getElementById('terminal11')
-                                terminal.innerHTML = "C:User/Project><br><br> Olá,Bruno"
-
-                                if (terminal.style.display === "flex") {
-                                    terminal.style.display = "none";
-                                } else {
-                                    terminal.style.display = "flex";
-                                }
-                            }
-                        </script>
-                        <button onclick="card11()">Executar Código</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mb-2">
-                <h3>Quando precisamos do objeto arguments, que não existe em arrow functions.</h3>
-            </div>
-            <div class="mb-2">
-                <h3>Quando usamos funções como construtores (new não funciona com arrow functions).</h3>
-            </div>
-            <div class="col-md-12">
-                <div class="vscode-explanation">
-                    <h3></h3>
-                    <p>As arrow functions são uma alternativa poderosa às funções tradicionais, oferecendo uma sintaxe
-                        mais curta e clara. Elas são ideais para callbacks, manipulação de arrays e funções assíncronas,
-                        mas não devem ser usadas quando this dinâmico ou arguments forem necessários. Dominar essa
-                        funcionalidade pode tornar seu código mais moderno e eficiente!</p>
+                        }
+                    </script>
+                    <button onclick="card5()">Executar Código</button>
                 </div>
             </div>
         </div>
-        <!-- Formulário para criar novos cards -->
 
-        <!-- footer -->
-        <footer class="site-footer bg-dark text-light py-4">
-            <div class="container">
-                <div class="row">
-                    <!-- Coluna para texto de copyright -->
-                    <div class="col-12 col-md-6 text-center text-md-left">
-                        <p class="footer-text mb-0">© 2025 - Todos os direitos reservados</p>
+        <div class="col-md-12">
+            <div class="vscode-explanation">
+                <h3>6. Parâmetros Nomeados (Simulação)</h3>
+                <p>JavaScript não possui suporte nativo para parâmetros nomeados como outras linguagens, mas
+                    isso
+                    pode ser simulado usando objetos.</p>
+            </div>
+        </div>
+        <div class="mb-2">
+            <h3>Exemplo:</h3>
+        </div>
+        <div class="col-md-12">
+            <div class="vscode-card">
+                <div class="vscode-header">
+                    <div class="dots">
+                        <div class="dot red"></div>
+                        <div class="dot yellow"></div>
+                        <div class="dot green"></div>
                     </div>
-                    <!-- Coluna para links -->
-                    <div class="col-12 col-md-6 text-center text-md-right">
-                        <ul class="footer-links list-unstyled mb-0">
-                            <li class="d-inline-block mr-3">
-                                <a href="http://127.0.0.1:5500/createapage.html#"
-                                    class="footer-link text-light">Sobre</a>
-                            </li>
-                            <li class="d-inline-block mr-3">
-                                <a href="http://127.0.0.1:5500/createapage.html#"
-                                    class="footer-link text-light">Serviços</a>
-                            </li>
-                            <li class="d-inline-block">
-                                <a href="http://127.0.0.1:5500/createapage.html#"
-                                    class="footer-link text-light">Contato</a>
-                            </li>
-                        </ul>
-                    </div>
+                    <span>Exemplo</span>
+                </div>
+                <div class="vscode-content">
+                    <pre><span class="keyword">function</span> <span class="function">criarUsuario</span>({ <span class="parameter">nome</span>, <span class="parameter">idade</span>, <span class="parameter">email</span> }) {
+                <span class="keyword">console</span>.<span class="function">log</span>(<span class="string">`Nome: ${nome}, Idade: ${idade}, Email: ${email}`</span>);
+            }
+            <span class="function">criarUsuario</span>({ <span class="parameter">nome</span>: <span class="string">"Bruno"</span>, <span class="parameter">idade</span>: <span class="number">18</span>, <span class="parameter">email</span>: <span class="string">"bruno@email.com"</span> });</pre>
+                </div>
+
+                <div class="vscode-terminal" id='terminal6'>
+                    <span>1</span>
+                </div>
+                <div class="vscode-footer">
+                    <script>
+                        function card6() {
+                            let terminal = document.getElementById('terminal6')
+                            terminal.innerHTML = "C:User/Project><br><br>Nome: Bruno, Idade: 18, Email: bruno@email.com"
+
+                            if (terminal.style.display === "flex") {
+                                terminal.style.display = "none";
+                            } else {
+                                terminal.style.display = "flex";
+                            }
+                        }
+                    </script>
+                    <button onclick="card6()">Executar Código</button>
                 </div>
             </div>
-        </footer>
-        <div class="deletarCode"></div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="vscode-explanation">
+                <h3>7. Passagem de Valores</h3>
+                <p></p>
+            </div>
+        </div>
+        <div class="col-md-12 mb-4">
+            <ul class="styled-list list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center"><span><strong>Por
+                            valor::</strong> Para tipos primitivos (números strings etc.) os valores são
+                        copiados.</span></li>
+                <li class="list-group-item d-flex justify-content-between align-items-center"><span><strong>Por
+                            referência::</strong> Para objetos e arrays a referência é passada e alterações no
+                        parâmetro afetam o valor original.</span></li>
+            </ul>
+        </div>
+        <div class="mb-2">
+            <h3>Exemplo:</h3>
+        </div>
+        <div class="col-md-12">
+            <div class="vscode-card">
+                <div class="vscode-header">
+                    <div class="dots">
+                        <div class="dot red"></div>
+                        <div class="dot yellow"></div>
+                        <div class="dot green"></div>
+                    </div>
+                    <span>Exemplo</span>
+                </div>
+                <div class="vscode-content">
+                    <pre><span class="keyword">function</span> <span class="function">alterarObjeto</span>(<span class="parameter">obj</span>) {
+                <span class="parameter">obj</span>.<span class="parameter">nome</span> = <span class="string">"Alterado"</span>;
+            }
+            <span class="let">let</span> <span class="variable">usuario</span> = { <span class="parameter">nome</span>: <span class="string">"Original"</span> };
+            <span class="function">alterarObjeto</span>(<span class="variable">usuario</span>);
+            <span class="keyword">console</span>.<span class="function">log</span>(<span class="variable">usuario</span>.<span class="parameter">nome</span>); // Saída: Alterado</pre>
+                </div>
+                <div class="vscode-terminal" id='terminal7'>
+                    <span>1</span>
+                </div>
+                <div class="vscode-footer">
+                    <script>
+                        function card7() {
+                            let terminal = document.getElementById('terminal7')
+                            terminal.innerHTML = "C:User/Project><br><br>Alterado"
+
+                            if (terminal.style.display === "flex") {
+                                terminal.style.display = "none";
+                            } else {
+                                terminal.style.display = "flex";
+                            }
+                        }
+                    </script>
+                    <button onclick="card7()">Executar Código</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="vscode-explanation">
+                <h3>8. Parâmetros Opcionais</h3>
+                <p>Em JavaScript, parâmetros podem ser opcionais. Basta verificar se eles foram fornecidos.</p>
+            </div>
+        </div>
+        <div class="mb-2">
+            <h3>Exemplo:</h3>
+        </div>
+        <div class="col-md-12">
+            <div class="vscode-card">
+                <div class="vscode-header">
+                    <div class="dots">
+                        <div class="dot red"></div>
+                        <div class="dot yellow"></div>
+                        <div class="dot green"></div>
+                    </div>
+                    <span>Exemplo</span>
+                </div>
+                <div class="vscode-content">
+                    <pre><span class="keyword">function</span> <span class="function">cumprimentar</span>(<span class="parameter">nome</span>) {
+                <span class="keyword">if</span> (<span class="parameter">nome</span>) {
+                    <span class="keyword">console</span>.<span class="function">log</span>(<span class="string">`Olá, ${nome}!`</span>);
+                } <span class="keyword">else</span> {
+                    <span class="keyword">console</span>.<span class="function">log</span>(<span class="string">"Olá, visitante!"</span>);
+                }
+            }
+            <span class="function">cumprimentar</span>(<span class="keyword">()</span>); // Saída: Olá, visitante!</pre>
+                </div>
+                <div class="vscode-terminal" id='terminal8'>
+                    <span>1</span>
+                </div>
+                <div class="vscode-footer">
+                    <script>
+                        function card8() {
+                            let terminal = document.getElementById('terminal8')
+                            terminal.innerHTML = "C:User/Project><br><br>Olá, visitante!"
+
+                            if (terminal.style.display === "flex") {
+                                terminal.style.display = "none";
+                            } else {
+                                terminal.style.display = "flex";
+                            }
+                        }
+                    </script>
+                    <button onclick="card8()">Executar Código</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="vscode-explanation">
+                <h3></h3>
+                <p>Os parâmetros são essenciais para criar funções dinâmicas e reutilizáveis em JavaScript. Eles
+                    permitem que você passe informações para as funções, adaptando-as a diferentes situações.
+
+                    Aqui estão os principais pontos:</p>
+            </div>
+        </div>
+        <div class="col-md-12 mb-4">
+            <ul class="styled-list list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span><strong>Definição:</strong> Os parâmetros são variáveis usadas dentro das
+                        funções.</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span><strong>Padrão:</strong> Valores podem ser definidos caso nenhum argumento seja
+                        passado.</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span><strong>Operador
+                            Rest:</strong> Agrupe múltiplos argumentos em um array com ....</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span><strong>Flexibilidade:</strong> Parâmetros opcionais e objetos permitem maior
+                        controle.</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center"><span><strong>Por
+                            Valor e Por Referência:</strong> Tipos primitivos são copiados enquanto objetos e
+                        arrays
+                        compartilham a referência.</span></li>
+            </ul>
+        </div>
+        <div class="col-md-12">
+            <div class="vscode-explanation">
+                <h3></h3>
+                <p>Ao dominar os parâmetros, você consegue criar funções mais adaptáveis, garantindo que elas se
+                    comportem bem em diversos cenários. Continue explorando, praticando e experimentando!
+                    <br><br>
+
+                    Agora, que tal aplicar o que você aprendeu criando sua própria função com parâmetros? 🚀
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Formulário para criar novos cards -->
+
+    <!-- footer -->
+    <footer class="site-footer bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <!-- Coluna para texto de copyright -->
+                <div class="col-12 col-md-6 text-center text-md-left">
+                    <p class="footer-text mb-0">© 2025 - Todos os direitos reservados</p>
+                </div>
+                <!-- Coluna para links -->
+                <div class="col-12 col-md-6 text-center text-md-right">
+                    <ul class="footer-links list-unstyled mb-0">
+                        <li class="d-inline-block mr-3">
+                            <a href="#" class="footer-link text-light">Sobre</a>
+                        </li>
+                        <li class="d-inline-block mr-3">
+                            <a href="#" class="footer-link text-light">Serviços</a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a href="#" class="footer-link text-light">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="deletarCode"></div>
 
     </div>
 

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<!-- saved from url=(0038)http://127.0.0.1:5500/createapage.html -->
+<!-- saved from url=(0039)# -->
 <html lang="pt-br" data-lt-installed="true">
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -10,6 +9,7 @@
     <!-- Link para o Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
     <style>
         body {
             background-color: #121212;
@@ -79,7 +79,7 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="http://127.0.0.1:5500/createapage.html#">Minha Marca</a>
+                <a class="navbar-brand" href="#">Minha Marca</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -117,37 +117,35 @@
                                         });
                                     }
                                 }
+
                             </script><a class="nav-link" onclick="aulas()" href="#">Aulas</a>
                         </li>
-
-                        </li>
-                        <li class="nav-item"><a class="nav-link"
-                                href="http://127.0.0.1:5500/createapage.html#">Sobre</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Sobre</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="http://127.0.0.1:5500/createapage.html#"
-                                id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Serviços
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                                <li><a class="dropdown-item" href="http://127.0.0.1:5500/createapage.html#">Serviço
+                                <li><a class="dropdown-item" href="#">Serviço
                                         1</a></li>
-                                <li><a class="dropdown-item" href="http://127.0.0.1:5500/createapage.html#">Serviço
+                                <li><a class="dropdown-item" href="#">Serviço
                                         2</a></li>
-                                <li><a class="dropdown-item" href="http://127.0.0.1:5500/createapage.html#">Serviço
+                                <li><a class="dropdown-item" href="#">Serviço
                                         3</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="http://127.0.0.1:5500/createapage.html#"
-                                id="contactDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Contato
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="contactDropdown">
-                                <li><a class="dropdown-item" href="http://127.0.0.1:5500/createapage.html#">Email</a>
+                                <li><a class="dropdown-item" href="#">Email</a>
                                 </li>
-                                <li><a class="dropdown-item" href="http://127.0.0.1:5500/createapage.html#">Telefone</a>
+                                <li><a class="dropdown-item" href="#">Telefone</a>
                                 </li>
-                                <li><a class="dropdown-item" href="http://127.0.0.1:5500/createapage.html#">Suporte</a>
+                                <li><a class="dropdown-item" href="#">Suporte</a>
                                 </li>
                             </ul>
                         </li>
@@ -171,201 +169,60 @@
                 <li><a href='10.Parametros.html'>10.Parametros.html</a></li>
                 <li><a href='11.Expressões_de_funções.html'>11.Expressões_de_funções.html</a></li>
                 <li><a href='12.Arrow_function.html'>12.Arrow_function.html</a></li>
+                <li><a href='13.Operador_ternario.html'>13.Operador_ternario.html</a></li>
+                <li><a href='14.if_and_else.html'>14.if_and_else.html</a></li>
+            </ul>
+            <h3>Modulo 02</h3>
+            <ul>
+                <li><a href='15.2.Arrays_criar.html'>15.2.Arrays_criar.html</a></li>
+                <li><a href='16.2.alterando_array.html'>16.2.alterando_array.html</a></li>
+                <li><a href='17.2.Metodos_array.html'>17.2.Metodos_array.html</a></li>
+                <li><a href='18.2.metodos_mod_inte.html'>18.2.metodos_mod_inte.html</a></li>
+                <li><a href='19.2.transform_array.html'>19.2.transform_array.html</a></li>
+                <li><a href='20.2.loops.html'>20.2.loops.html</a></li>
+                <li><a href='21.2.Arrays Multidimensionais.html'>21.2.Arrays Multidimensionais.html</a></li>
+                <li><a href='22.2.ordenação.html'>22.2.ordenação.html</a></li>
+                <li><a href='menu.html'>menu.html</a></li>
             </ul>
         </div>
-
         <!-- Container para os cards -->
         <div class="row" id="cards-container">
             <div class="mb-2">
-                <h1>Erros no JavaScript</h1>
+                <h1>Arrays e Como Criá-los</h1>
             </div>
             <div class="col-md-12">
                 <div class="vscode-explanation">
-                    <h3>1. Erros de Sintaxe (Syntax Errors)</h3>
-                    <p>São causados por problemas na estrutura do código, como palavras-chave escritas
-                        incorretamente ou
-                        falta de caracteres necessários, como ponto e vírgula ou chaves.</p>
+                    <h3>O que é um Array?</h3>
+                    <p>Um array em JavaScript é uma estrutura de dados que permite armazenar múltiplos valores em uma
+                        única variável. Arrays podem conter elementos de tipos diferentes, como números, strings,
+                        objetos, funções, etc.</p>
                 </div>
             </div>
-            <div class="col-md-12">
-                <div class="vscode-card">
-                    <div class="vscode-header">
-                        <div class="dots">
-                            <div class="dot red"></div>
-                            <div class="dot yellow"></div>
-                            <div class="dot green"></div>
-                        </div>
-                        <span>fechamento da aspa</span>
-                    </div>
-                    <div class="vscode-content">
-                        <pre><span class="keyword">console</span>.<span class="function">log</span>(<span class="string">"Olá mundo</span>) <span class="comment">// Falta o fechamento da aspa</span></pre>
-                    </div>
-                    <div class="vscode-terminal" id="terminal1">
-                        <span>Syntax Errors</span>
-                    </div>
-                    <div class="vscode-footer">
-                        <script>
-                            function card1() {
-                                let terminal = document.getElementById('terminal1')
-                                terminal.innerHTML = 'C:User/Project><br><br>SyntaxError: Invalid or unexpected token'
-                                if (terminal.style.display === "flex") {
-                                    terminal.style.display = "none"
-                                } else {
-                                    terminal.style.display = "flex"
-                                }
-                            }
-                        </script>
-                        <button onclick="card1()">Executar Código</button>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-2">
-                <h3>Correção:</h3>
-            </div>
-            <div class="col-md-12">
-                <div class="vscode-card">
-                    <div class="vscode-header">
-                        <div class="dots">
-                            <div class="dot red"></div>
-                            <div class="dot yellow"></div>
-                            <div class="dot green"></div>
-                        </div>
-                        <span>Correção:</span>
-                    </div>
-                    <div class="vscode-content">
-                        <pre><span class="keyword">console</span>.<span class="function">log</span>(<span class="string">"Olá mundo"</span>);</pre>
-                    </div>
-                    <div class="vscode-terminal" id="terminal2">
-                        <span>Olá mundo</span>
-                    </div>
-                    <div class="vscode-footer">
-                        <script>
-                            function card2() {
-                                let terminal = document.getElementById('terminal2')
-                                terminal.innerHTML = 'C:User/Project><br><br>Olá mundo'
-                                if (terminal.style.display === "flex") {
-                                    terminal.style.display = "none"
-                                } else {
-                                    terminal.style.display = "flex"
-                                }
-                            }
-                        </script>
-                        <button onclick="card2()">Executar Código</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="vscode-explanation">
-                    <h3>2. Erros de Execução (Runtime Errors)</h3>
-                    <p>Acontecem quando o código está correto sintaticamente, mas tenta realizar uma operação
-                        inválida
-                        durante a execução, como acessar uma variável inexistente.</p>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="vscode-card">
-                    <div class="vscode-header">
-                        <div class="dots">
-                            <div class="dot red"></div>
-                            <div class="dot yellow"></div>
-                            <div class="dot green"></div>
-                        </div>
-                        <span>Runtime Errors</span>
-                    </div>
-                    <div class="vscode-content">
-                        <pre><span class="keyword">console</span>.<span class="function">log</span>(<span class="variable">nome</span>); <span class="comment">// Variável 'nome' não foi definida</span></pre>
-                    </div>
-                    <div class="vscode-terminal" id="terminal3">
-                        <span>Variável 'nome' não foi definida</span>
-                    </div>
-                    <div class="vscode-footer">
-                        <script>
-                            function card3() {
-                                let terminal = document.getElementById('terminal3')
-                                terminal.innerHTML = 'C:User/Project><br><br>ReferenceError: nome is not defined'
-                                if (terminal.style.display === "flex") {
-                                    terminal.style.display = "none"
-                                } else {
-                                    terminal.style.display = "flex"
-                                }
-                            }
-                        </script>
-                        <button onclick="card3()">Executar Código</button>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-2">
-                <h3>Correção:</h3>
-            </div>
-            <div class="col-md-12">
-                <div class="vscode-card">
-                    <div class="vscode-header">
-                        <div class="dots">
-                            <div class="dot red"></div>
-                            <div class="dot yellow"></div>
-                            <div class="dot green"></div>
-                        </div>
-                        <span>Correção:</span>
-                    </div>
-                    <div class="vscode-content">
-                        <pre><code><span class="keyword">let</span> nome = <span class="string">"Bruno"</span>;
-<span class="keyword">console</span>.<span class="function">log</span>(nome);</code></pre>
-                    </div>
-                    <div class="vscode-terminal" id="terminal4">
-                        <span>Bruno</span>
-                    </div>
-                    <div class="vscode-footer">
-                        <script>
-                            function card4() {
-                                let terminal = document.getElementById('terminal4')
-                                terminal.innerHTML = 'C:User/Project><br><br>Bruno'
-                                if (terminal.style.display === "flex") {
-                                    terminal.style.display = "none"
-                                } else {
-                                    terminal.style.display = "flex"
-                                }
-                            }
-                        </script>
-                        <button onclick="card4()">Executar Código</button>
-                    </div>
-                </div>
-            </div>
-
-
-
             <div class="mb-2"></div>
             <div class="mb-2">
-                <h1>Dicas para Evitar Erros:</h1>
+                <h3>Criando Arrays</h3>
             </div>
-            <div class="col-md-12 mb-4">
-                <ul class="styled-list list-group">
-                    <li class="list-group-item d-flex justify-content-between align-items-center"><span><strong>Use
-                                o
-                                Console do Navegador:</strong> Utilize console.log() para depurar o código e
-                            entender o
-                            fluxo.</span></li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center"><span><strong>Leia
-                                as
-                                Mensagens de Erro:</strong> O navegador informa onde o problema ocorreu</span></li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <span><strong>Escreva
-                                Código Limpo:</strong> ajudando a identificar a causa.</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center"><span><strong>Use
-                                Ferramentas de Lint:</strong> Ferramentas como ESLint ajudam a detectar erros antes
-                            da
-                            execução.</span></li>
-                </ul>
-            </div>
-            <div class="col-md-12">
-                <div class="vscode-explanation">
-                    <h3></h3>
-                    <p>Entender e corrigir erros no JavaScript é uma habilidade essencial para qualquer
-                        desenvolvedor.
-                        Cada erro é uma oportunidade de aprendizado, e a prática constante torna você mais confiante
-                        e
-                        eficiente. Use ferramentas como o console e linters para facilitar o processo, e lembre-se:
-                        errar faz parte do aprendizado. Continue praticando e explorando o JavaScript! 🚀</p>
+            <div class="col-md-12" id="card-1">
+                <div class="vscode-card">
+                    <div class="vscode-header">
+                        <div class="dots">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                        <span>Card.Exemplo</span>
+                    </div>
+                    <div class="vscode-content">
+                        <pre><span class="comment">// &nbsp;Usando&nbsp;colchetes</span><br><span class="keyword">let</span>&nbsp;frutas&nbsp;=&nbsp;[<span class="string">'maçã'</span>,&nbsp;<span class="string">'banana'</span>,&nbsp;<span class="string">'laranja'</span>];<br><br><span class="comment">// &nbsp;Usando&nbsp;o&nbsp;construtor&nbsp;Array</span><br><span class="keyword">let</span>&nbsp;numeros&nbsp;=&nbsp;new&nbsp;Array(10,&nbsp;20,&nbsp;30);<br><br>Console.<span class="function">log</span>(numeros)</pre>
+                    </div>
+                    <div class="vscode-terminal" id="terminal1" style="display: none;">
+                        C:UserProject&gt;<br><br>
+                        <pre><span>[10,20,30]</span>
+            </pre>
+                    </div>
+                    <div class="vscode-footer">
+                        <button id="btn-1">Executar Código</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -383,16 +240,13 @@
                     <div class="col-12 col-md-6 text-center text-md-right">
                         <ul class="footer-links list-unstyled mb-0">
                             <li class="d-inline-block mr-3">
-                                <a href="http://127.0.0.1:5500/createapage.html#"
-                                    class="footer-link text-light">Sobre</a>
+                                <a href="#" class="footer-link text-light">Sobre</a>
                             </li>
                             <li class="d-inline-block mr-3">
-                                <a href="http://127.0.0.1:5500/createapage.html#"
-                                    class="footer-link text-light">Serviços</a>
+                                <a href="#" class="footer-link text-light">Serviços</a>
                             </li>
                             <li class="d-inline-block">
-                                <a href="http://127.0.0.1:5500/createapage.html#"
-                                    class="footer-link text-light">Contato</a>
+                                <a href="#" class="footer-link text-light">Contato</a>
                             </li>
                         </ul>
                     </div>
@@ -413,60 +267,82 @@
 
     <div class="deletarCode">
         <script>
-            // Função para criar um card dinamicamente
+            let num = 1;
+
+            function highlightCode(codeContent) {
+                // Substituindo espaços em branco por &nbsp;
+                codeContent = codeContent.replace(/ /g, '&nbsp;');
+                // Substituindo strings com aspas duplas
+                codeContent = codeContent.replace(/"([^"]+)"/g, '<span class="string">"$1"</span>'); // Strings com aspas duplas
+
+                // Substituindo strings com aspas simples
+                codeContent = codeContent.replace(/'([^']+)'/g, '<span class="string">\'$1\'</span>'); // Strings com aspas simples
+                codeContent = codeContent.replace(/`([^`]+)`/g, '<span class="string">\`$1\`</span>'); // Strings com aspas simples
+
+                // Substituindo comentários
+                codeContent = codeContent.replace(/\/\/(.*)$/gm, '<span class="comment">// $1</span>'); // Comentários
+
+                // Substituindo palavras-chave var, let, const
+                codeContent = codeContent.replace(/\b(var|let|const|console)\b/g, '<span class="keyword">$1</span>'); // Palavras-chave
+                codeContent = codeContent.replace(/\b(function|log)\b/g, '<span class="function">$1</span>');
+                codeContent = codeContent.replace(/\b(if|else)\b/g, '<span class="ifelse">$1</span>'); // Palavras-chave
+
+                // Substituindo palavras entre # com a tag <span class="keyword">
+                codeContent = codeContent.replace(/#([^#]+)#/g, '<span class="keyword">$1</span>'); // Palavras entre #
+                codeContent = codeContent.replace(/\n/g, '<br>'); // Adiciona <br> nas quebras de linha do código
+
+                return codeContent;
+            }
+
+
+
             function createCodeCard(fileName, codeContent, terminalContent) {
                 const container = document.getElementById("cards-container");
 
                 const card = document.createElement("div");
                 card.className = "col-md-12";
+                card.id = `card-${num}`;
+
+                // Aplicando a formatação no código
+                const formattedCodeContent = highlightCode(codeContent);
 
                 card.innerHTML = `
-                <div class="vscode-card">
-                    <div class="vscode-header">
-                        <div class="dots">
-                            <div class="dot red"></div>
-                            <div class="dot yellow"></div>
-                            <div class="dot green"></div>
-                        </div>
-                        <span>${fileName}</span>
-                    </div>
-                    <div class="vscode-content">
-                        <pre>${codeContent}</pre>
-                    </div>
-                    <div class="vscode-terminal">
-                        <span>${terminalContent}</span>
-                    </div>
-                    <div class="vscode-footer">
-                        <button onclick="executeCode(this)">Executar Código</button>
-                        <button onclick="deleteCard(this)" id="btndel">Deletar Card</button>
-                    </div>
-                </div>
-            `;
+    <div class="vscode-card">
+        <div class="vscode-header">
+            <div class="dots">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+            </div>
+            <span>${fileName}</span>
+        </div>
+        <div class="vscode-content">
+            <pre>${formattedCodeContent}</pre>
+        </div>
+        <div class="vscode-terminal" id="terminal${num}">
+            C:UserProject><br><br><pre><span>${terminalContent}</span>
+            </pre>
+        </div>
+        <div class="vscode-footer">
+            <button id="btn-${num}">Executar Código</button>
+        </div>
+    </div>`;
 
-                container.appendChild(card);
+                container.appendChild(card); // Adiciona o card ao DOM antes de capturar elementos
+
+                // Capturar botão e terminal DEPOIS de adicionar ao DOM
+                const btn = document.getElementById(`btn-${num}`);
+                const terminal = document.getElementById(`terminal${num}`);
+
+                btn.addEventListener("click", function () {
+                    terminal.style.display = terminal.style.display === "flex" ? "none" : "flex";
+                });
+
+                num++; // Incrementa o ID para o próximo card
             }
 
-            // Função para executar o código de um card
-            function executeCode(button) {
-                const card = button.closest(".vscode-card");
-                const codeContent = card.querySelector(".vscode-content pre").textContent;
-                const terminal = card.querySelector(".vscode-terminal");
 
-                try {
-                    const result = eval(codeContent);
-                    terminal.textContent = result !== undefined ? result : "Código executado com sucesso.";
-                } catch (error) {
-                    terminal.textContent = `Erro: ${error.message}`;
-                }
-            }
-
-            // Função para deletar um card
-            function deleteCard(button) {
-                const card = button.closest(".col-md-12");
-                card.remove();
-            }
-
-            // Função para adicionar um novo card usando o formulário
+            // Função para adicionar um novo card
             function addNewCard() {
                 const fileName = document.getElementById("file-name").value.trim();
                 const codeContent = document.getElementById("code-content").value.trim();
@@ -478,8 +354,6 @@
                 }
 
                 createCodeCard(fileName, codeContent, terminalContent);
-
-
             }
 
             // Função para adicionar o conteúdo de explicação no card
@@ -505,7 +379,7 @@
                 const deleteButton = document.createElement('button');
                 deleteButton.textContent = 'Deletar';
                 deleteButton.classList.add('btn', 'btn-danger', 'delete-button');
-                deleteButton.id = 'btndel';  // Corrigido aqui
+                deleteButton.id = 'btndel'; // Corrigido aqui
                 deleteButton.style.marginTop = '10px';
 
                 // Adicionar funcionalidade ao botão de deletar
@@ -553,7 +427,7 @@
                     // Botão para deletar o item individual
                     const deleteLiButton = document.createElement('button');
                     deleteLiButton.classList.add('btn', 'btn-danger', 'btn-sm');
-                    deleteLiButton.id = 'btndel';  // Corrigido aqui
+                    deleteLiButton.id = 'btndel'; // Corrigido aqui
                     deleteLiButton.textContent = 'Deletar';
                     deleteLiButton.onclick = () => li.remove();
 
@@ -564,7 +438,7 @@
                 // Botão para deletar a lista inteira
                 const deleteUlButton = document.createElement('button');
                 deleteUlButton.classList.add('btn', 'btn-danger', 'mt-2');
-                deleteUlButton.id = 'btndel';  // Corrigido aqui
+                deleteUlButton.id = 'btndel'; // Corrigido aqui
                 deleteUlButton.textContent = 'Deletar Lista';
                 deleteUlButton.onclick = () => colDiv.remove();
 
@@ -600,6 +474,7 @@
                 headers.forEach(headerText => {
                     const th = document.createElement("th");
                     th.textContent = headerText;
+                    th.contentEditable = "true"; // Torna o <th> editável
                     headerRow.appendChild(th);
                 });
 
@@ -613,7 +488,7 @@
         <td contenteditable="true">Exemplo</td>
         <td contenteditable="true">Descrição inicial</td>
         <td contenteditable="true"><span class="status active">Ativo</span></td>
-    `;
+        `;
 
                 // Adicionar a tabela à estrutura
                 tableResponsiveDiv.appendChild(table);
@@ -638,7 +513,7 @@
         <td contenteditable="true">Novo Nome</td>
         <td contenteditable="true">Nova Descrição</td>
         <td contenteditable="true"><span class="status active">Ativo</span></td>
-    `;
+        `;
             }
 
             // Função para adicionar uma coluna à tabela
@@ -652,6 +527,7 @@
                 const headerRow = table.tHead.rows[0];
                 const th = document.createElement("th");
                 th.textContent = `Nova Coluna`;
+                th.contentEditable = "true"; // Torna o novo <th> editável
                 headerRow.appendChild(th);
 
                 // Adicionar uma nova célula a cada linha do corpo
@@ -729,6 +605,7 @@
                 tableContainer.innerHTML = "";
                 table = null; // Limpa a referência da tabela atual
             }
+
             // Função para adicionar títulos dinâmicos
             function addDynamicTitle() {
                 const titleText = document.getElementById("titleText").value.trim();
@@ -746,7 +623,7 @@
                 // Criar o botão para deletar o título
                 const deleteButton = document.createElement('button');
                 deleteButton.classList.add('btn', 'btn-danger', 'ml-3');
-                deleteButton.id = 'btndel';  // Corrigido aqui
+                deleteButton.id = 'btndel'; // Corrigido aqui
                 deleteButton.textContent = 'Deletar';
 
                 // Adicionar evento de deletação
@@ -826,5 +703,4 @@
 
 
 </body>
-
-</html>>
+</html>
